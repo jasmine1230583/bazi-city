@@ -1663,9 +1663,9 @@ function renderResult(){
   +'</div>'
 
   +'<div class="share"><div class="sec-h"><h3>你的坐标卡</h3><span class="ln"></span></div>'
-  +'<canvas id="card" width="900" height="1400" aria-label="八字坐标结果卡"></canvas>'
-  +'<p class="cap">长按图片可保存 · 也可以直接截图分享</p>'
-  +'<div class="btn-row"><button class="btn-ghost" id="saveCard">保存这张卡</button><button class="btn-ghost" id="copyText">复制分享文案</button></div>'
+  +'<canvas id="card" width="900" height="1400" aria-label="八字坐标结果卡" style="display:none;"></canvas>'
+  +'<img id="cardImg" style="width:100%; height:auto; display:none; border-radius:3px; border:1px solid var(--line-2); background:#f4f2ea;" alt="八字坐标结果卡">'
+  +'<p class="cap">长按图片可保存 · 也可以直接截图分享</p>'  +'<div class="btn-row"><button class="btn-ghost" id="saveCard">保存这张卡</button><button class="btn-ghost" id="copyText">复制分享文案</button></div>'
   +'<button class="btn-ghost" id="restart" style="margin-top:10px">重新排一次</button>'
   +'</div>'
 
@@ -1794,16 +1794,45 @@ function drawCard(R){
 
   Tfit(arch.line,W/2,1296,W-170,26,serif,'rgba(138,106,44,.9)');
   T(r.p.y+'.'+pad(r.p.m)+'.'+pad(r.p.d)+'  '+pad(r.b.ts.h)+':'+pad(r.b.ts.mi)+' · '+S.city,W/2,1346,'300 20px '+sans,'rgba(17,26,21,.48)','center');
+  // 👇 【新增这部分】把 canvas 转换成 img 图片，好让微信长按保存
+  setTimeout(() => {
+    try {
+      const url = cv.toDataURL('image/png');
+      const img = document.getElementById('cardImg');
+      if (img) {
+        img.src = url;
+        img.style.display = 'block';
+      }
+    } catch(e) {
+      console.error("生成图片失败", e);
+    }
+  }, 100);
 }
 const WX_HEX=['#3d7f5b','#b8482c','#96762e','#5f6873','#33638c'];
 
 function saveCard(){
-  const cv=$('card');
-  try{
-    const url=cv.toDataURL('image/png');
-    const a=document.createElement('a');
-    a.href=url;a.download='八字坐标.png';a.click();
-  }catch(e){alert('这张卡请长按或截图保存')}
+  const isWeixin = /MicroMessenger/i.test(navigator.userAgent);
+  const img = document.getElementById('cardImg');
+  
+  if (!img || !img.src) {
+    alert('图片正在生成中，请稍后再试');
+    return;
+  }
+  
+  if (isWeixin) {
+    // 微信环境：弹窗提示用户长按
+    alert('请长按上方图片，在弹出的菜单中选择“保存图片”即可存入相册');
+  } else {
+    // 普通浏览器：依然支持一键下载
+    try {
+      const a = document.createElement('a');
+      a.href = img.src;
+      a.download = '八字坐标.png';
+      a.click();
+    } catch(e) {
+      alert('请长按上方图片或截图保存');
+    }
+  }
 }
 
 /* ---------- 启动 ---------- */
