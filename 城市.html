@@ -1,0 +1,1847 @@
+
+<!DOCTYPE html>
+<html data-src-ver="a48c9f46" lang="zh-CN" data-inspector-id="html:a48c9f46:0">
+<head data-inspector-id="html:a48c9f46:1"><base href="/app/app_17j21fb3n9c/"><script src="https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.cn.js" crossorigin="anonymous"></script><script>if(window.Slardar){Slardar("context.merge",{app_id:"app_17j21fb3n9c",user_id:"",tenant_id:"5537127362",app_type:"9",arch_type:"4"});Slardar("init",{bid:"flow_web",env:"cn-release-production-samantha"});Slardar("start")}</script><script>(function(e,t){e.LogAnalyticsObject=t;if(!e[t]){function c(){c.q.push(arguments)}c.q=[];e[t]=c}e[t].l=+new Date})(window,"collectEvent");var s=document.createElement("script");s.src="https://lf3-cdn-tos.bytescm.com/obj/static/log-sdk/collect/5.1/collect.js";s.crossOrigin="anonymous";s.async=true;s.onerror=function(){console.warn("Failed to load Tea script")};document.head.appendChild(s)</script><script>window.appId="app_17j21fb3n9c";window.userId="";window.tenantId="5537127362";window.csrfToken="ddacc9fe46748ddf00a58a61cd63d6e9c5b197a934b93d105fb3bd809aea0247";window.appEnv="runtime";window.__teaChannelDomain__="https://mcs-bd.feishu.cn";globalThis.CLIENT_BASE_PATH="/app/app_17j21fb3n9c";globalThis.ENVIRONMENT="online"</script><script>"use strict";var MiaodaRuntime=(()=>{var Ue=Object.create;var R=Object.defineProperty;var ze=Object.getOwnPropertyDescriptor;var Ge=Object.getOwnPropertyNames;var Je=Object.getPrototypeOf,Xe=Object.prototype.hasOwnProperty;var j=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),Q=(t,e)=>{for(var r in e)R(t,r,{get:e[r],enumerable:!0})},ee=(t,e,r,i)=>{if(e&&typeof e=="object"||typeof e=="function")for(let p of Ge(e))!Xe.call(t,p)&&p!==r&&R(t,p,{get:()=>e[p],enumerable:!(i=ze(e,p))||i.enumerable});return t};var te=(t,e,r)=>(r=t!=null?Ue(Je(t)):{},ee(e||!t||!t.__esModule?R(r,"default",{value:t,enumerable:!0}):r,t)),Ke=t=>ee(R({},"__esModule",{value:!0}),t);var re=j((ne,O)=>{"use strict";(function(t){"use strict";function e(n,v){var o=(n&65535)+(v&65535),C=(n>>16)+(v>>16)+(o>>16);return C<<16|o&65535}function r(n,v){return n<<v|n>>>32-v}function i(n,v,o,C,x,T){return e(r(e(e(v,n),e(C,T)),x),o)}function p(n,v,o,C,x,T,M){return i(v&o|~v&C,n,v,x,T,M)}function f(n,v,o,C,x,T,M){return i(v&C|o&~C,n,v,x,T,M)}function a(n,v,o,C,x,T,M){return i(v^o^C,n,v,x,T,M)}function g(n,v,o,C,x,T,M){return i(o^(v|~C),n,v,x,T,M)}function h(n,v){n[v>>5]|=128<<v%32,n[(v+64>>>9<<4)+14]=v;var o,C,x,T,M,c=1732584193,l=-271733879,d=-1732584194,u=271733878;for(o=0;o<n.length;o+=16)C=c,x=l,T=d,M=u,c=p(c,l,d,u,n[o],7,-680876936),u=p(u,c,l,d,n[o+1],12,-389564586),d=p(d,u,c,l,n[o+2],17,606105819),l=p(l,d,u,c,n[o+3],22,-1044525330),c=p(c,l,d,u,n[o+4],7,-176418897),u=p(u,c,l,d,n[o+5],12,1200080426),d=p(d,u,c,l,n[o+6],17,-1473231341),l=p(l,d,u,c,n[o+7],22,-45705983),c=p(c,l,d,u,n[o+8],7,1770035416),u=p(u,c,l,d,n[o+9],12,-1958414417),d=p(d,u,c,l,n[o+10],17,-42063),l=p(l,d,u,c,n[o+11],22,-1990404162),c=p(c,l,d,u,n[o+12],7,1804603682),u=p(u,c,l,d,n[o+13],12,-40341101),d=p(d,u,c,l,n[o+14],17,-1502002290),l=p(l,d,u,c,n[o+15],22,1236535329),c=f(c,l,d,u,n[o+1],5,-165796510),u=f(u,c,l,d,n[o+6],9,-1069501632),d=f(d,u,c,l,n[o+11],14,643717713),l=f(l,d,u,c,n[o],20,-373897302),c=f(c,l,d,u,n[o+5],5,-701558691),u=f(u,c,l,d,n[o+10],9,38016083),d=f(d,u,c,l,n[o+15],14,-660478335),l=f(l,d,u,c,n[o+4],20,-405537848),c=f(c,l,d,u,n[o+9],5,568446438),u=f(u,c,l,d,n[o+14],9,-1019803690),d=f(d,u,c,l,n[o+3],14,-187363961),l=f(l,d,u,c,n[o+8],20,1163531501),c=f(c,l,d,u,n[o+13],5,-1444681467),u=f(u,c,l,d,n[o+2],9,-51403784),d=f(d,u,c,l,n[o+7],14,1735328473),l=f(l,d,u,c,n[o+12],20,-1926607734),c=a(c,l,d,u,n[o+5],4,-378558),u=a(u,c,l,d,n[o+8],11,-2022574463),d=a(d,u,c,l,n[o+11],16,1839030562),l=a(l,d,u,c,n[o+14],23,-35309556),c=a(c,l,d,u,n[o+1],4,-1530992060),u=a(u,c,l,d,n[o+4],11,1272893353),d=a(d,u,c,l,n[o+7],16,-155497632),l=a(l,d,u,c,n[o+10],23,-1094730640),c=a(c,l,d,u,n[o+13],4,681279174),u=a(u,c,l,d,n[o],11,-358537222),d=a(d,u,c,l,n[o+3],16,-722521979),l=a(l,d,u,c,n[o+6],23,76029189),c=a(c,l,d,u,n[o+9],4,-640364487),u=a(u,c,l,d,n[o+12],11,-421815835),d=a(d,u,c,l,n[o+15],16,530742520),l=a(l,d,u,c,n[o+2],23,-995338651),c=g(c,l,d,u,n[o],6,-198630844),u=g(u,c,l,d,n[o+7],10,1126891415),d=g(d,u,c,l,n[o+14],15,-1416354905),l=g(l,d,u,c,n[o+5],21,-57434055),c=g(c,l,d,u,n[o+12],6,1700485571),u=g(u,c,l,d,n[o+3],10,-1894986606),d=g(d,u,c,l,n[o+10],15,-1051523),l=g(l,d,u,c,n[o+1],21,-2054922799),c=g(c,l,d,u,n[o+8],6,1873313359),u=g(u,c,l,d,n[o+15],10,-30611744),d=g(d,u,c,l,n[o+6],15,-1560198380),l=g(l,d,u,c,n[o+13],21,1309151649),c=g(c,l,d,u,n[o+4],6,-145523070),u=g(u,c,l,d,n[o+11],10,-1120210379),d=g(d,u,c,l,n[o+2],15,718787259),l=g(l,d,u,c,n[o+9],21,-343485551),c=e(c,C),l=e(l,x),d=e(d,T),u=e(u,M);return[c,l,d,u]}function k(n){var v,o="",C=n.length*32;for(v=0;v<C;v+=8)o+=String.fromCharCode(n[v>>5]>>>v%32&255);return o}function y(n){var v,o=[];for(o[(n.length>>2)-1]=void 0,v=0;v<o.length;v+=1)o[v]=0;var C=n.length*8;for(v=0;v<C;v+=8)o[v>>5]|=(n.charCodeAt(v/8)&255)<<v%32;return o}function S(n){return k(h(y(n),n.length*8))}function L(n,v){var o,C=y(n),x=[],T=[],M;for(x[15]=T[15]=void 0,C.length>16&&(C=h(C,n.length*8)),o=0;o<16;o+=1)x[o]=C[o]^909522486,T[o]=C[o]^1549556828;return M=h(x.concat(y(v)),512+v.length*8),k(h(T.concat(M),640))}function w(n){var v="0123456789abcdef",o="",C,x;for(x=0;x<n.length;x+=1)C=n.charCodeAt(x),o+=v.charAt(C>>>4&15)+v.charAt(C&15);return o}function I(n){return unescape(encodeURIComponent(n))}function s(n){return S(I(n))}function m(n){return w(s(n))}function _(n,v){return L(I(n),I(v))}function b(n,v){return w(_(n,v))}function E(n,v,o){return v?o?_(v,n):b(v,n):o?s(n):m(n)}typeof define=="function"&&define.amd?define(function(){return E}):typeof O=="object"&&O.exports?O.exports=E:t.md5=E})(ne)});var ie=j((B,oe)=>{"use strict";(function(t,e){typeof B=="object"?oe.exports=B=e():typeof define=="function"&&define.amd?define([],e):t.CryptoJS=e()})(B,function(){var t=t||(function(e,r){var i=Object.create||(function(){function s(){}return function(m){var _;return s.prototype=m,_=new s,s.prototype=null,_}})(),p={},f=p.lib={},a=f.Base=(function(){return{extend:function(s){var m=i(this);return s&&m.mixIn(s),(!m.hasOwnProperty("init")||this.init===m.init)&&(m.init=function(){m.$super.init.apply(this,arguments)}),m.init.prototype=m,m.$super=this,m},create:function(){var s=this.extend();return s.init.apply(s,arguments),s},init:function(){},mixIn:function(s){for(var m in s)s.hasOwnProperty(m)&&(this[m]=s[m]);s.hasOwnProperty("toString")&&(this.toString=s.toString)},clone:function(){return this.init.prototype.extend(this)}}})(),g=f.WordArray=a.extend({init:function(s,m){s=this.words=s||[],m!=r?this.sigBytes=m:this.sigBytes=s.length*4},toString:function(s){return(s||k).stringify(this)},concat:function(s){var m=this.words,_=s.words,b=this.sigBytes,E=s.sigBytes;if(this.clamp(),b%4)for(var n=0;n<E;n++){var v=_[n>>>2]>>>24-n%4*8&255;m[b+n>>>2]|=v<<24-(b+n)%4*8}else for(var n=0;n<E;n+=4)m[b+n>>>2]=_[n>>>2];return this.sigBytes+=E,this},clamp:function(){var s=this.words,m=this.sigBytes;s[m>>>2]&=4294967295<<32-m%4*8,s.length=e.ceil(m/4)},clone:function(){var s=a.clone.call(this);return s.words=this.words.slice(0),s},random:function(s){for(var m=[],_=(function(o){var o=o,C=987654321,x=4294967295;return function(){C=36969*(C&65535)+(C>>16)&x,o=18e3*(o&65535)+(o>>16)&x;var T=(C<<16)+o&x;return T/=4294967296,T+=.5,T*(e.random()>.5?1:-1)}}),b=0,E;b<s;b+=4){var n=_((E||e.random())*4294967296);E=n()*987654071,m.push(n()*4294967296|0)}return new g.init(m,s)}}),h=p.enc={},k=h.Hex={stringify:function(s){for(var m=s.words,_=s.sigBytes,b=[],E=0;E<_;E++){var n=m[E>>>2]>>>24-E%4*8&255;b.push((n>>>4).toString(16)),b.push((n&15).toString(16))}return b.join("")},parse:function(s){for(var m=s.length,_=[],b=0;b<m;b+=2)_[b>>>3]|=parseInt(s.substr(b,2),16)<<24-b%8*4;return new g.init(_,m/2)}},y=h.Latin1={stringify:function(s){for(var m=s.words,_=s.sigBytes,b=[],E=0;E<_;E++){var n=m[E>>>2]>>>24-E%4*8&255;b.push(String.fromCharCode(n))}return b.join("")},parse:function(s){for(var m=s.length,_=[],b=0;b<m;b++)_[b>>>2]|=(s.charCodeAt(b)&255)<<24-b%4*8;return new g.init(_,m)}},S=h.Utf8={stringify:function(s){try{return decodeURIComponent(escape(y.stringify(s)))}catch{throw new Error("Malformed UTF-8 data")}},parse:function(s){return y.parse(unescape(encodeURIComponent(s)))}},L=f.BufferedBlockAlgorithm=a.extend({reset:function(){this._data=new g.init,this._nDataBytes=0},_append:function(s){typeof s=="string"&&(s=S.parse(s)),this._data.concat(s),this._nDataBytes+=s.sigBytes},_process:function(s){var m=this._data,_=m.words,b=m.sigBytes,E=this.blockSize,n=E*4,v=b/n;s?v=e.ceil(v):v=e.max((v|0)-this._minBufferSize,0);var o=v*E,C=e.min(o*4,b);if(o){for(var x=0;x<o;x+=E)this._doProcessBlock(_,x);var T=_.splice(0,o);m.sigBytes-=C}return new g.init(T,C)},clone:function(){var s=a.clone.call(this);return s._data=this._data.clone(),s},_minBufferSize:0}),w=f.Hasher=L.extend({cfg:a.extend(),init:function(s){this.cfg=this.cfg.extend(s),this.reset()},reset:function(){L.reset.call(this),this._doReset()},update:function(s){return this._append(s),this._process(),this},finalize:function(s){s&&this._append(s);var m=this._doFinalize();return m},blockSize:512/32,_createHelper:function(s){return function(m,_){return new s.init(_).finalize(m)}},_createHmacHelper:function(s){return function(m,_){return new I.HMAC.init(s,_).finalize(m)}}}),I=p.algo={};return p})(Math);return t})});var ae=j((H,se)=>{"use strict";(function(t,e){typeof H=="object"?se.exports=H=e(ie()):typeof define=="function"&&define.amd?define(["./core"],e):e(t.CryptoJS)})(H,function(t){return(function(){var e=t,r=e.lib,i=r.WordArray,p=r.Hasher,f=e.algo,a=[],g=f.SHA1=p.extend({_doReset:function(){this._hash=new i.init([1732584193,4023233417,2562383102,271733878,3285377520])},_doProcessBlock:function(h,k){for(var y=this._hash.words,S=y[0],L=y[1],w=y[2],I=y[3],s=y[4],m=0;m<80;m++){if(m<16)a[m]=h[k+m]|0;else{var _=a[m-3]^a[m-8]^a[m-14]^a[m-16];a[m]=_<<1|_>>>31}var b=(S<<5|S>>>27)+s+a[m];m<20?b+=(L&w|~L&I)+1518500249:m<40?b+=(L^w^I)+1859775393:m<60?b+=(L&w|L&I|w&I)-1894007588:b+=(L^w^I)-899497514,s=I,I=w,w=L<<30|L>>>2,L=S,S=b}y[0]=y[0]+S|0,y[1]=y[1]+L|0,y[2]=y[2]+w|0,y[3]=y[3]+I|0,y[4]=y[4]+s|0},_doFinalize:function(){var h=this._data,k=h.words,y=this._nDataBytes*8,S=h.sigBytes*8;return k[S>>>5]|=128<<24-S%32,k[(S+64>>>9<<4)+14]=Math.floor(y/4294967296),k[(S+64>>>9<<4)+15]=y,h.sigBytes=k.length*4,this._process(),this._hash},clone:function(){var h=p.clone.call(this);return h._hash=this._hash.clone(),h}});e.SHA1=p._createHelper(g),e.HmacSHA1=p._createHmacHelper(g)})(),t.SHA1})});var $t={};Q($t,{TrackKey:()=>z,comments:()=>W,name:()=>Dt,reportTeaEvent:()=>G,version:()=>Ft});var pe=te(re(),1),fe=te(ae(),1);function P(){return window.appId||null}function N(){var r;let t="suda-csrf-token",e=document.cookie.split("; ");for(let i of e){let[p,f]=i.split("=");if(p===t)return decodeURIComponent(f)}return(r=window.csrfToken)!=null?r:null}function F(){let t=globalThis.CLIENT_BASE_PATH||"/";return/^\/app\/[^/]/.test(t)}function D(){switch(globalThis.ENVIRONMENT){case"gray":return"PRE";case"online":return"ONLINE";default:return"BOE"}}function ce(){return window.appEnv!=null?window.appEnv==="runtime":!0}function $(){let t=navigator.userAgent,e=/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(t),r=/iPad|Tab|Tablet/i.test(t)&&navigator.maxTouchPoints>1;return e||r}async function le(){var t,e,r;try{let i=P();if(!i)return!0;let p=F()?`/app/${i}/__runtime__/api/v1/studio/get_published`:`/spark/b/${i}/get_published`,a=await(await fetch(p,{headers:{"X-Suda-Csrf-Token":(t=N())!=null?t:""}})).json();if(a.code===0||a.status_code==="0")return((r=(e=a.data)==null?void 0:e.app_info)==null?void 0:r.show_badge)!==!1}catch{}return!0}async function de(){var i;let t=P();if(!t)return{code:1,msg:"appId is required",data:{}};let e=F()?`/app/${t}/__runtime__/api/v1/studio/lark/user_info`:`/spark/b/${t}/lark/user_info`;return await(await fetch(e,{headers:{"X-Suda-Csrf-Token":(i=N())!=null?i:""}})).json()}var z={VIEW:"aily_agent_artifact_page_view"},Ze="08a441",qe="42b91e";function ue(t){let e=String(t);return(0,fe.default)(Ze+(0,pe.default)(e+qe)).toString()}var U=!1;async function Ye(){var f,a,g,h;let{data:t}=await de(),{tenantID:e,userID:r}=t||{},i=r&&r!=="0"?ue(r):void 0,p=e&&e!=="0"?ue(e):void 0;(f=window.collectEvent)==null||f.call(window,"init",{app_id:788827,channel:"cn",disable_auto_pv:!1,enable_ab_test:!1,enable_debug:!1,enable_stay_duration:!0,reportTime:1e3}),(g=window.collectEvent)==null||g.call(window,"config",{user_unique_id:i,device_type:$()?"mobile":"pc",evtParams:{open_from:(a=new URLSearchParams(window.location.search).get("open-from"))!=null?a:void 0,env:D(),user_id:i,tenant_id:p}}),U=!0,(h=window.collectEvent)==null||h.call(window,"start")}async function G({trackKey:t,trackParams:e={}}){var r;try{U||(U=!0,await Ye()),(r=window.collectEvent)==null||r.call(window,t,e)}catch(i){console.error(i)}}function me(){return G({trackKey:z.VIEW,trackParams:{artifact_uid:P(),agent_id:"agent_miaoda",url:window.location.href}})}function he(){if(typeof crypto!="undefined"&&crypto.getRandomValues){let e=new Uint8Array(8);return crypto.getRandomValues(e),Array.from(e).map(r=>r.toString(16).padStart(2,"0")).join("")}let t="";for(let e=0;e<16;e++)t+=Math.floor(Math.random()*16).toString(16);return t}var ge="x_sdk_device_id";function Qe(){try{let t=localStorage.getItem(ge);return t||(t=he(),localStorage.setItem(ge,t)),t}catch{return he()}}function et(){let t=typeof navigator!="undefined"?navigator.userAgent:"";return t&&(/Android/i.test(t)&&/Mobile/i.test(t)||/iPhone|iPod/i.test(t)||/BlackBerry|IEMobile|Opera Mini/i.test(t))?"mobile":"desktop"}var tt="pageSessionID";function nt(){try{return new URLSearchParams(window.location.search).get(tt)||""}catch{return""}}function rt(t={}){let e=t.pvId||nt();return{app_id:window.appId||"",tenant_id:window.tenantId||"",user_id:window.userId||"",did:Qe(),module:"app_web",app_env:"runtime",source_type:"user",device_type:et(),release_commit_id:window.__RELEASE_COMMIT_ID__||"",...e?{pv_id:e}:{}}}function ve(t){let e=Math.round(t);if(!Number.isFinite(e))throw new RangeError(`toNanoString: \u975E\u6CD5\u65F6\u95F4\u6233 ${t}`);return typeof BigInt!="function"?e===0?"0":`${e}000000`:String(BigInt(e)*BigInt(1e6))}var ot="1.0.2";function it(t,e){let r=rt(e),i=ve(Date.now());return{metricsData:{resource:{attributes:{sdk_version:ot,sdk_lang:"javascript",sdk_type:"client-frontend"}},metrics:[{name:"apaas_internal_metrics_pv_uv",description:"Count of page views",unit:"",scopeName:"apaas_internal_metrics_pv_uv",sum:{aggregationTemporality:1,isMonotonic:!0,dataPoints:t.map(p=>({attributes:{...r,url:p.url,path:p.path,referrer:p.referrer},startTimeUnixNano:ve(p.timestampMs),timeUnixNano:i,asDouble:1}))}}]}}}function st(t,e,r={},i){if(e.length===0)return;let p;try{p=JSON.stringify(it(e,i))}catch{return}try{fetch(t,{method:"POST",headers:{"Content-Type":"application/json","X-Suda-Csrf-Token":window.csrfToken||"",...r},body:p,keepalive:!0}).catch(()=>{})}catch{}}var J="__APAAS_PV_TRACKER_STARTED__";function at(){try{let t=window;return t[J]?!1:(t[J]=!0,!0)}catch{return!0}}function be(){try{window[J]=!1}catch{}}var ct=class ye{constructor(){this.started=!1,this.disposers=[],this.holdsPvReporting=!1,this.buffer=[]}static get instance(){return this._instance||(this._instance=new ye),this._instance}start(e){var r;if(!this.started&&at()){this.holdsPvReporting=!0,this.config=e,this.started=!0;try{this.listenRouteChanges(),this.registerLifecycleListeners();let i=(r=e.flushIntervalMs)!=null?r:1e4;this.flushTimer=setInterval(()=>this.flush(),i)}catch(i){throw this.started=!1,this.flushTimer&&(clearInterval(this.flushTimer),this.flushTimer=void 0),this.holdsPvReporting=!1,be(),i}}}shutdown(){this.flush(),this.flushTimer&&(clearInterval(this.flushTimer),this.flushTimer=void 0),this.firstFlushTimer&&(clearTimeout(this.firstFlushTimer),this.firstFlushTimer=void 0),this.started=!1;for(let e of this.disposers.splice(0))try{e()}catch{}this.holdsPvReporting&&(this.holdsPvReporting=!1,be())}pageKey(){let{origin:e,pathname:r,search:i}=window.location;return`${e}${r}${i}`}scheduleFirstFlush(){var e;let r=(e=this.config)==null?void 0:e.firstFlushDelayMs;r==null||this.firstFlushTimer||(this.firstFlushTimer=setTimeout(()=>this.flush(),r))}recordPv(){let e=this.pageKey();this.lastKey!==e&&(this.lastKey=e,this.buffer.push({url:window.location.href,path:window.location.pathname,referrer:document.referrer,timestampMs:Date.now()}),this.scheduleFirstFlush())}flush(){if(!this.config||this.buffer.length===0)return;let e=this.buffer.splice(0);st(this.config.collectorUrl,e,this.config.headers,{pvId:this.config.pvId})}listenRouteChanges(){this.recordPv();let e=()=>this.recordPv();window.addEventListener("popstate",e),this.disposers.push(()=>window.removeEventListener("popstate",e)),this.patchHistory("pushState"),this.patchHistory("replaceState")}patchHistory(e){let r=history[e],i=()=>this.recordPv();history[e]=function(...p){let f=r.apply(this,p);return i(),f},this.disposers.push(()=>{history[e]=r})}registerLifecycleListeners(){let e=()=>{document.visibilityState==="hidden"&&this.flush()};document.addEventListener("visibilitychange",e),this.disposers.push(()=>document.removeEventListener("visibilitychange",e));let r=()=>this.flush();window.addEventListener("pagehide",r),this.disposers.push(()=>window.removeEventListener("pagehide",r))}},we=ct.instance;function _e(){var r;let t=(r=P())!=null?r:"",e=F()?`/app/${t}/__runtime__/api/v1/observability/metrics/collect`:`/spark/app/${t}/runtime/api/v1/observability/metrics/collect`;we.start({collectorUrl:e})}var lt=/\bLark\//i;function Ce(){var e,r,i,p;let t=window;return typeof((i=(r=(e=t.webkit)==null?void 0:e.messageHandlers)==null?void 0:r.invokeNative)==null?void 0:i.postMessage)=="function"||typeof((p=t.Lark_Bridge)==null?void 0:p.invokeNative)=="function"?!0:lt.test(navigator.userAgent)}function ke({messageIds:t,token:e,docType:r=113}){var g,h;if(t.length===0||!e)return!1;let i={apiName:"markMiaodaFeedMessagesRead",data:{__v2__:!0,messageIds:t.map(String),token:e,docType:r}},p=window,f=(h=(g=p.webkit)==null?void 0:g.messageHandlers)==null?void 0:h.invokeNative;if(f!=null&&f.postMessage)return f.postMessage(i),!0;let a=p.Lark_Bridge;return a!=null&&a.invokeNative?(a.invokeNative(JSON.stringify(i)),!0):!1}var dt=113,ut="/app/",pt="/__runtime__/api/v1/devops/read_lark_messages";function ft(t){if(!t||typeof t!="object")return[];let{data:e}=t;return Array.isArray(e)?e.map(String):e&&Array.isArray(e.message_ids)?e.message_ids.map(String):[]}var xe=!1;async function mt(t){var i;let e=await fetch(`${ut}${t}${pt}`,{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json","X-Suda-Csrf-Token":(i=N())!=null?i:""}});if(!e.ok)return[];let r=await e.json();return ft(r)}async function Ee(){if(xe||!Ce())return;xe=!0;let t=P();if(t)try{let e=await mt(t);if(!e.length)return;ke({messageIds:e,token:t,docType:dt})}catch{}}function Se(){let t="inspector-id";document.addEventListener("DOMContentLoaded",()=>{let e=window.Babel;if(!e||!e.registerPlugin)return;let r=null,i=()=>{let f={},a=0;return document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach(g=>{let h=g.getAttribute("src");if(h){let k=h.split("?")[0],y=k.split("/").pop()||k;f[y]=y in f?"":k}else{a++;let k=a===1?"Inline Babel script":`Inline Babel script (${a})`;f[k]=g.getAttribute("data-filename")||`inline-${a-1}`}}),f};e.availablePlugins&&delete e.availablePlugins[t],e.registerPlugin(t,({types:f})=>({visitor:{JSXOpeningElement(a,g){let h=a.node;if(h.name&&h.name.type==="JSXMemberExpression")return;for(let b=0;b<h.attributes.length;b++){let E=h.attributes[b];if(E.type==="JSXAttribute"&&E.name&&E.name.name==="data-inspector-id")return}let k=g.file&&g.file.opts&&g.file.opts.filename||"?";r===null&&(r=i());let y=k.split("?")[0],S=y.split("/").pop()||y,L=r[k]||r[S]||y.replace(/^\/?[a-z][a-z0-9+.-]*:\/{1,2}[^/]+/i,"").replace(/^\/+/,"")||k,w=h.loc&&h.loc.start,I=w?w.line:0,s=w?w.column+1:0,m=h.name&&h.name.type==="JSXIdentifier"?h.name.name:L,_=`jsx:${L}:${m}:${I}:${s}`;h.attributes.push(f.jsxAttribute(f.jsxIdentifier("data-inspector-id"),f.stringLiteral(_)))}}}));let p="";try{let f=document.getElementById("__srcmap");if(f&&f.textContent){let a=JSON.parse(f.textContent),g=a==null?void 0:a.file;typeof g=="string"&&(p=g)}}catch{}document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((f,a)=>{let g=f.getAttribute("data-plugins")||"";if(g.indexOf(t)<0&&f.setAttribute("data-plugins",g?`${g},${t}`:t),!f.hasAttribute("data-filename")){let h=p?`${p}#inline-${a}`:`inline-${a}`;f.setAttribute("data-filename",f.getAttribute("src")||h)}})})}var W={};Q(W,{destroy:()=>yt,init:()=>K,version:()=>bt});var ht=new Set(["https://comment.feishuapp.cn","https://comment.aiforce.cloud","https://comment.doubaoapps.com","https://comment.feishu.link","https://comment.feishuapp.com","https://comment.doubaowork.link","https://comment.doubao.link"]),Le="ccm-comment-bootstrap";function Ie(){return(t,e,r)=>{let i=new URL(t.src,document.URL);return!t.isConnected||t.hasAttribute("srcdoc")||!ht.has(i.origin)||i.username||i.password?Promise.reject(new Error("Untrusted comment iframe")):new Promise((p,f)=>{var S;let a=()=>{clearTimeout(y),window.removeEventListener("message",k),r.removeEventListener("abort",h)},g=L=>{a(),f(L)},h=()=>g(new Error("Comment session destroyed")),k=L=>{let w=L.data;if(L.source!==t.contentWindow||L.origin!==i.origin||(w==null?void 0:w.channel)!==Le||w.version!==1||w.type!=="waiting"||w.bootstrapSource===void 0)return;if(typeof w.bootstrapSource!="string"||!w.bootstrapSource.length||w.bootstrapSource.length>65536||typeof w.bootstrapVersion!="string"||!/^\d+\.\d+\.\d+(?:-[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*)?$/.test(w.bootstrapVersion)||w.bootstrapVersion.length>64||typeof w.buildId!="string"||!w.buildId.length||w.buildId.length>128){g(new Error("Invalid comment bootstrap payload"));return}a();let I=window,s=I.CCMCommentBootstrap,m=document.createElement("script");e&&(m.nonce=e),m.textContent=w.bootstrapSource;try{I.CCMCommentBootstrap=void 0,document.head.appendChild(m);let _=I.CCMCommentBootstrap;if(!_||typeof _.init!="function"||_.version!==w.bootstrapVersion||_.buildId!==w.buildId)throw new Error("Comment bootstrap blocked or version/buildId mismatch");p(_)}catch(_){I.CCMCommentBootstrap=s,f(_)}finally{m.remove()}},y=setTimeout(()=>g(new Error("Comment bootstrap announcement timed out")),15e3);if(window.addEventListener("message",k),r.addEventListener("abort",h,{once:!0}),r.aborted){h();return}(S=t.contentWindow)==null||S.postMessage({channel:Le,version:1,type:"request-bootstrap"},i.origin)})}}function Te(t){let e;function r(){e==null||e.session.destroy()}function i(p){let{iframe:f}=p;if(!(f instanceof HTMLIFrameElement))throw new Error("A comment iframe is required");if((e==null?void 0:e.iframe)===f)return e.session;r();let a=new AbortController,g,h=new Promise((S,L)=>{let w=()=>{s(),S()},I=()=>{s(),L(new Error("Comment session destroyed"))},s=()=>{document.removeEventListener("DOMContentLoaded",w),a.signal.removeEventListener("abort",I)};a.signal.addEventListener("abort",I,{once:!0}),document.readyState==="loading"?document.addEventListener("DOMContentLoaded",w,{once:!0}):w()}).then(async()=>{if(a.signal.aborted)throw new Error("Comment session destroyed");let S=await t(p,a.signal);if(g=S,a.signal.aborted)throw S.destroy(),new Error("Comment session destroyed");return S.ready}),k=S=>{S.persisted||y.destroy()},y={ready:h,destroy(){a.abort(),g==null||g.destroy(),window.removeEventListener("pagehide",k),(e==null?void 0:e.session)===y&&(e=void 0)}};return e={iframe:f,session:y},window.addEventListener("pagehide",k),h.catch(()=>y.destroy()),y}return{init:i,destroy:r}}var gt=document.currentScript instanceof HTMLScriptElement?document.currentScript.nonce:void 0,Pe="__miaodaCommentRuntime__",Ae=window,vt=Ie(),Me,X=(Me=Ae[Pe])!=null?Me:Te(async(t,e)=>{let r=await vt(t.iframe,t.nonce,e);if(e.aborted)throw new Error("Comment session destroyed");return r.init(t)});Ae[Pe]=X;var bt="0.0.1";function K({iframe:t,nonce:e=gt}){return X.init({iframe:t,nonce:e})}var yt=X.destroy;function Re(){let t=()=>{let e=document.getElementById("miaoda-html-comment");if(e instanceof HTMLIFrameElement)try{K({iframe:e}).ready.catch(r=>{console.warn("[MiaodaComments] initialization failed",r)})}catch(r){console.warn("[MiaodaComments] initialization failed",r)}};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",t,{once:!0}):t()}var q="https://lf3-static.bytednsdoc.com/obj/eden-cn/LMfspH/ljhwZthlaukjlkulzlp",wt=`${q}/miaoda-ui/doubao.svg`,_t=`${q}/miaoda-ui/Doubao_watermark_aigc.svg`,Ct=`${q}/logo/miaodalogo.svg`,Be='<svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.08312 8.08298C8.2384 7.92769 8.23953 7.67705 8.08424 7.52176L5.3625 4.80002L8.08422 2.07829C8.23951 1.92301 8.23839 1.67236 8.0831 1.51708C7.92781 1.36179 7.67717 1.36066 7.52188 1.51595C7.36659 1.67124 4.80016 4.23767 4.80016 4.23767L2.07841 1.51593C1.92313 1.36064 1.67248 1.36177 1.5172 1.51705C1.36191 1.67234 1.36078 1.92298 1.51607 2.07827L4.23782 4.80002L1.51605 7.52178C1.36076 7.67707 1.36189 7.92771 1.51718 8.083C1.67246 8.23829 1.92311 8.23941 2.07839 8.08412L4.80016 5.36236L7.5219 8.0841C7.67719 8.23939 7.92783 8.23826 8.08312 8.08298Z" fill="currentColor"/></svg>',kt='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6667 2H3.33333V14H6.66667V15.3334H3.33333C2.59695 15.3334 2 14.7364 2 14V2C2 1.26364 2.59695 0.666687 3.33333 0.666687H12.6667C13.403 0.666687 14 1.26364 14 2V7.33335H12.6667V2Z" fill="currentColor"/><path d="M5.33333 4.66669C4.96514 4.66669 4.66667 4.96516 4.66667 5.33335C4.66667 5.70154 4.96514 6 5.33333 6H10.6667C11.0349 6 11.3333 5.70154 11.3333 5.33335C11.3333 4.96516 11.0349 4.66669 10.6667 4.66669H5.33333Z" fill="currentColor"/><path d="M4.66667 8.33335C4.66667 7.96516 4.96514 7.66669 5.33333 7.66669H8C8.36819 7.66669 8.66667 7.96516 8.66667 8.33335C8.66667 8.70154 8.36819 9 8 9H5.33333C4.96514 9 4.66667 8.70154 4.66667 8.33335Z" fill="currentColor"/><path d="M13.5523 8.70017C13.9428 8.30964 14.576 8.30964 14.9665 8.70017C15.357 9.09069 15.357 9.72386 14.9665 10.1144L14.2594 10.8215L12.8452 9.40728L13.5523 8.70017Z" fill="currentColor"/><path d="M12.1381 10.1144L13.5523 11.5286L10.2309 14.85C10.0916 14.9892 9.91229 15.0815 9.71798 15.1138L8.45737 15.3234C8.42136 15.3294 8.38467 15.3177 8.35885 15.2918C8.33271 15.2657 8.32099 15.2284 8.32749 15.192L8.55128 13.9374C8.58465 13.7502 8.6746 13.5779 8.80901 13.4435L12.1381 10.1144Z" fill="currentColor"/></svg>',xt='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.13397 2.5C7.51887 1.83333 8.48113 1.83333 8.86603 2.5L14.0622 11.5C14.4471 12.1667 13.966 13 13.1962 13H2.80385C2.03405 13 1.55292 12.1667 1.93782 11.5L7.13397 2.5Z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 6.16667V8.83333" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="10.6667" r="0.6667" fill="currentColor"/></svg>',Et='<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.91685 2.08234C10.2097 2.37519 10.2096 2.8501 9.91685 3.143L7.06253 5.99732L9.91858 8.85337C10.2114 9.14627 10.2115 9.62115 9.91858 9.91403C9.62568 10.2068 9.15076 10.2068 8.85792 9.91403L6.00187 7.05798L3.14444 9.91541C2.85155 10.2083 2.37667 10.2083 2.08378 9.91541C1.791 9.62251 1.79093 9.14761 2.08378 8.85475L4.94121 5.99732L2.08551 3.14162C1.79267 2.84878 1.79278 2.37387 2.08551 2.08096C2.3784 1.78807 2.85327 1.78807 3.14617 2.08096L6.00187 4.93666L8.85619 2.08234C9.14906 1.78961 9.62399 1.7896 9.91685 2.08234Z" fill="white" fill-opacity="0.3"/></svg>',St='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9922 1.99221C12.5445 1.98895 12.9958 2.43407 12.999 2.98634L13.0762 16.1943L14.6387 14.6328L17.8926 11.3789C18.2831 10.9884 18.9171 10.9885 19.3076 11.3789C19.6977 11.7695 19.6979 12.4026 19.3076 12.793L16.0527 16.0479L12.7979 19.3018C12.7111 19.3884 12.6098 19.4566 12.5 19.5059H20.375C20.9271 19.5059 21.3748 19.9538 21.375 20.5059C21.375 21.0581 20.9273 21.5059 20.375 21.5059H3.625C3.07272 21.5059 2.625 21.0581 2.625 20.5059C2.62523 19.9538 3.07286 19.5059 3.625 19.5059H11.6816C11.572 19.4566 11.4704 19.3884 11.3838 19.3018L4.87402 12.793C4.48372 12.4026 4.4839 11.7694 4.87402 11.3789C5.26452 10.9884 5.89756 10.9885 6.28809 11.3789L11.0762 16.166L10.999 2.99806C10.9958 2.44603 11.4402 1.99582 11.9922 1.99221Z" fill="currentColor"/></svg>',Lt='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0754 7.57153C2.23188 9.44922 3.49231 11.053 5.27982 11.6488C5.31351 11.6601 5.33994 11.6865 5.35117 11.7202L5.72076 12.8289C5.88752 13.3292 6.3557 13.6667 6.88304 13.6667H9.11696C9.6443 13.6667 10.1125 13.3292 10.2792 12.8289L10.6488 11.7202C10.6601 11.6865 10.6865 11.6601 10.7202 11.6488C12.5077 11.053 13.7681 9.44922 13.9246 7.57153L14 6.66667C14 3.35296 11.3137 0.666668 8 0.666668C4.68629 0.666668 2 3.35296 2 6.66667L2.0754 7.57153ZM9.38392 11.2985L9.03899 12.3333H6.96101L6.61608 11.2985C6.47214 10.8667 6.13328 10.5279 5.70146 10.3839C4.41995 9.95675 3.51631 8.80696 3.40413 7.4608L3.33362 6.61462C3.36152 4.06127 5.44004 2 8 2C10.56 2 12.6385 4.06127 12.6664 6.61462L12.5959 7.4608C12.4837 8.80696 11.5801 9.95675 10.2985 10.3839C9.86672 10.5279 9.52786 10.8667 9.38392 11.2985Z" fill="currentColor"/><path d="M6.66667 14.3333C6.29848 14.3333 6 14.6318 6 15C6 15.3682 6.29848 15.6667 6.66667 15.6667H9.33333C9.70152 15.6667 10 15.3682 10 15C10 14.6318 9.70152 14.3333 9.33333 14.3333H6.66667Z" fill="currentColor"/><path d="M8.00864 4.13208L5.44578 6.94049C5.20258 7.18228 5.37835 7.56531 5.74361 7.58951L7.2181 7.6872L7.21814 9.60852C7.21814 9.96788 7.72139 10.1366 7.99168 9.86792C8.26197 9.59921 10.5545 7.05951 10.5545 7.05951C10.7977 6.81772 10.622 6.43469 10.2567 6.41049L8.78222 6.3128L8.78219 4.39148C8.78218 4.03212 8.27893 3.86336 8.00864 4.13208Z" fill="currentColor"/></svg>',He=!0,It="0px 8px 32px rgba(0,0,0,0.08), 0px 4px 16px rgba(0,0,0,0.04), 0px 2px 4px rgba(0,0,0,0.02)",Tt="0px 4px 16px rgba(0,0,0,0.03), 0px 4px 10px rgba(0,0,0,0.03), 0px 2px 4px rgba(0,0,0,0.02)",Y="'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif",Mt="'Doubao Sans', 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif",V={doubao:{brandText:"\u8C46\u5305\u5DE5\u4F5C AI \u751F\u6210",logoSrc:wt,downloadUrl:"https://ugapk.com/FCtLH"},miaoda:{brandText:"\u5999\u642D\u751F\u6210",logoSrc:Ct,landingUrl:"https://miaoda.feishu.cn/landing"}},Pt={BOE:"tns.feishu-boe.cn",PRE:"tns.feishu-pre.cn",ONLINE:"tns.feishu.cn"};function Ne(){var r;let t=JSON.stringify({scene:"miaoda_app_report",entity_id:(r=P())!=null?r:"",entity_type:"miaoda_app",extra:""}),e=`https://${Pt[D()]}/cust/lark_report/?type=common&params=${encodeURIComponent(t)}&lang=zh-CN`;window.open(e,"_blank","noopener,noreferrer")}var At={feedback:kt,report:xt,close:Be,download:St,efficiency:Lt};function Fe(t){let e=document.createElement("span");Object.assign(e.style,{display:"inline-flex",width:`${t}px`,height:`${t}px`,flexShrink:"0"}),e.innerHTML=Be;let r=e.firstElementChild;return r&&(r.setAttribute("width",String(t)),r.setAttribute("height",String(t)),r.style.display="block"),e}function Rt(t,e=16){if(t==="close")return Fe(e);let r=document.createElement("span");Object.assign(r.style,{display:"inline-flex",width:`${e}px`,height:`${e}px`,flexShrink:"0"}),r.innerHTML=At[t];let i=r.firstElementChild;return i&&(i.style.display="block"),r}function Ot(t,e){let r=document.createElement("img");return r.src=t,r.width=e,r.height=e,r.alt="",Object.assign(r.style,{width:`${e}px`,height:`${e}px`,maxWidth:"none",maxHeight:"none",borderRadius:"100px",flexShrink:"0",display:"block"}),r}function De(t,e,r){let i=e==="desktop",p=t==="doubao",f=V[t],a=document.createElement("div");p?Object.assign(a.style,{boxSizing:"border-box",display:"inline-flex",alignItems:"center",gap:"6px",padding:"6px 8px",background:"rgba(77,77,77,0.7)",borderRadius:"6px",cursor:"pointer"}):Object.assign(a.style,{boxSizing:"border-box",display:"inline-flex",alignItems:"center",gap:"4px",padding:i?"6px 12px 6px 8px":"5px 12px 5px 8px",background:"#363636",border:"0.5px solid rgba(255,255,255,0.1)",borderRadius:"100px",boxShadow:It,cursor:"pointer"});let g;if(p){let h=document.createElement("img");h.src=_t,h.alt=f.brandText,h.draggable=!1,Object.assign(h.style,{height:i?"12px":"14px",width:"auto",display:"block",flexShrink:"0"}),g=h}else{let h=Ot(f.logoSrc,16),k=document.createElement("span");k.textContent=f.brandText,Object.assign(k.style,{fontFamily:Y,fontSize:i?"12px":"14px",lineHeight:i?"18px":"22px",color:"rgba(255,255,255,0.85)",whiteSpace:"nowrap"}),g=k,a.append(h)}if(a.append(g),i&&r){let h=document.createElement("span");h.setAttribute("role","button"),h.setAttribute("aria-label","\u5173\u95ED"),h.setAttribute("data-watermark-close",""),Object.assign(h.style,{display:"none",alignItems:"center",cursor:"pointer",flexShrink:"0"}),p?h.innerHTML=Et:(h.style.color="rgba(255,255,255,0.5)",h.appendChild(Fe(10))),h.addEventListener("click",k=>{k.stopPropagation(),r()}),a.appendChild(h)}return a}function A(t){let e=document.createElement("div");e.setAttribute("role","menuitem"),e.setAttribute("data-label",t.label),Object.assign(e.style,{boxSizing:"border-box",display:"flex",alignItems:"center",gap:"8px",minHeight:"38px",padding:"4px 10px",borderRadius:"6px",cursor:"pointer",color:"#000000"});let r=document.createElement("span");Object.assign(r.style,{display:"inline-flex",width:"16px",height:"16px",flexShrink:"0",color:"#000000"}),r.appendChild(Rt(t.icon));let i=document.createElement("span");return i.textContent=t.label,Object.assign(i.style,{fontFamily:Y,fontSize:`${t.fontSize}px`,lineHeight:`${t.fontSize+8}px`,color:"#000000",whiteSpace:"nowrap"}),e.append(r,i),e.addEventListener("mouseenter",()=>{e.style.background="rgba(0,0,0,0.04)"}),e.addEventListener("mouseleave",()=>{e.style.background="transparent"}),e.addEventListener("click",t.onClick),e}function Bt(){let t=document.createElement("div");return Object.assign(t.style,{height:"1px",background:"rgba(0,0,0,0.08)",margin:"0 10px"}),t}function $e(t){var r;let e=document.createElement("div");if(Object.assign(e.style,{boxSizing:"border-box",display:"flex",flexDirection:"column",minWidth:`${t.minWidth}px`,background:"#ffffff",border:"0.5px solid rgba(0,0,0,0.1)",borderRadius:"10px",boxShadow:Tt,overflow:"hidden",outline:"none"}),t.items.length){let i=document.createElement("div");Object.assign(i.style,{boxSizing:"border-box",padding:"4px",display:"flex",flexDirection:"column",gap:`${(r=t.itemGap)!=null?r:0}px`}),t.items.forEach(p=>i.appendChild(p)),e.appendChild(i)}if(t.extraItems&&t.extraItems.length){e.appendChild(Bt());let i=document.createElement("div");Object.assign(i.style,{boxSizing:"border-box",padding:"4px"}),t.extraItems.forEach(p=>i.appendChild(p)),e.appendChild(i)}return e}function We(t,e=!1){let r=document.createElement("div");r.setAttribute("data-custom-element",`${t}-watermark${e?"-mobile":""}`);let i=r.attachShadow({mode:"open"}),p=t==="doubao"?Mt:Y,f=document.createElement("style");f.textContent=`
+    :host {
+      all: initial !important;
+      display: block !important;
+      position: fixed !important;
+      right: 12px !important;
+      bottom: 12px !important;
+      z-index: 9999 !important;
+      direction: ltr !important;
+      unicode-bidi: isolate !important;
+    }
+    :host::before, :host::after { content: none !important; }
+    .watermark-root {
+      all: initial;
+      direction: ltr;
+      unicode-bidi: isolate;
+      font-family: ${p};
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+  `;let a=document.createElement("div");return a.className="watermark-root",i.append(f,a),{host:r,container:a}}function Ht(t){let{host:e,container:r}=We(t),i=[];t==="doubao"?i.push(A({icon:"download",label:"\u4E0B\u8F7D\u8C46\u5305\u5DE5\u4F5C",fontSize:14,onClick:()=>window.open(V.doubao.downloadUrl,"_blank","noopener,noreferrer")})):i.push(A({icon:"efficiency",label:"\u4E86\u89E3\u5999\u642D",fontSize:14,onClick:()=>window.open(V.miaoda.landingUrl,"_blank","noopener,noreferrer")})),He&&i.push(A({icon:t==="doubao"?"report":"feedback",label:"\u6295\u8BC9\u4E0E\u4E3E\u62A5",fontSize:14,onClick:Ne}));let p=$e({items:i,minWidth:160,itemGap:8});p.style.display="none";let f=De(t,"desktop",()=>e.remove()),a=f.querySelector("[data-watermark-close]");r.append(p,f);let g=null;return r.addEventListener("mouseenter",()=>{g&&clearTimeout(g),p.style.display="flex",a&&(a.style.display="inline-flex")}),r.addEventListener("mouseleave",()=>{g=setTimeout(()=>{p.style.display="none",a&&(a.style.display="none")},100)}),e}function Nt(t){let{host:e,container:r}=We(t,!0);r.style.cursor="pointer";let i=[];t==="miaoda"&&i.push(A({icon:"efficiency",label:"\u4E86\u89E3\u5999\u642D",fontSize:16,onClick:()=>window.open(V.miaoda.landingUrl,"_blank","noopener,noreferrer")})),He&&i.push(A({icon:t==="doubao"?"report":"feedback",label:"\u6295\u8BC9\u4E0E\u4E3E\u62A5",fontSize:16,onClick:Ne}));let p=[A({icon:"close",label:"\u4E0D\u518D\u5C55\u793A",fontSize:16,onClick:h=>{h.stopPropagation(),document.removeEventListener("click",g),e.remove()}})],f=$e({items:i,extraItems:p,minWidth:160});f.style.display="none";let a=De(t,"mobile");r.append(f,a),r.addEventListener("click",h=>{h.stopPropagation(),f.style.display=f.style.display==="none"?"flex":"none"});let g=()=>{f.style.display="none"};return document.addEventListener("click",g),e}var Oe=!1,Z=!1;async function Ve(t){if(Oe||Z||typeof document=="undefined")return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",()=>Ve(t),{once:!0});return}Z=!0;let e=await le();if(Oe=!0,Z=!1,!e)return;let r=$()?Nt(t):Ht(t);document.body.appendChild(r)}function je(){return Ve("doubao")}var Ft="0.0.1",Dt="@lark-apaas/miaoda-coding-sdk";Se();ce()&&(me(),_e());je();Ee();Re();return Ke($t);})();
+</script><meta property="og:title" content="八字坐标·人生地图测试"><meta property="og:image" content="https://lf3-static.bytednsdoc.com/obj/eden-cn/ylcylz_fsph_ryhs/ljhwZthlaukjlkulzlp/feisuda/avatar/5.svg"><script type="application/json" id="__srcmap">{"gen":"a48c9f46","file":"index.html","entries":[{"id":"html:a48c9f46:0","tag":"html","openStart":16,"attrEnd":34,"openEnd":35,"textRuns":[[35,36],[19326,19327],[123506,123507]],"parentId":null,"childIds":["html:a48c9f46:1","html:a48c9f46:8"],"line":2,"column":1,"closeStart":123507,"closeEnd":123514},{"id":"html:a48c9f46:1","tag":"head","openStart":36,"attrEnd":41,"openEnd":42,"textRuns":[[42,43],[65,66],[134,135],[196,197],[326,327],[370,371],[705,706],[860,861],[19318,19319]],"parentId":"html:a48c9f46:0","childIds":["html:a48c9f46:2","html:a48c9f46:3","html:a48c9f46:4","html:a48c9f46:5","html:a48c9f46:6","html:a48c9f46:7"],"line":3,"column":1,"closeStart":19319,"closeEnd":19326},{"id":"html:a48c9f46:2","tag":"meta","openStart":43,"attrEnd":64,"openEnd":65,"textRuns":[],"parentId":"html:a48c9f46:1","childIds":[],"line":4,"column":1,"closeEnd":65},{"id":"html:a48c9f46:3","tag":"meta","openStart":66,"attrEnd":133,"openEnd":134,"textRuns":[],"parentId":"html:a48c9f46:1","childIds":[],"line":5,"column":1,"closeEnd":134},{"id":"html:a48c9f46:4","tag":"meta","openStart":197,"attrEnd":325,"openEnd":326,"textRuns":[],"parentId":"html:a48c9f46:1","childIds":[],"line":7,"column":1,"closeEnd":326},{"id":"html:a48c9f46:5","tag":"meta","openStart":327,"attrEnd":369,"openEnd":370,"textRuns":[],"parentId":"html:a48c9f46:1","childIds":[],"line":8,"column":1,"closeEnd":370},{"id":"html:a48c9f46:6","tag":"link","openStart":371,"attrEnd":704,"openEnd":705,"textRuns":[],"parentId":"html:a48c9f46:1","childIds":[],"line":9,"column":1,"closeEnd":705},{"id":"html:a48c9f46:7","tag":"link","openStart":706,"attrEnd":859,"openEnd":860,"textRuns":[],"parentId":"html:a48c9f46:1","childIds":[],"line":10,"column":1,"closeEnd":860},{"id":"html:a48c9f46:8","tag":"body","openStart":19327,"attrEnd":19332,"openEnd":19333,"textRuns":[[19333,19334],[24209,24210],[123498,123499]],"parentId":"html:a48c9f46:0","childIds":["html:a48c9f46:9"],"line":307,"column":1,"closeStart":123499,"closeEnd":123506},{"id":"html:a48c9f46:9","tag":"div","openStart":19334,"attrEnd":19350,"openEnd":19351,"textRuns":[[19351,19353],[19389,19390],[20821,20823],[20865,20866],[22779,22781],[22820,22821],[23438,23440],[23479,23480],[24109,24111],[24147,24148],[24201,24203]],"parentId":"html:a48c9f46:8","childIds":["html:a48c9f46:10","html:a48c9f46:40","html:a48c9f46:77","html:a48c9f46:90","html:a48c9f46:101"],"line":308,"column":1,"closeStart":24203,"closeEnd":24209},{"id":"html:a48c9f46:10","tag":"section","openStart":19390,"attrEnd":19430,"openEnd":19431,"textRuns":[[19431,19434],[19491,19495],[20256,20260],[20312,20315],[20464,20468],[20634,20638],[20691,20694],[20810,20811]],"parentId":"html:a48c9f46:9","childIds":["html:a48c9f46:11","html:a48c9f46:14","html:a48c9f46:25","html:a48c9f46:27","html:a48c9f46:28","html:a48c9f46:38","html:a48c9f46:39"],"line":311,"column":1,"closeStart":20811,"closeEnd":20821},{"id":"html:a48c9f46:11","tag":"div","openStart":19434,"attrEnd":19452,"openEnd":19453,"textRuns":[],"parentId":"html:a48c9f46:10","childIds":["html:a48c9f46:12","html:a48c9f46:13"],"line":312,"column":3,"closeStart":19485,"closeEnd":19491},{"id":"html:a48c9f46:12","tag":"i","openStart":19453,"attrEnd":19455,"openEnd":19456,"textRuns":[],"parentId":"html:a48c9f46:11","childIds":[],"line":312,"column":22,"closeStart":19456,"closeEnd":19460},{"id":"html:a48c9f46:13","tag":"span","openStart":19460,"attrEnd":19465,"openEnd":19466,"textRuns":[[19466,19478]],"parentId":"html:a48c9f46:11","childIds":[],"line":312,"column":29,"closeStart":19478,"closeEnd":19485},{"id":"html:a48c9f46:14","tag":"div","openStart":19495,"attrEnd":19517,"openEnd":19518,"textRuns":[[19518,19523],[20118,20123],[20247,20250]],"parentId":"html:a48c9f46:10","childIds":["html:a48c9f46:15","html:a48c9f46:22"],"line":314,"column":3,"closeStart":20250,"closeEnd":20256},{"id":"html:a48c9f46:15","tag":"svg","openStart":19523,"attrEnd":19578,"openEnd":19579,"textRuns":[[19579,19586],[19848,19855],[19887,19894]],"parentId":"html:a48c9f46:14","childIds":["html:a48c9f46:16","html:a48c9f46:19","html:a48c9f46:20"],"line":315,"column":5,"closeStart":20112,"closeEnd":20118},{"id":"html:a48c9f46:16","tag":"g","openStart":19586,"attrEnd":19601,"openEnd":19602,"textRuns":[[19602,19611]],"parentId":"html:a48c9f46:15","childIds":["html:a48c9f46:17"],"line":316,"column":7,"closeStart":19844,"closeEnd":19848},{"id":"html:a48c9f46:17","tag":"circle","openStart":19611,"attrEnd":19703,"openEnd":19705,"textRuns":[[19705,19714]],"parentId":"html:a48c9f46:16","childIds":["html:a48c9f46:18"],"line":317,"column":9},{"id":"html:a48c9f46:18","tag":"path","openStart":19714,"attrEnd":19835,"openEnd":19837,"textRuns":[[19837,19844]],"parentId":"html:a48c9f46:17","childIds":[],"line":318,"column":9},{"id":"html:a48c9f46:19","tag":"g","openStart":19855,"attrEnd":19882,"openEnd":19883,"textRuns":[],"parentId":"html:a48c9f46:15","childIds":[],"line":320,"column":7,"closeStart":19883,"closeEnd":19887},{"id":"html:a48c9f46:20","tag":"circle","openStart":19894,"attrEnd":19983,"openEnd":19985,"textRuns":[[19985,19992]],"parentId":"html:a48c9f46:15","childIds":["html:a48c9f46:21"],"line":321,"column":7},{"id":"html:a48c9f46:21","tag":"circle","openStart":19992,"attrEnd":20105,"openEnd":20107,"textRuns":[[20107,20112]],"parentId":"html:a48c9f46:20","childIds":[],"line":322,"column":7},{"id":"html:a48c9f46:22","tag":"div","openStart":20123,"attrEnd":20147,"openEnd":20148,"textRuns":[[20148,20155],[20190,20197],[20236,20241]],"parentId":"html:a48c9f46:14","childIds":["html:a48c9f46:23","html:a48c9f46:24"],"line":324,"column":5,"closeStart":20241,"closeEnd":20247},{"id":"html:a48c9f46:23","tag":"div","openStart":20155,"attrEnd":20180,"openEnd":20181,"textRuns":[[20181,20184]],"parentId":"html:a48c9f46:22","childIds":[],"line":325,"column":7,"closeStart":20184,"closeEnd":20190},{"id":"html:a48c9f46:24","tag":"div","openStart":20197,"attrEnd":20222,"openEnd":20223,"textRuns":[[20223,20230]],"parentId":"html:a48c9f46:22","childIds":[],"line":326,"column":7,"closeStart":20230,"closeEnd":20236},{"id":"html:a48c9f46:25","tag":"h1","openStart":20260,"attrEnd":20263,"openEnd":20264,"textRuns":[[20264,20279]],"parentId":"html:a48c9f46:10","childIds":["html:a48c9f46:26"],"line":330,"column":3,"closeStart":20307,"closeEnd":20312},{"id":"html:a48c9f46:26","tag":"span","openStart":20279,"attrEnd":20284,"openEnd":20285,"textRuns":[[20285,20300]],"parentId":"html:a48c9f46:25","childIds":[],"line":330,"column":12,"closeStart":20300,"closeEnd":20307},{"id":"html:a48c9f46:27","tag":"p","openStart":20315,"attrEnd":20330,"openEnd":20331,"textRuns":[[20331,20460]],"parentId":"html:a48c9f46:10","childIds":[],"line":331,"column":3,"closeStart":20460,"closeEnd":20464},{"id":"html:a48c9f46:28","tag":"div","openStart":20468,"attrEnd":20486,"openEnd":20487,"textRuns":[[20487,20492],[20533,20538],[20579,20584],[20625,20628]],"parentId":"html:a48c9f46:10","childIds":["html:a48c9f46:29","html:a48c9f46:32","html:a48c9f46:35"],"line":333,"column":3,"closeStart":20628,"closeEnd":20634},{"id":"html:a48c9f46:29","tag":"div","openStart":20492,"attrEnd":20496,"openEnd":20497,"textRuns":[],"parentId":"html:a48c9f46:28","childIds":["html:a48c9f46:30","html:a48c9f46:31"],"line":334,"column":5,"closeStart":20527,"closeEnd":20533},{"id":"html:a48c9f46:30","tag":"b","openStart":20497,"attrEnd":20499,"openEnd":20500,"textRuns":[[20500,20501]],"parentId":"html:a48c9f46:29","childIds":[],"line":334,"column":10,"closeStart":20501,"closeEnd":20505},{"id":"html:a48c9f46:31","tag":"span","openStart":20505,"attrEnd":20510,"openEnd":20511,"textRuns":[[20511,20520]],"parentId":"html:a48c9f46:29","childIds":[],"line":334,"column":18,"closeStart":20520,"closeEnd":20527},{"id":"html:a48c9f46:32","tag":"div","openStart":20538,"attrEnd":20542,"openEnd":20543,"textRuns":[],"parentId":"html:a48c9f46:28","childIds":["html:a48c9f46:33","html:a48c9f46:34"],"line":335,"column":5,"closeStart":20573,"closeEnd":20579},{"id":"html:a48c9f46:33","tag":"b","openStart":20543,"attrEnd":20545,"openEnd":20546,"textRuns":[[20546,20547]],"parentId":"html:a48c9f46:32","childIds":[],"line":335,"column":10,"closeStart":20547,"closeEnd":20551},{"id":"html:a48c9f46:34","tag":"span","openStart":20551,"attrEnd":20556,"openEnd":20557,"textRuns":[[20557,20566]],"parentId":"html:a48c9f46:32","childIds":[],"line":335,"column":18,"closeStart":20566,"closeEnd":20573},{"id":"html:a48c9f46:35","tag":"div","openStart":20584,"attrEnd":20588,"openEnd":20589,"textRuns":[],"parentId":"html:a48c9f46:28","childIds":["html:a48c9f46:36","html:a48c9f46:37"],"line":336,"column":5,"closeStart":20619,"closeEnd":20625},{"id":"html:a48c9f46:36","tag":"b","openStart":20589,"attrEnd":20591,"openEnd":20592,"textRuns":[[20592,20593]],"parentId":"html:a48c9f46:35","childIds":[],"line":336,"column":10,"closeStart":20593,"closeEnd":20597},{"id":"html:a48c9f46:37","tag":"span","openStart":20597,"attrEnd":20602,"openEnd":20603,"textRuns":[[20603,20612]],"parentId":"html:a48c9f46:35","childIds":[],"line":336,"column":18,"closeStart":20612,"closeEnd":20619},{"id":"html:a48c9f46:38","tag":"button","openStart":20638,"attrEnd":20669,"openEnd":20670,"textRuns":[[20670,20682]],"parentId":"html:a48c9f46:10","childIds":[],"line":339,"column":3,"closeStart":20682,"closeEnd":20691},{"id":"html:a48c9f46:39","tag":"p","openStart":20694,"attrEnd":20751,"openEnd":20752,"textRuns":[[20752,20806]],"parentId":"html:a48c9f46:10","childIds":[],"line":340,"column":3,"closeStart":20806,"closeEnd":20810,"styleAttr":[20717,20750]},{"id":"html:a48c9f46:40","tag":"section","openStart":20866,"attrEnd":20906,"openEnd":20907,"textRuns":[[20907,20910],[21042,21046],[21922,21926],[22364,22368],[22660,22664],[22768,22769]],"parentId":"html:a48c9f46:9","childIds":["html:a48c9f46:41","html:a48c9f46:46","html:a48c9f46:59","html:a48c9f46:66","html:a48c9f46:75"],"line":344,"column":1,"closeStart":22769,"closeEnd":22779},{"id":"html:a48c9f46:41","tag":"div","openStart":20910,"attrEnd":20932,"openEnd":20933,"textRuns":[[20933,20938],[20998,21003],[21033,21036]],"parentId":"html:a48c9f46:40","childIds":["html:a48c9f46:42","html:a48c9f46:45"],"line":345,"column":3,"closeStart":21036,"closeEnd":21042},{"id":"html:a48c9f46:42","tag":"div","openStart":20938,"attrEnd":20957,"openEnd":20958,"textRuns":[],"parentId":"html:a48c9f46:41","childIds":["html:a48c9f46:43","html:a48c9f46:44"],"line":346,"column":5,"closeStart":20992,"closeEnd":20998},{"id":"html:a48c9f46:43","tag":"b","openStart":20958,"attrEnd":20960,"openEnd":20961,"textRuns":[[20961,20963]],"parentId":"html:a48c9f46:42","childIds":[],"line":346,"column":25,"closeStart":20963,"closeEnd":20967},{"id":"html:a48c9f46:44","tag":"span","openStart":20967,"attrEnd":20972,"openEnd":20973,"textRuns":[[20973,20985]],"parentId":"html:a48c9f46:42","childIds":[],"line":346,"column":34,"closeStart":20985,"closeEnd":20992},{"id":"html:a48c9f46:45","tag":"h2","openStart":21003,"attrEnd":21006,"openEnd":21007,"textRuns":[[21007,21028]],"parentId":"html:a48c9f46:41","childIds":[],"line":347,"column":5,"closeStart":21028,"closeEnd":21033},{"id":"html:a48c9f46:46","tag":"div","openStart":21046,"attrEnd":21064,"openEnd":21065,"textRuns":[[21065,21070],[21097,21102],[21396,21401],[21547,21552],[21806,21811],[21913,21916]],"parentId":"html:a48c9f46:40","childIds":["html:a48c9f46:47","html:a48c9f46:48","html:a48c9f46:51","html:a48c9f46:53","html:a48c9f46:58"],"line":350,"column":3,"closeStart":21916,"closeEnd":21922},{"id":"html:a48c9f46:47","tag":"label","openStart":21070,"attrEnd":21076,"openEnd":21077,"textRuns":[[21077,21089]],"parentId":"html:a48c9f46:46","childIds":[],"line":351,"column":5,"closeStart":21089,"closeEnd":21097},{"id":"html:a48c9f46:48","tag":"div","openStart":21102,"attrEnd":21160,"openEnd":21161,"textRuns":[[21161,21168],[21274,21281],[21385,21390]],"parentId":"html:a48c9f46:46","childIds":["html:a48c9f46:49","html:a48c9f46:50"],"line":352,"column":5,"closeStart":21390,"closeEnd":21396},{"id":"html:a48c9f46:49","tag":"button","openStart":21168,"attrEnd":21258,"openEnd":21259,"textRuns":[[21259,21265]],"parentId":"html:a48c9f46:48","childIds":[],"line":353,"column":7,"closeStart":21265,"closeEnd":21274},{"id":"html:a48c9f46:50","tag":"button","openStart":21281,"attrEnd":21369,"openEnd":21370,"textRuns":[[21370,21376]],"parentId":"html:a48c9f46:48","childIds":[],"line":354,"column":7,"closeStart":21376,"closeEnd":21385},{"id":"html:a48c9f46:51","tag":"div","openStart":21401,"attrEnd":21419,"openEnd":21420,"textRuns":[[21420,21427],[21536,21541]],"parentId":"html:a48c9f46:46","childIds":["html:a48c9f46:52"],"line":356,"column":5,"closeStart":21541,"closeEnd":21547},{"id":"html:a48c9f46:52","tag":"input","openStart":21427,"attrEnd":21535,"openEnd":21536,"textRuns":[],"parentId":"html:a48c9f46:51","childIds":[],"line":357,"column":7,"closeEnd":21536},{"id":"html:a48c9f46:53","tag":"div","openStart":21552,"attrEnd":21577,"openEnd":21578,"textRuns":[[21578,21585],[21795,21800]],"parentId":"html:a48c9f46:46","childIds":["html:a48c9f46:54"],"line":359,"column":5,"closeStart":21800,"closeEnd":21806},{"id":"html:a48c9f46:54","tag":"div","openStart":21585,"attrEnd":21607,"openEnd":21608,"textRuns":[[21608,21617],[21666,21675],[21724,21733],[21782,21789]],"parentId":"html:a48c9f46:53","childIds":["html:a48c9f46:55","html:a48c9f46:56","html:a48c9f46:57"],"line":360,"column":7,"closeStart":21789,"closeEnd":21795},{"id":"html:a48c9f46:55","tag":"select","openStart":21617,"attrEnd":21656,"openEnd":21657,"textRuns":[],"parentId":"html:a48c9f46:54","childIds":[],"line":361,"column":9,"closeStart":21657,"closeEnd":21666},{"id":"html:a48c9f46:56","tag":"select","openStart":21675,"attrEnd":21714,"openEnd":21715,"textRuns":[],"parentId":"html:a48c9f46:54","childIds":[],"line":362,"column":9,"closeStart":21715,"closeEnd":21724},{"id":"html:a48c9f46:57","tag":"select","openStart":21733,"attrEnd":21772,"openEnd":21773,"textRuns":[],"parentId":"html:a48c9f46:54","childIds":[],"line":363,"column":9,"closeStart":21773,"closeEnd":21782},{"id":"html:a48c9f46:58","tag":"p","openStart":21811,"attrEnd":21839,"openEnd":21840,"textRuns":[[21840,21909]],"parentId":"html:a48c9f46:46","childIds":[],"line":366,"column":5,"closeStart":21909,"closeEnd":21913},{"id":"html:a48c9f46:59","tag":"div","openStart":21926,"attrEnd":21944,"openEnd":21945,"textRuns":[[21945,21950],[22013,22018],[22062,22067],[22226,22231],[22355,22358]],"parentId":"html:a48c9f46:40","childIds":["html:a48c9f46:60","html:a48c9f46:61","html:a48c9f46:62","html:a48c9f46:65"],"line":369,"column":3,"closeStart":22358,"closeEnd":22364},{"id":"html:a48c9f46:60","tag":"label","openStart":21950,"attrEnd":21968,"openEnd":21969,"textRuns":[[21969,22005]],"parentId":"html:a48c9f46:59","childIds":[],"line":370,"column":5,"closeStart":22005,"closeEnd":22013},{"id":"html:a48c9f46:61","tag":"input","openStart":22018,"attrEnd":22061,"openEnd":22062,"textRuns":[],"parentId":"html:a48c9f46:59","childIds":[],"line":371,"column":5,"closeEnd":22062},{"id":"html:a48c9f46:62","tag":"div","openStart":22067,"attrEnd":22148,"openEnd":22149,"textRuns":[[22149,22156],[22215,22220]],"parentId":"html:a48c9f46:59","childIds":["html:a48c9f46:63","html:a48c9f46:64"],"line":372,"column":5,"closeStart":22220,"closeEnd":22226},{"id":"html:a48c9f46:63","tag":"span","openStart":22156,"attrEnd":22173,"openEnd":22174,"textRuns":[],"parentId":"html:a48c9f46:62","childIds":[],"line":373,"column":7,"closeStart":22174,"closeEnd":22181},{"id":"html:a48c9f46:64","tag":"span","openStart":22181,"attrEnd":22186,"openEnd":22187,"textRuns":[[22187,22208]],"parentId":"html:a48c9f46:62","childIds":[],"line":373,"column":32,"closeStart":22208,"closeEnd":22215},{"id":"html:a48c9f46:65","tag":"p","openStart":22231,"attrEnd":22260,"openEnd":22261,"textRuns":[[22261,22351]],"parentId":"html:a48c9f46:59","childIds":[],"line":375,"column":5,"closeStart":22351,"closeEnd":22355},{"id":"html:a48c9f46:66","tag":"div","openStart":22368,"attrEnd":22386,"openEnd":22387,"textRuns":[[22387,22392],[22587,22592],[22651,22654]],"parentId":"html:a48c9f46:40","childIds":["html:a48c9f46:67","html:a48c9f46:74"],"line":378,"column":3,"closeStart":22654,"closeEnd":22660},{"id":"html:a48c9f46:67","tag":"div","openStart":22392,"attrEnd":22408,"openEnd":22409,"textRuns":[[22409,22416],[22497,22504],[22576,22581]],"parentId":"html:a48c9f46:66","childIds":["html:a48c9f46:68","html:a48c9f46:71"],"line":379,"column":5,"closeStart":22581,"closeEnd":22587},{"id":"html:a48c9f46:68","tag":"div","openStart":22416,"attrEnd":22420,"openEnd":22421,"textRuns":[],"parentId":"html:a48c9f46:67","childIds":["html:a48c9f46:69","html:a48c9f46:70"],"line":380,"column":7,"closeStart":22491,"closeEnd":22497},{"id":"html:a48c9f46:69","tag":"label","openStart":22421,"attrEnd":22439,"openEnd":22440,"textRuns":[[22440,22455]],"parentId":"html:a48c9f46:68","childIds":[],"line":380,"column":12,"closeStart":22455,"closeEnd":22463},{"id":"html:a48c9f46:70","tag":"select","openStart":22463,"attrEnd":22481,"openEnd":22482,"textRuns":[],"parentId":"html:a48c9f46:68","childIds":[],"line":380,"column":46,"closeStart":22482,"closeEnd":22491},{"id":"html:a48c9f46:71","tag":"div","openStart":22504,"attrEnd":22508,"openEnd":22509,"textRuns":[],"parentId":"html:a48c9f46:67","childIds":["html:a48c9f46:72","html:a48c9f46:73"],"line":381,"column":7,"closeStart":22570,"closeEnd":22576},{"id":"html:a48c9f46:72","tag":"label","openStart":22509,"attrEnd":22527,"openEnd":22528,"textRuns":[[22528,22534]],"parentId":"html:a48c9f46:71","childIds":[],"line":381,"column":12,"closeStart":22534,"closeEnd":22542},{"id":"html:a48c9f46:73","tag":"select","openStart":22542,"attrEnd":22560,"openEnd":22561,"textRuns":[],"parentId":"html:a48c9f46:71","childIds":[],"line":381,"column":41,"closeStart":22561,"closeEnd":22570},{"id":"html:a48c9f46:74","tag":"p","openStart":22592,"attrEnd":22621,"openEnd":22622,"textRuns":[[22622,22647]],"parentId":"html:a48c9f46:66","childIds":[],"line":383,"column":5,"closeStart":22647,"closeEnd":22651},{"id":"html:a48c9f46:75","tag":"div","openStart":22664,"attrEnd":22692,"openEnd":22693,"textRuns":[],"parentId":"html:a48c9f46:40","childIds":["html:a48c9f46:76"],"line":386,"column":3,"closeStart":22762,"closeEnd":22768,"styleAttr":[22676,22691]},{"id":"html:a48c9f46:76","tag":"button","openStart":22693,"attrEnd":22724,"openEnd":22725,"textRuns":[[22725,22753]],"parentId":"html:a48c9f46:75","childIds":[],"line":386,"column":32,"closeStart":22753,"closeEnd":22762},{"id":"html:a48c9f46:77","tag":"section","openStart":22821,"attrEnd":22861,"openEnd":22862,"textRuns":[[22862,22865],[22987,22990],[23028,23031],[23086,23089],[23124,23127],[23161,23164],[23312,23315],[23427,23428]],"parentId":"html:a48c9f46:9","childIds":["html:a48c9f46:78","html:a48c9f46:82","html:a48c9f46:83","html:a48c9f46:84","html:a48c9f46:85","html:a48c9f46:86","html:a48c9f46:89"],"line":390,"column":1,"closeStart":23428,"closeEnd":23438},{"id":"html:a48c9f46:78","tag":"div","openStart":22865,"attrEnd":22912,"openEnd":22913,"textRuns":[[22913,22918],[22978,22981]],"parentId":"html:a48c9f46:77","childIds":["html:a48c9f46:79"],"line":391,"column":3,"closeStart":22981,"closeEnd":22987,"styleAttr":[22895,22911]},{"id":"html:a48c9f46:79","tag":"div","openStart":22918,"attrEnd":22937,"openEnd":22938,"textRuns":[],"parentId":"html:a48c9f46:78","childIds":["html:a48c9f46:80","html:a48c9f46:81"],"line":392,"column":5,"closeStart":22972,"closeEnd":22978},{"id":"html:a48c9f46:80","tag":"b","openStart":22938,"attrEnd":22940,"openEnd":22941,"textRuns":[[22941,22943]],"parentId":"html:a48c9f46:79","childIds":[],"line":392,"column":25,"closeStart":22943,"closeEnd":22947},{"id":"html:a48c9f46:81","tag":"span","openStart":22947,"attrEnd":22952,"openEnd":22953,"textRuns":[[22953,22965]],"parentId":"html:a48c9f46:79","childIds":[],"line":392,"column":34,"closeStart":22965,"closeEnd":22972},{"id":"html:a48c9f46:82","tag":"div","openStart":22990,"attrEnd":23021,"openEnd":23022,"textRuns":[],"parentId":"html:a48c9f46:77","childIds":[],"line":394,"column":3,"closeStart":23022,"closeEnd":23028},{"id":"html:a48c9f46:83","tag":"div","openStart":23031,"attrEnd":23066,"openEnd":23067,"textRuns":[[23067,23080]],"parentId":"html:a48c9f46:77","childIds":[],"line":395,"column":3,"closeStart":23080,"closeEnd":23086},{"id":"html:a48c9f46:84","tag":"h2","openStart":23089,"attrEnd":23118,"openEnd":23119,"textRuns":[],"parentId":"html:a48c9f46:77","childIds":[],"line":396,"column":3,"closeStart":23119,"closeEnd":23124},{"id":"html:a48c9f46:85","tag":"div","openStart":23127,"attrEnd":23154,"openEnd":23155,"textRuns":[],"parentId":"html:a48c9f46:77","childIds":[],"line":397,"column":3,"closeStart":23155,"closeEnd":23161},{"id":"html:a48c9f46:86","tag":"div","openStart":23164,"attrEnd":23185,"openEnd":23186,"textRuns":[[23186,23191],[23245,23250],[23303,23306]],"parentId":"html:a48c9f46:77","childIds":["html:a48c9f46:87","html:a48c9f46:88"],"line":398,"column":3,"closeStart":23306,"closeEnd":23312},{"id":"html:a48c9f46:87","tag":"button","openStart":23191,"attrEnd":23222,"openEnd":23223,"textRuns":[[23223,23236]],"parentId":"html:a48c9f46:86","childIds":[],"line":399,"column":5,"closeStart":23236,"closeEnd":23245},{"id":"html:a48c9f46:88","tag":"button","openStart":23250,"attrEnd":23281,"openEnd":23282,"textRuns":[[23282,23294]],"parentId":"html:a48c9f46:86","childIds":[],"line":400,"column":5,"closeStart":23294,"closeEnd":23303},{"id":"html:a48c9f46:89","tag":"p","openStart":23315,"attrEnd":23334,"openEnd":23335,"textRuns":[[23335,23423]],"parentId":"html:a48c9f46:77","childIds":[],"line":402,"column":3,"closeStart":23423,"closeEnd":23427},{"id":"html:a48c9f46:90","tag":"section","openStart":23480,"attrEnd":23528,"openEnd":23529,"textRuns":[[23529,23532],[23898,23901],[23922,23925],[24098,24099]],"parentId":"html:a48c9f46:9","childIds":["html:a48c9f46:91","html:a48c9f46:95","html:a48c9f46:96"],"line":406,"column":1,"closeStart":24099,"closeEnd":24109},{"id":"html:a48c9f46:91","tag":"svg","openStart":23532,"attrEnd":23592,"openEnd":23593,"textRuns":[[23593,23598],[23673,23678]],"parentId":"html:a48c9f46:90","childIds":["html:a48c9f46:92","html:a48c9f46:93"],"line":407,"column":3,"closeStart":23892,"closeEnd":23898},{"id":"html:a48c9f46:92","tag":"g","openStart":23598,"attrEnd":23668,"openEnd":23669,"textRuns":[],"parentId":"html:a48c9f46:91","childIds":[],"line":408,"column":5,"closeStart":23669,"closeEnd":23673,"styleAttr":[23634,23667]},{"id":"html:a48c9f46:93","tag":"circle","openStart":23678,"attrEnd":23767,"openEnd":23769,"textRuns":[[23769,23774]],"parentId":"html:a48c9f46:91","childIds":["html:a48c9f46:94"],"line":409,"column":5},{"id":"html:a48c9f46:94","tag":"circle","openStart":23774,"attrEnd":23887,"openEnd":23889,"textRuns":[[23889,23892]],"parentId":"html:a48c9f46:93","childIds":[],"line":410,"column":5},{"id":"html:a48c9f46:95","tag":"h2","openStart":23901,"attrEnd":23904,"openEnd":23905,"textRuns":[[23905,23917]],"parentId":"html:a48c9f46:90","childIds":[],"line":412,"column":3,"closeStart":23917,"closeEnd":23922},{"id":"html:a48c9f46:96","tag":"ul","openStart":23925,"attrEnd":23928,"openEnd":23929,"textRuns":[[23929,23934],[23964,23969],[24002,24007],[24049,24054],[24090,24093]],"parentId":"html:a48c9f46:90","childIds":["html:a48c9f46:97","html:a48c9f46:98","html:a48c9f46:99","html:a48c9f46:100"],"line":413,"column":3,"closeStart":24093,"closeEnd":24098},{"id":"html:a48c9f46:97","tag":"li","openStart":23934,"attrEnd":23937,"openEnd":23938,"textRuns":[[23938,23959]],"parentId":"html:a48c9f46:96","childIds":[],"line":414,"column":5,"closeStart":23959,"closeEnd":23964},{"id":"html:a48c9f46:98","tag":"li","openStart":23969,"attrEnd":23972,"openEnd":23973,"textRuns":[[23973,23997]],"parentId":"html:a48c9f46:96","childIds":[],"line":415,"column":5,"closeStart":23997,"closeEnd":24002},{"id":"html:a48c9f46:99","tag":"li","openStart":24007,"attrEnd":24010,"openEnd":24011,"textRuns":[[24011,24044]],"parentId":"html:a48c9f46:96","childIds":[],"line":416,"column":5,"closeStart":24044,"closeEnd":24049},{"id":"html:a48c9f46:100","tag":"li","openStart":24054,"attrEnd":24057,"openEnd":24058,"textRuns":[[24058,24085]],"parentId":"html:a48c9f46:96","childIds":[],"line":417,"column":5,"closeStart":24085,"closeEnd":24090},{"id":"html:a48c9f46:101","tag":"section","openStart":24148,"attrEnd":24190,"openEnd":24191,"textRuns":[],"parentId":"html:a48c9f46:9","childIds":[],"line":422,"column":1,"closeStart":24191,"closeEnd":24201}]}</script>
+<meta charset="UTF-8" data-inspector-id="html:a48c9f46:2">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-inspector-id="html:a48c9f46:3">
+<title>八字坐标 · 你的生辰里藏着一座城</title>
+<meta name="description" content="输入生日与出生地排四柱，看人物画像、五行结构与适合长住的城市。" data-inspector-id="html:a48c9f46:4">
+<meta name="theme-color" content="#eceee8" data-inspector-id="html:a48c9f46:5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23e2e5e1'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%23b9432b' stroke-width='2'/%3E%3Cpath d='M32 8v48M8 32h48' stroke='%23b9432b' stroke-width='1' opacity='.6'/%3E%3C/svg%3E" data-inspector-id="html:a48c9f46:6">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" data-inspector-id="html:a48c9f46:7">
+<style>
+/* ===== 基础 ===== */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#eceee8;
+  --panel:#f8f9f4;
+  --panel-2:#f0f1eb;
+  --line:rgba(18,26,22,.30);
+  --line-2:rgba(18,26,22,.14);
+  --txt:#111a15;
+  --txt-2:rgba(17,26,21,.84);
+  --txt-3:rgba(17,26,21,.62);
+  --seal:#b9432b;
+  --seal-2:#9e3621;
+  --gold:#7a5c22;
+  --wood:#3d7f5b;
+  --fire:#b8482c;
+  --earth:#96762e;
+  --metal:#67707b;
+  --water:#33638c;
+  --serif:'Noto Serif SC','Songti SC','STSong','SimSun',serif;
+  --sans:'Noto Sans SC',-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+}
+html,body{margin:0;padding:0}
+body{
+  background:linear-gradient(178deg,#f2f3ee 0%,#eceee8 42%,#e5e9e1 100%);
+  background-attachment:fixed;
+  color:var(--txt);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:15px;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(80% 42% at 82% -6%, rgba(185,67,43,.055), transparent 70%),
+    radial-gradient(70% 38% at 6% 14%, rgba(51,99,140,.05), transparent 70%),
+    radial-gradient(110% 50% at 50% 108%, rgba(138,106,44,.05), transparent 72%);
+}
+body::after{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+}
+.app{position:relative;z-index:1;max-width:444px;margin:0 auto;padding:0 20px 32px}
+.view[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--serif);font-weight:900;margin:0;letter-spacing:.01em;color:var(--txt)}
+p{margin:0}
+em{font-style:normal;color:var(--gold)}
+.serif{font-family:var(--serif)}
+.ttl{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.04em;line-height:1.5}
+.kicker{font-size:11.5px;letter-spacing:.22em;color:var(--txt-3)}
+.small{font-size:12px;color:var(--txt-2);line-height:1.7}
+.note{font-size:11.5px;color:var(--txt-3);line-height:1.75}
+
+/* ===== 按钮 ===== */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:.5em;
+  width:100%;min-height:54px;padding:0 20px;
+  font-family:var(--serif);font-size:16px;font-weight:600;letter-spacing:.14em;
+  color:#fbf7f1;background:var(--seal);border:0;border-radius:3px;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform .18s ease, background .18s ease;
+  box-shadow:0 8px 20px -14px rgba(185,67,43,.75);
+}
+.btn:active{transform:translateY(1px);background:var(--seal-2)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn:disabled{opacity:.4;box-shadow:none;cursor:not-allowed}
+.btn-ghost{
+  width:100%;min-height:48px;background:rgba(255,255,255,.42);border:1px solid var(--line);
+  color:var(--txt);font-family:var(--sans);font-size:13px;letter-spacing:.1em;
+  border-radius:3px;cursor:pointer;
+}
+.btn-ghost:active{background:rgba(22,33,28,.06)}
+.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+
+/* ===== 封面 ===== */
+.cover{padding-top:26px}
+.brand{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.28em;color:var(--txt-2)}
+.brand i{width:7px;height:7px;background:var(--seal);display:block;transform:rotate(45deg)}
+.ring-wrap{position:relative;display:flex;justify-content:center;margin:22px 0 6px}
+#ring{width:min(72vw,286px);height:min(72vw,286px);display:block}
+#ring .ticks{animation:spin 90s linear infinite;transform-origin:150px 150px}
+#ring .halo{animation:spin 140s linear infinite reverse;transform-origin:150px 150px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+.ring-center .g{font-family:var(--serif);font-size:38px;font-weight:900;line-height:1;color:var(--txt)}
+.ring-center .l{font-size:9.5px;letter-spacing:.3em;color:var(--txt-3);margin-top:9px}
+.cover h1{font-size:clamp(29px,8.6vw,40px);line-height:1.3;margin:18px 0 0;text-align:center;text-wrap:balance}
+.cover h1 span{display:block;color:var(--txt-2);font-weight:600;font-size:clamp(19px,5.6vw,25px);margin-top:8px;letter-spacing:.06em}
+.cover .lede{margin:22px auto 0;max-width:355px;font-size:14px;color:var(--txt-2);line-height:1.95;text-align:center}
+.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin:26px 0 24px;background:var(--line-2);border:1px solid var(--line-2);border-radius:3px;overflow:hidden}
+.facts div{background:var(--panel);padding:13px 8px;text-align:center}
+.facts b{display:block;font-family:var(--serif);font-size:19px;font-weight:600;color:var(--gold);line-height:1.2}
+.facts span{font-size:10.5px;letter-spacing:.1em;color:var(--txt-3)}
+
+/* ===== 表单 ===== */
+.view-head{padding:30px 0 0}
+.stepno{display:flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.24em;color:var(--txt-3)}
+.stepno b{color:var(--seal);font-weight:500}
+.view-head h2{font-size:26px;margin:9px 0 0;line-height:1.4;text-wrap:balance}
+.field{margin-top:26px}
+.field .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field label{display:block;font-size:12px;letter-spacing:.14em;color:var(--txt-2);margin-bottom:9px}
+.field .hint{font-size:11px;color:var(--txt-3);letter-spacing:0;margin-top:8px;line-height:1.7}
+input,select{
+  width:100%;min-height:50px;padding:0 14px;
+  background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:3px;
+  color:var(--txt);font-family:var(--sans);font-size:15px;font-weight:300;
+  appearance:none;-webkit-appearance:none;
+}
+select{padding-right:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2318211d' stroke-opacity='.55'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+input:focus,select:focus{outline:none;border-color:rgba(185,67,43,.6);background:rgba(255,255,255,.8)}
+input[type=date],input[type=time]{color-scheme:light;min-width:0}
+input:disabled{opacity:.45;background:rgba(255,255,255,.3)}
+.cal-switch{display:flex;gap:0;margin-bottom:10px;border:1px solid var(--line);border-radius:3px;overflow:hidden;width:fit-content}
+.cal-btn{
+  border:0;background:transparent;padding:7px 20px;font-family:var(--sans);font-size:12.5px;
+  letter-spacing:.12em;color:var(--txt-2);cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.cal-btn.on{background:var(--seal);color:#fbf7f1}
+.lunar-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px}
+.toggle{display:flex;align-items:center;gap:9px;margin-top:12px;font-size:12.5px;color:var(--txt-2);cursor:pointer;user-select:none}
+.toggle .box{width:15px;height:15px;border:1px solid var(--line);border-radius:2px;display:flex;align-items:center;justify-content:center;flex:none;background:rgba(255,255,255,.5)}
+.toggle[aria-checked=true] .box{background:var(--seal);border-color:var(--seal)}
+.toggle[aria-checked=true] .box::after{content:'';width:6px;height:6px;background:#fff;transform:rotate(45deg)}
+.city-main .attr{margin-top:10px;display:flex;flex-wrap:wrap;gap:7px}
+.city-main .attr span{font-size:10.5px;letter-spacing:.1em;color:var(--gold);padding:3px 9px;border:1px solid rgba(138,106,44,.3);border-radius:2px}
+
+/* ===== 测试题 ===== */
+.quiz-bar{display:flex;gap:4px;margin-top:24px}
+.quiz-bar i{flex:1;height:2px;background:var(--line);display:block}
+.quiz-bar i.on{background:var(--seal)}
+.quiz-count{margin-top:12px;font-size:11px;letter-spacing:.2em;color:var(--txt-3)}
+#v-quiz:not([hidden]){min-height:70vh;display:flex;flex-direction:column}
+.quiz-tip{margin-top:32px;font-size:11.5px;color:var(--txt-3);letter-spacing:.06em;line-height:1.8}
+.q-text{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.7;margin:22px 0 0;min-height:3em;text-wrap:balance}
+.opts{margin-top:30px;display:flex;flex-direction:column;gap:11px}
+.opt{
+  display:flex;align-items:flex-start;gap:12px;text-align:left;
+  padding:17px 16px;background:var(--panel);border:1px solid var(--line-2);border-radius:3px;
+  color:var(--txt);font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.7;cursor:pointer;
+  transition:background .15s ease,border-color .15s ease,transform .12s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.opt:hover{background:#fbfbf6;border-color:var(--line)}
+.opt:active{transform:scale(.995)}
+.opt .k{font-family:var(--serif);font-size:13px;color:var(--seal);flex:none;padding-top:2px;letter-spacing:.05em}
+.opt:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
+.link{background:none;border:0;color:var(--txt-3);font-size:12.5px;letter-spacing:.1em;cursor:pointer;padding:8px 0}
+.link:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ===== 排盘动画 ===== */
+.loading{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.loading .ring-s{width:132px;height:132px}
+.loading h2{font-size:20px;font-weight:600;margin-top:30px;letter-spacing:.06em}
+.loading ul{list-style:none;margin:26px 0 0;padding:0;font-size:12.5px;color:var(--txt-3);line-height:2.1}
+.loading li{opacity:0;animation:fadein .5s ease forwards}
+.loading li:nth-child(1){animation-delay:.15s}
+.loading li:nth-child(2){animation-delay:.6s}
+.loading li:nth-child(3){animation-delay:1.05s}
+.loading li:nth-child(4){animation-delay:1.5s}
+@keyframes fadein{to{opacity:1}}
+
+/* ===== 结果：命盘 ===== */
+.res-head{padding-top:28px}
+.res-head h2{font-size:clamp(24px,7vw,31px);line-height:1.35}
+.res-head .sub{margin-top:10px;font-size:13px;color:var(--txt-2);line-height:1.9}
+.res-head .sub .nw{display:inline-block;margin-right:14px;white-space:nowrap}
+.pan{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:24px;background:var(--line-2);border:1px solid var(--line-2);border-radius:3px;overflow:hidden}
+.pan .cell{background:var(--panel);padding:13px 6px 12px;text-align:center;position:relative}
+.pan .cell.hid{background:repeating-linear-gradient(135deg,rgba(22,33,28,.035) 0 6px,transparent 6px 12px)}
+.pan .role{font-size:10px;letter-spacing:.12em;color:var(--txt-3);height:1.4em}
+.pan .gan{font-family:var(--serif);font-size:29px;font-weight:900;line-height:1.35;margin-top:2px}
+.pan .zhi{font-family:var(--serif);font-size:29px;font-weight:900;line-height:1.35}
+.pan .tg{font-size:10px;letter-spacing:.04em;color:var(--txt-3);margin-top:5px;height:1.4em}
+.pan .cang{font-size:10px;color:var(--txt-3);margin-top:6px;line-height:1.5}
+.pan .cell.me{background:#eff0e8}
+.wx-0{color:var(--wood)}.wx-1{color:var(--fire)}.wx-2{color:var(--earth)}.wx-3{color:var(--metal)}.wx-4{color:var(--water)}
+.pan-note{margin-top:12px;font-size:11px;color:var(--txt-3);line-height:1.75}
+
+/* ===== 结果：类型卡 ===== */
+.type-card{margin-top:30px;padding:26px 22px 24px;border:1px solid rgba(185,67,43,.28);border-radius:3px;background:linear-gradient(178deg,rgba(185,67,43,.055),rgba(185,67,43,.008));position:relative;overflow:hidden}
+.seal{
+  width:48px;height:48px;flex:none;border:1.5px solid rgba(185,67,43,.5);
+  border-radius:2px;display:flex;align-items:center;justify-content:center;
+  color:rgba(185,67,43,.95);font-family:var(--serif);font-size:25px;font-weight:900;line-height:1;
+  text-align:center;transform:rotate(3deg);
+}
+.type-card .tc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px}
+.type-card .tc-en{font-size:10.5px;letter-spacing:.2em;color:var(--txt-3);margin-top:7px}
+.type-card .kicker{margin-bottom:12px}
+.type-card h3{font-size:clamp(19px,5.2vw,24px);font-weight:600;line-height:1.85;letter-spacing:.02em}
+.type-card .en{margin-top:16px;font-size:11.5px;letter-spacing:.12em;color:var(--txt-3)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.tags span{padding:5px 10px;font-size:11.5px;letter-spacing:.08em;color:var(--gold);border:1px solid rgba(138,106,44,.34);border-radius:2px;background:rgba(138,106,44,.07)}
+
+/* ===== 结果：正文块 ===== */
+.sec{margin-top:36px}
+.sec-h{display:flex;align-items:baseline;gap:10px}
+.sec-h h3{font-size:17px;font-weight:600;letter-spacing:.05em}
+.sec-h .ln{flex:1;height:1px;background:var(--line-2)}
+.sec-body{margin-top:14px}
+.p-body{font-size:14.5px;line-height:1.95;color:rgba(17,26,21,.92);margin-top:13px;text-align:justify}
+.p-body strong{font-family:var(--serif);font-weight:600;color:var(--txt)}
+.first{font-family:var(--serif);font-size:19px;font-weight:900;color:var(--gold);margin-right:.28em;line-height:1}
+
+/* 五行条 */
+.wx-list{margin-top:6px}
+.wx-row{display:grid;grid-template-columns:30px 1fr 44px 46px;align-items:center;gap:10px;padding:7px 0}
+.wx-row .n{font-family:var(--serif);font-size:15px;font-weight:600}
+.wx-row .bar{display:block;height:5px;background:rgba(17,26,21,.22);border-radius:2px;overflow:hidden}
+.wx-row .bar i{display:block;height:100%;width:0;border-radius:2px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.wx-row .pct{font-size:11.5px;color:var(--txt-2);text-align:right;font-variant-numeric:tabular-nums}
+.wx-row .mark{font-size:10px;letter-spacing:.06em;text-align:right;color:var(--seal)}
+.wx-row .mark.mute{color:transparent}
+.wx-legend{margin-top:10px;font-size:11.5px;color:var(--txt-3);line-height:1.8}
+
+/* 城市 */
+.city-main{margin-top:4px;padding:20px 18px 18px;border:1px solid var(--line);border-radius:3px;background:var(--panel);position:relative}
+.city-main .tagline{font-size:10.5px;letter-spacing:.2em;color:var(--seal)}
+.city-main .name{font-family:var(--serif);font-size:34px;font-weight:900;line-height:1.3;margin-top:6px;letter-spacing:.08em}
+.city-main .name small{font-size:12px;font-weight:400;letter-spacing:.1em;color:var(--txt-3);margin-left:8px;font-family:var(--sans)}
+.city-main .blurb{font-size:13px;color:var(--txt-2);margin-top:6px}
+.city-main .why{margin-top:14px;font-size:14px;line-height:1.9;color:rgba(17,26,21,.92)}
+.city-main .why b{color:var(--gold);font-weight:500}
+.alt{margin-top:20px;border-top:1px solid var(--line-2)}
+.alt .item{padding:15px 0;border-bottom:1px solid var(--line-2)}
+.alt .item:last-child{border-bottom:0}
+.alt .item .h{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.alt .item .nm{font-family:var(--serif);font-size:20px;font-weight:600}
+.alt .item .ds{font-size:11px;color:var(--txt-3);letter-spacing:.06em}
+.alt .item .lb{font-size:9.5px;letter-spacing:.12em;color:var(--seal);border:1px solid rgba(185,67,43,.3);padding:1px 6px;border-radius:2px}
+.alt .item p{margin-top:6px;font-size:13px;color:var(--txt-2);line-height:1.85}
+.avoid{margin-top:18px;padding:13px 15px;border-left:2px solid rgba(51,99,140,.45);background:rgba(51,99,140,.07);border-radius:0 3px 3px 0}
+.avoid .t{font-size:11px;letter-spacing:.16em;color:var(--water)}
+.avoid p{margin-top:5px;font-size:13px;color:var(--txt-2);line-height:1.85}
+
+/* 细节 */
+.detail{display:flex;gap:11px;padding:13px 0;border-bottom:1px solid var(--line-2)}
+.detail:last-child{border-bottom:0}
+.detail .dia{width:6px;height:6px;flex:none;margin-top:9px;background:var(--seal);transform:rotate(45deg)}
+.detail .k{font-family:var(--serif);font-size:14.5px;font-weight:600;letter-spacing:.04em}
+.detail p{margin-top:5px;font-size:13px;color:var(--txt-2);line-height:1.85}
+
+/* 补给 */
+.supply{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:3px;overflow:hidden;margin-top:6px}
+.supply > div{background:var(--panel);padding:14px 15px}
+.supply .k{font-size:10.5px;letter-spacing:.16em;color:var(--txt-3)}
+.supply .v{font-family:var(--serif);font-size:16px;font-weight:600;margin-top:5px;color:var(--txt)}
+.supply .wide{grid-column:span 2;background:var(--panel-2)}
+.supply .wide .v{font-size:13.5px;line-height:1.85;margin-top:5px;text-wrap:pretty;letter-spacing:.01em}
+
+/* 分享卡 */
+.share{margin-top:36px}
+#card{width:100%;height:auto;display:block;border-radius:3px;border:1px solid var(--line-2);background:#f4f2ea}
+.share .cap{margin-top:10px;font-size:11px;color:var(--txt-3);text-align:center;line-height:1.7}
+
+/* 评分逻辑 */
+details.logic{margin-top:34px;border:1px solid var(--line-2);border-radius:3px;padding:0 16px;background:var(--panel)}
+details.logic summary{cursor:pointer;padding:15px 0;font-size:12.5px;letter-spacing:.14em;color:var(--txt-2);list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.logic summary::-webkit-details-marker{display:none}
+details.logic summary::after{content:'+';font-family:var(--serif);font-size:15px;color:var(--txt-3)}
+details.logic[open] summary::after{content:'−'}
+details.logic .in{padding:0 0 18px;font-size:12.5px;color:var(--txt-2);line-height:1.9}
+details.logic .in h4{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--txt);margin:16px 0 6px;letter-spacing:.04em}
+details.logic table{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:8px;font-variant-numeric:tabular-nums}
+details.logic th,details.logic td{border-bottom:1px solid var(--line-2);padding:6px 2px;font-size:11.5px;text-align:right;color:var(--txt-2)}
+details.logic th{color:var(--txt-3);font-weight:400;letter-spacing:.04em}
+details.logic th:first-child,details.logic td:first-child{text-align:left}
+details.logic col.c1{width:34%}
+details.logic col.c2{width:16%}
+details.logic col.c3{width:16%}
+details.logic col.c4{width:34%}
+details.logic .formula{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:var(--txt-3);line-height:1.8;margin-top:8px;word-break:break-all}
+
+/* 页脚 */
+.foot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line-2);text-align:center}
+.foot .brand{justify-content:center;color:var(--txt-3);font-size:10.5px;letter-spacing:.3em}
+.foot p{margin-top:12px;font-size:10.5px;color:rgba(17,26,21,.56);line-height:1.8}
+
+@media (max-width:359px){
+  .facts b{font-size:16px}
+  .pan .gan,.pan .zhi{font-size:25px}
+  .wx-row{grid-template-columns:26px 1fr 38px 40px}
+  .cal-btn{padding:7px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body data-inspector-id="html:a48c9f46:8">
+<div class="app" data-inspector-id="html:a48c9f46:9">
+
+<!-- ===== 视图：封面 ===== -->
+<section class="view cover" id="v-cover" data-inspector-id="html:a48c9f46:10">
+  <div class="brand" data-inspector-id="html:a48c9f46:11"><i data-inspector-id="html:a48c9f46:12"></i><span data-inspector-id="html:a48c9f46:13">八字坐标</span></div>
+
+  <div class="ring-wrap" data-inspector-id="html:a48c9f46:14">
+    <svg id="ring" viewBox="0 0 300 300" aria-hidden="true" data-inspector-id="html:a48c9f46:15">
+      <g class="halo" data-inspector-id="html:a48c9f46:16">
+        <circle cx="150" cy="150" r="132" fill="none" stroke="rgba(138,106,44,.30)" stroke-width="1" data-inspector-id="html:a48c9f46:17"/>
+        <path d="M150 18a132 132 0 0 1 0 264" fill="none" stroke="rgba(138,106,44,.42)" stroke-width="1.2" stroke-dasharray="2 9" data-inspector-id="html:a48c9f46:18"/>
+      </g>
+      <g class="ticks" id="ticks" data-inspector-id="html:a48c9f46:19"></g>
+      <circle cx="150" cy="150" r="96" fill="none" stroke="rgba(22,33,28,.26)" stroke-width="1" data-inspector-id="html:a48c9f46:20"/>
+      <circle cx="150" cy="150" r="64" fill="none" stroke="rgba(185,67,43,.34)" stroke-width="1" stroke-dasharray="4 6" data-inspector-id="html:a48c9f46:21"/>
+    </svg>
+    <div class="ring-center" data-inspector-id="html:a48c9f46:22">
+      <div class="g" id="ringG" data-inspector-id="html:a48c9f46:23">命</div>
+      <div class="l" id="ringL" data-inspector-id="html:a48c9f46:24">四 柱</div>
+    </div>
+  </div>
+
+  <h1 data-inspector-id="html:a48c9f46:25">你的生辰里<span data-inspector-id="html:a48c9f46:26">藏着一座城</span></h1>
+  <p class="lede" data-inspector-id="html:a48c9f46:27">填出生日期、时刻和出生地。出来三样东西：一张人物画像、一组五行结构、三座待得住的城市。</p>
+
+  <div class="facts" data-inspector-id="html:a48c9f46:28">
+    <div data-inspector-id="html:a48c9f46:29"><b data-inspector-id="html:a48c9f46:30">4</b><span data-inspector-id="html:a48c9f46:31">柱排盘</span></div>
+    <div data-inspector-id="html:a48c9f46:32"><b data-inspector-id="html:a48c9f46:33">8</b><span data-inspector-id="html:a48c9f46:34">情境题</span></div>
+    <div data-inspector-id="html:a48c9f46:35"><b data-inspector-id="html:a48c9f46:36">3</b><span data-inspector-id="html:a48c9f46:37">座城市</span></div>
+  </div>
+
+  <button class="btn" id="goForm" data-inspector-id="html:a48c9f46:38">开始排盘</button>
+  <p class="note" style="margin-top:14px;text-align:center" data-inspector-id="html:a48c9f46:39">仅供娱乐与自我观察，不作任何决策依据</p>
+</section>
+
+<!-- ===== 视图：出生信息 ===== -->
+<section class="view" id="v-form" hidden data-inspector-id="html:a48c9f46:40">
+  <div class="view-head" data-inspector-id="html:a48c9f46:41">
+    <div class="stepno" data-inspector-id="html:a48c9f46:42"><b data-inspector-id="html:a48c9f46:43">01</b><span data-inspector-id="html:a48c9f46:44">出生信息</span></div>
+    <h2 data-inspector-id="html:a48c9f46:45">出生时间与地点</h2>
+  </div>
+
+  <div class="field" data-inspector-id="html:a48c9f46:46">
+    <label data-inspector-id="html:a48c9f46:47">出生日期</label>
+    <div class="cal-switch" role="tablist" aria-label="历法" data-inspector-id="html:a48c9f46:48">
+      <button class="cal-btn on" type="button" data-mode="solar" role="tab" aria-selected="true" data-inspector-id="html:a48c9f46:49">公历</button>
+      <button class="cal-btn" type="button" data-mode="lunar" role="tab" aria-selected="false" data-inspector-id="html:a48c9f46:50">农历</button>
+    </div>
+    <div id="solarBox" data-inspector-id="html:a48c9f46:51">
+      <input type="date" id="bdate" min="1920-01-01" max="2050-12-31" value="1995-06-18" aria-label="公历生日" data-inspector-id="html:a48c9f46:52">
+    </div>
+    <div id="lunarBox" hidden data-inspector-id="html:a48c9f46:53">
+      <div class="lunar-row" data-inspector-id="html:a48c9f46:54">
+        <select id="luY" aria-label="农历年" data-inspector-id="html:a48c9f46:55"></select>
+        <select id="luM" aria-label="农历月" data-inspector-id="html:a48c9f46:56"></select>
+        <select id="luD" aria-label="农历日" data-inspector-id="html:a48c9f46:57"></select>
+      </div>
+    </div>
+    <p class="hint" id="calHint" data-inspector-id="html:a48c9f46:58">默认填公历。只知道农历，切到左边那一档直接选。</p>
+  </div>
+
+  <div class="field" data-inspector-id="html:a48c9f46:59">
+    <label for="btime" data-inspector-id="html:a48c9f46:60">出生时刻（当地钟表时间）</label>
+    <input type="time" id="btime" value="08:30" data-inspector-id="html:a48c9f46:61">
+    <div class="toggle" id="noHour" role="checkbox" aria-checked="false" tabindex="0" data-inspector-id="html:a48c9f46:62">
+      <span class="box" data-inspector-id="html:a48c9f46:63"></span><span data-inspector-id="html:a48c9f46:64">不知道出生时辰</span>
+    </div>
+    <p class="hint" id="hourHint" data-inspector-id="html:a48c9f46:65">不确定的话按中午十二点排，时柱会标成灰色，相关推断只作参考。</p>
+  </div>
+
+  <div class="field" data-inspector-id="html:a48c9f46:66">
+    <div class="two" data-inspector-id="html:a48c9f46:67">
+      <div data-inspector-id="html:a48c9f46:68"><label for="bprov" data-inspector-id="html:a48c9f46:69">省份 / 地区</label><select id="bprov" data-inspector-id="html:a48c9f46:70"></select></div>
+      <div data-inspector-id="html:a48c9f46:71"><label for="bcity" data-inspector-id="html:a48c9f46:72">城市</label><select id="bcity" data-inspector-id="html:a48c9f46:73"></select></div>
+    </div>
+    <p class="hint" id="cityHint" data-inspector-id="html:a48c9f46:74">北京 · 东经 116.41°</p>
+  </div>
+
+  <div style="margin-top:26px" data-inspector-id="html:a48c9f46:75"><button class="btn" id="goQuiz" data-inspector-id="html:a48c9f46:76">下一步 · 八道情境题</button></div>
+</section>
+
+<!-- ===== 视图：测试题 ===== -->
+<section class="view" id="v-quiz" hidden data-inspector-id="html:a48c9f46:77">
+  <div class="view-head" style="padding-top:24px" data-inspector-id="html:a48c9f46:78">
+    <div class="stepno" data-inspector-id="html:a48c9f46:79"><b data-inspector-id="html:a48c9f46:80">02</b><span data-inspector-id="html:a48c9f46:81">情境八问</span></div>
+  </div>
+  <div class="quiz-bar" id="qbar" data-inspector-id="html:a48c9f46:82"></div>
+  <div class="quiz-count" id="qcount" data-inspector-id="html:a48c9f46:83">第 1 / 8 题</div>
+  <h2 class="q-text" id="qtext" data-inspector-id="html:a48c9f46:84"></h2>
+  <div class="opts" id="opts" data-inspector-id="html:a48c9f46:85"></div>
+  <div class="quiz-nav" data-inspector-id="html:a48c9f46:86">
+    <button class="link" id="qback" data-inspector-id="html:a48c9f46:87">← 上一题</button>
+    <button class="link" id="qskip" data-inspector-id="html:a48c9f46:88">跳过这题</button>
+  </div>
+  <p class="quiz-tip" data-inspector-id="html:a48c9f46:89">选完自动进入下一题 · 这些题只校准节奏与环境，不改变你的四柱</p>
+</section>
+
+<!-- ===== 视图：排盘中 ===== -->
+<section class="view loading" id="v-load" hidden data-inspector-id="html:a48c9f46:90">
+  <svg class="ring-s" viewBox="0 0 300 300" aria-hidden="true" data-inspector-id="html:a48c9f46:91">
+    <g class="ticks" id="ticks2" style="animation:spin 3s linear infinite" data-inspector-id="html:a48c9f46:92"></g>
+    <circle cx="150" cy="150" r="96" fill="none" stroke="rgba(22,33,28,.30)" stroke-width="1" data-inspector-id="html:a48c9f46:93"/>
+    <circle cx="150" cy="150" r="64" fill="none" stroke="rgba(185,67,43,.52)" stroke-width="1" stroke-dasharray="4 6" data-inspector-id="html:a48c9f46:94"/>
+  </svg>
+  <h2 data-inspector-id="html:a48c9f46:95">正在排盘</h2>
+  <ul data-inspector-id="html:a48c9f46:96">
+    <li data-inspector-id="html:a48c9f46:97">核对出生时刻…</li>
+    <li data-inspector-id="html:a48c9f46:98">定位节气与月令…</li>
+    <li data-inspector-id="html:a48c9f46:99">排列四柱、量五行轻重…</li>
+    <li data-inspector-id="html:a48c9f46:100">计算你的城市坐标…</li>
+  </ul>
+</section>
+
+<!-- ===== 视图：结果 ===== -->
+<section class="view" id="v-result" hidden data-inspector-id="html:a48c9f46:101"></section>
+
+</div>
+<script>
+// ===== 节气表（1920-2050，北京时间，每行 12 个节气：月日时分）=====
+const TERM_YEAR_START = 1920;
+const TERM_NAMES = ["小寒","立春","惊蛰","清明","立夏","芒种","小暑","立秋","白露","寒露","立冬","大雪"];
+const TERM_LON = [285,315,345,15,45,75,105,135,165,195,225,255];
+const TERM_TABLE = [
+"010622400205102603060451040510140506041106060850070719180808045809080726100822291108010412071730",
+"010604330204162003061045040516080506100406061441070801060808104309081309100904101108064512072311",
+"010610160204220603061633040521570506155206062030070806570808163709081906100910091108124512080510",
+"010616130205040003062224040603450506213806070214070812420808222409090057100916031108184012081104",
+"010622050205094903060412040509330506032506060801070718290808041209080645100821521108002912071652",
+"010603530204153603060959040515220506091706061356070800240808100709081240100903471108062612072252",
+"010609540204213803061559040521180506150806061941070806050808154409081815100909241108120712080438",
+"010615440205033003062150040603060506205306070124070811490808213109090005100915151108175612081026",
+"010621310205091603060337040508540506024306060717070717440808032709080601100821091107234912071617",
+"010603220204150803060931040514510506084006061310070723310808090809081139100902471108052712072156",
+"010609020204205103061516040520370506142606061858070805190808145609081728100908371108112012080350",
+"010614550205024003062102040602200506200906070041070811050808204409082317100914261108170912080940",
+"010620450205082903060249040508060506015506060627070716520808023109080502100820091107224912071518",
+"010602230204140903060831040513500506074106061217070722440808082509081057100902031108044212072111",
+"010608160204200303061426040519430506133006061801070804240808140309081636100907441108102612080256",
+"010614020205014803062010040601260506191206062341070810050808194709082224100913351108161712080844",
+"010619460205072903060149040507060506005606060530070715580808014309080420100819321107221412071442",
+"010601430204132503060744040513010506065006061122070721450808072509080959100901101108035512072026",
+"010607310204191403061333040518480506123506061706070803310808131209081548100907011108094812080221",
+"010613270205011003061926040600370506182106062251070809180808190309082142100912561108154312080816",
+"010619230205070703060123040506340506001606060444070715080808005109080329100818421107212612071357",
+"010601030204124903060710040512240506060906061039070721030808064509080923100900381108032412071955",
+"010607020204184803061309040518230506120606061632070802510808123009081506100906211108091112080146",
+"010612540205004003061858040600110506175306062218070808380808181809082055100912101108145812080732",
+"010618390205062203060040040505530505233906060410070714360808001809080255100818081107205412071327",
+"010600340204121903060637040511510506053606061005070720260808060509080838100823491108023412071907",
+"010606160204180303061224040517380506112106061548070802100808115109081427100905401108082712080100",
+"010612060204235003061807040523200506170206062131070807550808174009082021100911371108142412080656",
+"010618000205054203052357040505090505225206060320070713430807232609080204100817201107200612071237",
+"010523410204112203060539040510510506043606060906070719310808051409080754100823111108015912071833",
+"010605380204172003061135040516440506102406061450070801130808105509081333100904511108074312080021",
+"010611300204231303061726040522320506160906062032070806530808163709081918100910361108132612080602",
+"010617090205045203052307040504150505215406060220070712440807223009080113100816321107192112071155",
+"010523020204104503060502040510120506035206060816070718340808041409080652100822101108010012071736",
+"010604450204163003061048040515590506093806061400070800190808095909081237100903571108065012072328",
+"010610350204221703061630040521380506151706061943070806050808155009081831100909521108124512080522",
+"010616300205041103052224040503310505210906060135070711570807214009080018100815351107182512071102",
+"010522100204095403060410040509180506025806060724070717480808033209080612100821291108002012071655",
+"010604040204154903061004040515120506084906061312070723330808091709081158100903191108061112072249",
+"010609580204214203061556040521030506143806061900070805190808150409081747100909091108120212080437",
+"010615420205032303052136040502430505202206060048070711120807205909072345100815081107180212071037",
+"010521420204092203060334040508420506022106060645070717060808024809080529100820501107234612071625",
+"010603340204151703060929040514340506080906061231070722510808083309081115100902371108053412072216",
+"010609260204210703061517040520180506135106061814070804370808142509081711100908361108113212080412",
+"010615220205030403052115040502180505195106060011070710320807201609072259100814211107171512070953",
+"010521010204084603060300040508060506014106060602070716210808020409080447100820111107230612071545",
+"010602540204143703060851040513560506073006061149070722060808074809081032100901561108045512072137",
+"010608480204203003061441040519440506131706061736070803530808133409081617100907411108103712080317",
+"010614260205020703052017040501200505185506052319070709410807192709072211100813341107162912070908",
+"010520160204075803060210040507140506004906060511070715310808011409080355100819161107221112071451",
+"010602010204134503060758040513010506063306061052070721100808065409080937100901011108035712072037",
+"010607450204192503061334040518360506120806061628070802510808124009081530100906581108095612080235",
+"010613410205012003051928040500280505180106052221070708420807182809072115100812411107153912070818",
+"010519250204070403060112040506130505234606060406070714270808001209080259100818271107212712071410",
+"010601190204130003060707040512040506053306060951070720110808055709080845100900141108031712072004",
+"010607170204185903061305040518010506112706061542070801590808114409081433100906021108090212080146",
+"010612570205003903051848040423460505171406052131070707500807173809072028100811581107145812070740",
+"010518510204063303060044040505450505231506060332070713470807233009080215100817431107204512071330",
+"010600430204122603060638040511390506050806060923070719360808051709080802100823301108023412071920",
+"010606310204181203061219040517170506104706061505070801240808111009081359100905301108083212080117",
+"010612280205000903051816040423140505164406052103070707230807170809071953100811191107141812070701",
+"010518120204055503060005040505050505223406060252070713110807225709080143100817091107200812071251",
+"010600020204114503060554040510520506041906060835070718540808044109080731100823021108020412071848",
+"010605580204173903061147040516440506101006061425070800430808102909081320100904511108075212080033",
+"010611400204231803051724040422220505155006052008070706290807161709071909100810421107134512070628",
+"010517350204051103052316040504130505214206060159070712180807220409080053100816241107192912071216",
+"010523280204110703060512040510060506033006060744070718000808034509080634100822061108011212071800",
+"010605130204165103061053040515440506090506061318070723380808092909081224100903591108070512072352",
+"010611030204224203051646040421390505150106051914070705320807152009071811100809441107124812070534",
+"010516450204042703052234040503290505205306060105070711190807210309072353100815271107183312071120",
+"010522330204101403060419040509120506023506060646070717000808024509080537100821131108002312071714",
+"010604280204160803061012040515040506082606061238070722520808083709081127100903011108060712072256",
+"010610080204214803051552040420450505140806051822070704400807142709071718100808511107115712070444",
+"010515560204033703052142040502370505200106060015070710320807201709072307100814401107174512071033",
+"010521480204093003060337040508310506015406060604070716190808020409080455100820291107233512071622",
+"010603340204151203060916040514080506073006061142070722000808075109081048100902271108053512072222",
+"010609310204210703051509040420020505132606051740070703590807134809071642100808181107112612070414",
+"010515240204030103052104040501560505191906052332070709490807193609072228100814051107171412071004",
+"010521180204085603060257040507440506010306060513070715300808011909080415100819551107230812071601",
+"010603170204145703060857040513440506070006061109070721240808071409081009100901481108045712072147",
+"010609000204204003051442040419310505125006051658070703130807130209071559100807381107104812070337",
+"010514490204022803052032040501240505184406052253070709060807185209072146100813251107163612070928",
+"010520430204082403060227040507180506003706060444070714560808003909080331100819091107222112071514",
+"010602270204140503060804040512520506061006061019070720350808062409080920100901001108041312072105",
+"010608180204195603051355040418430505120206051613070702310807121909071512100806491107095812070248",
+"010514020204014303051945040500340505175206052201070708160807180309072056100812331107154212070832",
+"010519460204072703060128040506150505233006060336070713510807234009080239100818211107213412071426",
+"010601400204131803060717040512040506052006060927070719410808053109080829100900111108032412072014",
+"010607240204190003051258040417450505110306051511070701260807111609071414100805561107091012070202",
+"010513140204004903051847040423330505165006052059070707130807170109071957100811401107145612070752",
+"010519080204064703060046040505300505224406060249070713020807224909080144100817261107204212071338",
+"010600540204123203060629040511110506042306060827070718410808043309080734100823191108023412071928",
+"010606430204182203051221040417050505101906051425070700400807103009071328100805111107082512070118",
+"010512330204001303051814040423020505161806052023070706340807162009071916100810581107141312070708",
+"010518240204060303060002040504460505215906060203070712140807220209080101100816471107200612071304",
+"010600200204115803060555040510390506035206060758070718120808040109080659100822421108015812071853",
+"010606080204174603051143040416270505094106051348070700030807095209071251100804331107074712070041",
+"010511550203233403051732040422170505153006051936070705500807153909071838100810221107133712070632",
+"010517480204052803052328040504120505212506060129070711410807213009080029100816141107193112071225",
+"010523380204111403060509040509510506030206060706070717200808031209080616100822051108012412071818",
+"010605290204170303051056040415380505085106051258070623140807090609071207100803551107071312070009",
+"010511230203225803051653040421340505144706051851070705050807145309071752100809381107125812070556",
+"010517130204045003052243040503200505202506060025070710370807202809072332100815221107184512071146",
+"010523040204104203060436040509120506021806060618070716300808022209080526100821151108003512071732",
+"010604490204162603051022040415020505080906051209070622190807080909071111100802591107061912062316",
+"010510320203221003051607040420480505135606051756070704040807135109071651100808401107120312070504",
+"010516220204040103052158040502390505194806052348070709560807194209072240100814281107175112071052",
+"010522090204094503060339040508170506012406060525070715360808012609080428100820161107233812071637",
+"010603540204153003050924040414020505071106051115070621290807072009071021100802081107052612062224",
+"010509410203212003051517040419580505130706051709070703220807131109071611100807571107111612070413",
+"010515300204030803052102040501400505184506052244070708550807184609072152100813441107170812071007",
+"010521220204085703060250040507270506003406060435070714480808004209080349100819421107230512071602",
+"010603150204144803050839040413170505062506051027070620400807063209070937100801291107045312062152",
+"010509070203204103051431040419070505121306051612070702240807121509071519100807131107104012070344",
+"010515040204024003052031040501050505180806052206070708170807180809072113100813061107163312070936",
+"010520550204083103060221040506530505235406060350070714000807235309080301100818571107222312071524",
+"010602420204141903050811040412450505054806050946070619570807054809070854100800481107041412062115",
+"010508330203201103051405040418430505114806051546070701540807114209071444100806371107100312070306",
+"010514260204020303051954040500280505173006052125070707310807172009072025100812201107155012070855",
+"010520160204075203060142040506150505231706060314070713250807231709080223100818161107214212071444",
+"010602020204133903050730040412040505050806050907070619180807050909070813100800041107032812062029",
+"010507470203192403051317040417510505105306051449070700570807104809071352100805461107091212070215",
+"010513340204011203051905040423390505164206052037070706460807163809071944100811391107150612070808",
+"010519240204065803060047040505190505222106060217070712270807222009080129100817271107205512071356",
+"010601110204124303050630040411020505040406050803070618150807040709070715100723121107024112061944",
+"010507010203183503051224040416560505095806051356070700070807095809071304100804591107082912070134",
+"010512550204003003051817040422440505153906051931070705390807153209071842100810411107141312070720",
+"010518410204061703060004040504310505212706060120070711290807212509080037100816361107200612071310",
+"010600280204120303050553040410240505032306050717070617260807031809070627100722251107015612061900",
+"010506170203175203051142040416130505091106051302070623080807085709071204100804041107073712070045",
+"010512070203234303051731040422020505150106051854070705010807145109071759100809591107133212070640"
+];
+
+const GAN = ["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"];
+const ZHI = ["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
+const GAN_WX = [0,0,1,1,2,2,3,3,4,4];       // 0木 1火 2土 3金 4水
+const ZHI_WX = [4,2,0,0,2,1,1,2,3,3,2,4];
+const GAN_YANG = [1,0,1,0,1,0,1,0,1,0];
+const ZHI_CANG = [
+  [[9,1]],                       // 子 癸
+  [[5,0.6],[9,0.3],[7,0.1]],      // 丑 己癸辛
+  [[0,0.6],[2,0.3],[4,0.1]],      // 寅 甲丙戊
+  [[1,1]],                        // 卯 乙
+  [[4,0.6],[1,0.3],[9,0.1]],      // 辰 戊乙癸
+  [[2,0.6],[6,0.3],[4,0.1]],      // 巳 丙庚戊
+  [[3,0.7],[5,0.3]],              // 午 丁己
+  [[5,0.6],[3,0.3],[1,0.1]],      // 未 己丁乙
+  [[6,0.6],[8,0.3],[4,0.1]],      // 申 庚壬戊
+  [[7,1]],                        // 酉 辛
+  [[4,0.6],[7,0.3],[3,0.1]],      // 戌 戊辛丁
+  [[8,0.7],[0,0.3]]               // 亥 壬甲
+];
+const WX_NAMES = ["木","火","土","金","水"];
+const WX_COLORS = ["#4d8b6a","#c0452c","#b08b3e","#9aa4ac","#2f5d80"];
+
+// 节气表外的天文回退
+function sunApparentLon(jd){
+  const T=(jd-2451545.0)/36525.0;
+  const L0=280.46646+36000.76983*T+0.0003032*T*T;
+  const M=(357.52911+35999.05029*T-0.0001537*T*T)*Math.PI/180;
+  const C=(1.914602-0.004817*T-0.000014*T*T)*Math.sin(M)+(0.019993-0.000101*T)*Math.sin(2*M)+0.000289*Math.sin(3*M);
+  const Om=(125.04-1934.136*T)*Math.PI/180;
+  let v=L0+C-0.00569-0.00478*Math.sin(Om);
+  v=((v%360)+360)%360; return v;
+}
+function jdFromDate(dt){
+  let y=dt.getUTCFullYear(), m=dt.getUTCMonth()+1;
+  const hh=dt.getUTCHours()+dt.getUTCMinutes()/60+dt.getUTCSeconds()/3600;
+  if(m<=2){y-=1;m+=12;}
+  const A=Math.floor(y/100), B=2-A+Math.floor(A/4);
+  return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+dt.getUTCDate()+B-1524.5+hh/24;
+}
+function solveTermFallback(year, lon){
+  const approx=[[1,6],[2,4],[3,6],[4,5],[5,6],[6,6],[7,7],[8,8],[9,8],[10,8],[11,7],[12,7]];
+  const idx=TERM_LON.indexOf(lon), md=approx[idx];
+  let lo=jdFromDate(new Date(Date.UTC(year,md[0]-1,md[1]-3,12)));
+  let hi=jdFromDate(new Date(Date.UTC(year,md[0]-1,md[1]+3,12)));
+  const f=(jd)=>{ const d=(sunApparentLon(jd)-lon+180)%360-180; return d<0?-1:1; };
+  for(let i=0;i<50;i++){ const mid=(lo+hi)/2; if(f(mid)<0) lo=mid; else hi=mid; }
+  const jd=(lo+hi)/2;
+  return new Date((jd-2440587.5)*86400000);
+}
+// 返回节气时刻：北京时间（UTC+8）
+function termInstant(year, idx){
+  if(year>=TERM_YEAR_START && year<TERM_YEAR_START+TERM_TABLE.length){
+    const s=TERM_TABLE[year-TERM_YEAR_START].substr(idx*8,8);
+    const mo=+s.substr(0,2), da=+s.substr(2,2), ho=+s.substr(4,2), mi=+s.substr(6,2);
+    return Date.UTC(year,mo-1,da,ho-8,mi);
+  }
+  const utc=solveTermFallback(year,TERM_LON[idx]);
+  return utc.getTime();
+}
+
+// 真太阳时：返回 {y,m,d,h,mi,offMin}
+function trueSolar(y,m,d,h,mi,lon,tz){
+  const instant=Date.UTC(y,m-1,d,h,mi)-tz*3600000;
+  const N=Math.floor((Date.UTC(y,m-1,d)-Date.UTC(y,0,1))/86400000)+1;
+  const g=2*Math.PI/365*(N-1+(h-12)/24);
+  const eot=229.2*(0.000075+0.001868*Math.cos(g)-0.032077*Math.sin(g)-0.014615*Math.cos(2*g)-0.040849*Math.sin(2*g));
+  const offMin=(lon-15*tz)*4+eot;
+  const clk=new Date(instant+tz*3600000+offMin*60000);
+  return {y:clk.getUTCFullYear(),m:clk.getUTCMonth()+1,d:clk.getUTCDate(),h:clk.getUTCHours(),mi:clk.getUTCMinutes(),
+          ss:clk.getUTCSeconds(),offMin,instant};
+}
+
+function dayIndex(y,m,d){
+  const days=Math.floor(Date.UTC(y,m-1,d)/86400000);
+  return ((2440588+days+49)%60+60)%60;
+}
+function tenGod(dayGan, otherGan){
+  const dw=GAN_WX[dayGan], ow=GAN_WX[otherGan];
+  const sameYin=GAN_YANG[dayGan]===GAN_YANG[otherGan];
+  if(ow===dw) return sameYin?"比肩":"劫财";
+  if((dw+1)%5===ow) return sameYin?"食神":"伤官";     // 我生
+  if((dw+2)%5===ow) return sameYin?"偏财":"正财";     // 我克
+  if((dw+3)%5===ow) return sameYin?"七杀":"正官";     // 克我
+  return sameYin?"偏印":"正印";                        // 生我
+}
+function calcBazi(y,m,d,h,mi,lon,tz){
+  const ts=trueSolar(y,m,d,h,mi,lon,tz);
+  // 节气定位
+  const edges=[];
+  for(const yy of [y-1,y,y+1]) for(let i=0;i<12;i++) edges.push({yy,i,t:termInstant(yy,i)});
+  edges.sort((a,b)=>a.t-b.t);
+  let li=-1; for(let i=0;i<edges.length;i++){ if(edges[i].t<=ts.instant) li=i; }
+  const last=edges[li], next=edges[li+1];
+  // 年柱：以立春为界
+  let solarYear;
+  const lichun=termInstant(y,1);
+  solarYear = ts.instant < lichun ? y-1 : y;
+  if(ts.instant>=termInstant(y+1,1)) solarYear=y+1;
+  const yGan=((solarYear-4)%10+10)%10, yZhi=((solarYear-4)%12+12)%12;
+  // 月柱：节气名 -> 月支序
+  const idxToZhi=[1,2,3,4,5,6,7,8,9,10,11,0];        // 小寒=丑,立春=寅,...大雪=子
+  const mZhi=idxToZhi[last.i];
+  const mOrder=((mZhi-2)+12)%12+1;                    // 寅月=1
+  const mGan=((2*yGan+2+(mOrder-1))%10+10)%10;
+  // 日柱：23点后算次日
+  let dy=y, dm=m, dd=d;
+  if(ts.h>=23){ const nx=new Date(Date.UTC(ts.y,ts.m-1,ts.d+1)); dy=nx.getUTCFullYear(); dm=nx.getUTCMonth()+1; dd=nx.getUTCDate(); }
+  else { dy=ts.y; dm=ts.m; dd=ts.d; }
+  const dIdx=dayIndex(dy,dm,dd);
+  const dGan=dIdx%10, dZhi=dIdx%12;
+  const hZhi=Math.floor((ts.h+1)/2)%12;
+  const hGan=((dGan*2+hZhi)%10+10)%10;
+  const pillars=[{g:yGan,z:yZhi},{g:mGan,z:mZhi},{g:dGan,z:dZhi},{g:hGan,z:hZhi}];
+  return {
+    ts, pillars, solarYear, monthStart:last, nextTerm:next, dIdx,
+    gz: pillars.map(p=>GAN[p.g]+ZHI[p.z]),
+    tsText: `${ts.y}-${String(ts.m).padStart(2,"0")}-${String(ts.d).padStart(2,"0")} ${String(ts.h).padStart(2,"0")}:${String(ts.mi).padStart(2,"0")}`,
+    offMin: ts.offMin
+  };
+}
+function elemScores(pillars){
+  const w=[10,10,0,10];          // 年干 月干 日干(不计) 时干
+  const zw=[10,36,12,12];        // 年支 月支 日支 时支
+  const s=[0,0,0,0,0];
+  for(let i=0;i<4;i++){
+    if(i!==2 && pillars[i].g!==undefined) s[GAN_WX[pillars[i].g]]+=w[i];
+    for(const c of ZHI_CANG[pillars[i].z]) s[GAN_WX[c[0]]]+=zw[i]*c[1];
+  }
+  return s;
+}
+
+const LU_Y0=1920;
+const LU_INFO = [
+  59680,53840,53973,42336,11104,109908,27968,60048,62626,59680,
+  27238,21168,42352,103781,46496,27968,95763,29840,110903,43312,
+  21168,86454,43728,22176,121428,47680,46224,54450,43344,43735,
+  21344,43728,109733,23328,55888,125475,54432,22872,43376,21856,
+  22358,44368,27936,30036,59984,25760,25843,43440,44455,22176,
+  46736,47909,46368,45648,45748,42160,43704,10960,22224,88726,
+  55952,55584,59732,53840,58586,42336,11104,12118,27984,60048,
+  62757,59680,53856,21219,42352,44392,13728,27984,46741,29840,
+  26928,43444,21168,42416,43746,22176,56663,47680,46224,54581,
+  43344,21200,21972,43856,47785,23840,55888,125094,54432,51536,
+  43492,21856,43856,44450,27936,30294,29264,25776,25973,51888,
+  21920,22243,46736,62763,46368,45648,118966,42160,19120,11189,
+  23248,46752,55970,55584,59991,53840,42320,107733,19296,23376,
+  93475
+];
+const LU_NY = [
+  2422375,2422729,2423083,2423467,2423821,2424175,2424560,2424914,2425269,2425653,
+  2426007,2426390,2426744,2427099,2427483,2427838,2428192,2428576,2428930,2429314,
+  2429668,2430022,2430406,2430761,2431115,2431500,2431854,2432208,2432592,2432946,
+  2433330,2433684,2434039,2434423,2434777,2435132,2435516,2435870,2436253,2436608,
+  2436962,2437346,2437701,2438055,2438439,2438794,2439147,2439531,2439886,2440270,
+  2440624,2440979,2441363,2441717,2442071,2442455,2442809,2443193,2443547,2443902,
+  2444286,2444641,2444995,2445379,2445733,2446117,2446471,2446825,2447209,2447564,
+  2447919,2448303,2448657,2449011,2449394,2449749,2450133,2450487,2450842,2451226,
+  2451580,2451934,2452318,2452672,2453027,2453411,2453765,2454150,2454504,2454858,
+  2455242,2455596,2455950,2456334,2456689,2457073,2457427,2457782,2458166,2458520,
+  2458874,2459258,2459612,2459967,2460351,2460705,2461089,2461443,2461797,2462181,
+  2462536,2462890,2463274,2463629,2464013,2464367,2464721,2465105,2465459,2465813,
+  2466197,2466552,2466907,2467291,2467645,2468029,2468383,2468737,2469121,2469475,
+  2469830
+];
+
+/* ---------- 农历 → 公历 ---------- */
+function luMonthLen(y,m,leap){
+  const i=y-LU_Y0;
+  if(i<0||i>=LU_INFO.length) return 0;
+  const inf=LU_INFO[i];
+  return leap ? (((inf>>16)&1)?30:29) : (((inf>>(3+m))&1)?30:29);
+}
+function luLeapMonth(y){
+  const i=y-LU_Y0;
+  if(i<0||i>=LU_INFO.length) return 0;
+  return LU_INFO[i]&15;
+}
+function luToSolar(y,m,d,leap){
+  const i=y-LU_Y0;
+  if(i<0||i>=LU_INFO.length) return null;
+  const inf=LU_INFO[i], lm=inf&15;
+  if(leap&&lm!==m) return null;
+  if(d<1||d>luMonthLen(y,m,leap)) return null;
+  let off=0;
+  if(leap){
+    for(let k=1;k<=m;k++) off+=luMonthLen(y,k,false);
+  }else{
+    for(let k=1;k<m;k++){
+      off+=luMonthLen(y,k,false);
+      if(lm===k) off+=luMonthLen(y,k,true);
+    }
+  }
+  const j=LU_NY[i]+off+(d-1);
+  const dt=new Date((j-2440588)*86400000);
+  return {y:dt.getUTCFullYear(),m:dt.getUTCMonth()+1,d:dt.getUTCDate()};
+}
+
+function solarToLunar(y,m,d){
+  const j=2440588+Math.floor(Date.UTC(y,m-1,d)/86400000);
+  let i=-1;
+  for(let k=0;k<LU_NY.length-1;k++) if(LU_NY[k]<=j&&j<LU_NY[k+1]){i=k;break}
+  if(i<0) return null;
+  let rest=j-LU_NY[i];
+  const yy=LU_Y0+i, lm=LU_INFO[i]&15;
+  for(let mm=1;mm<=12;mm++){
+    const len=luMonthLen(yy,mm,false);
+    if(rest<len) return {y:yy,m:mm,d:rest+1,leap:false};
+    rest-=len;
+    if(lm===mm){
+      const ll=luMonthLen(yy,mm,true);
+      if(rest<ll) return {y:yy,m:mm,d:rest+1,leap:true};
+      rest-=ll;
+    }
+  }
+  return null;
+}
+
+// ================= 内容数据 =================
+const ARCH = [
+ {
+  "n": "山巅立木",
+  "en": "RIDGE PINE",
+  "img": "松",
+  "core": "风从谷底起，你向破晓生。",
+  "strong": "你的骨子里有一股不肯服输的倔强，天生就是要往高处走的。别人觉得你硬扛，其实你只是不愿在低处将就。哪怕被现实折断过几次枝桠，你那深深扎在石头缝里的根，也绝不会松动半分。",
+  "mid": "你活得很通透，该长的时候绝不退缩，该蛰伏时也能坦然低头。这种能屈能伸的分寸感，是你行走世间最好的护身符。",
+  "weak": "你并不喜欢张扬，更多时候是沉默着往下扎根。不争一时的风光，只求在风雨来临时，自己能有一个立得稳的底盘，哪怕只弯不折。",
+  "gift": "定力。当周围人都在追着风向跑的时候，你往往能一个人死死钉在原地，熬到出头的那天。",
+  "shadow": "你太容易活成一座丰碑了。身边的人全指望你遮风挡雨，把你当成了不会累的机器，可你自己心里那点脆弱，却死活找不到人说。",
+  "line": "阴影终会退散，但高山之巅的脊梁，永远立着。",
+  "doing": "你做事习惯先从高处看：先把大方向定死，再去抠细节。一旦没人敢拍板，通常都是你站出来把锅扛下来。代价就是你太懒得解释，别人只看到你顶风逆行的结果，不知道你在背后推演了多少步。",
+  "bond": "你不太懂怎么跟人客套，只会把该担的责任直接扛起来。时间长了，大家都默认你最坚强；真正能走进你心里的人不多，可一旦认定了，那就是能处十年的过命交情。"
+ },
+ {
+  "n": "绕树柔枝",
+  "en": "CLIMBING VINE",
+  "img": "藤",
+  "core": "不争一时的直，只求一生的韧。",
+  "strong": "你看着好说话，心里其实比谁都有盘算。深知这世道的生存法则，知道什么时候该借力，什么时候该弯腰。旁人以为你没脾气，其实你只是把劲都暗暗使在了刀刃上。",
+  "mid": "你的适应力惊人。总能在别人的规矩里游刃有余，不声不响地，就把自己长成了那个环境里再也缺不得的角色。",
+  "weak": "你太懂得顺势而为了，常常是绕着绕着，就绕到了高处。只是跟别人绑得太紧，有时候你会觉得，想抽身退步都难。",
+  "gift": "敏锐。你像长了雷达一样，能一眼看清局势的缝隙，然后精准地渗进去。",
+  "shadow": "你太容易活在别人的期待里了。一直顺着别人的话去长，等某天回过神来，连你自己都分不清，哪个是真正的你，哪个只是为了讨人喜欢才长出来的影子。",
+  "line": "那些你以为绕不过去的高墙，最后都成了你向上的阶梯。",
+  "doing": "你做事从来不硬碰硬，先看形势再动。别人直愣愣往前撞，你绕个弯找那道缝，往往比对方先到。只是每一步都借了别人的势，夜深人静的时候，你偶尔也会犯嘀咕：这些究竟算不算我自己的真本事。",
+  "bond": "跟你相处很舒服，因为你总能顺着别人的意去说，也懂在关键时刻轻轻推一把。你极少跟人起正面冲突，但那些憋在肚子里的不满，就像藤蔓一样越缠越紧，直到某天你终于觉得喘不过气。"
+ },
+ {
+  "n": "正午之日",
+  "en": "NOON SUN",
+  "img": "日",
+  "core": "光至盛时，便无惧身后影长。",
+  "strong": "你是个藏不住事的人，爱恨全写在脸上。一件本来悬着的事，只要被你定下调子，周围人就有了主心骨。你讨厌藏着掖着，活得炽烈又坦荡。",
+  "mid": "你身上有光，但也不刺人。知道什么时候该出风头，什么时候该把舞台让给别人，这份克制是你阅历的证明。",
+  "weak": "你的火气都是向内烧的。怕烫着别人，更怕别人根本不在意，所以常常用一副漫不经心的样子，掩饰着心里那团其实很渴望被看见的火。",
+  "gift": "感染力。只要你在那个场子里，不管多晦暗的气氛，总能被你挑出一丝希望来。",
+  "shadow": "你烧得太快，也太需要别人的回应了。要是付出的热情长期丢进黑洞里没声响，你就会忍不住自我怀疑，觉得是不是自己早就不亮了。",
+  "line": "你的坦荡是破绽，可那也是你照亮这世界的唯一方式。",
+  "doing": "你做事情全靠那股冲动。想通了立马点火，边跑边修轮子。你最烦那种为了一件小事在会议室里来回拉扯。你推进得快，熄火也快；一旦中途没人给你递柴火，那团火气就会自己咽回肚子里。",
+  "bond": "你待人永远是亮堂堂的：先把心掏出来，先对人好，把话说在明面上。别人觉得一眼就能看透你，其实你只是把最安全的那一面摊给了太阳，剩下那些阴暗面的情绪，全是你一个人在深夜里慢慢消化掉的。"
+ },
+ {
+  "n": "长夜之烛",
+  "en": "NIGHT CANDLE",
+  "img": "烛",
+  "core": "不问前路明暗，只管燃尽这一寸夜。",
+  "strong": "你身上有一种能熬的特质。别人觉得枯燥乏味的细枝末节，你能耐着性子一点点抠到极致，最终在自己那一小片天地里，发出谁都无法替代的光。",
+  "mid": "你的温度刚刚好。不灼人，但靠近你的人，总会不知不觉卸下伪装，觉得待在你这儿很踏实。",
+  "weak": "你把光压得太小了，生怕晃着别人的眼。大家全夸你懂事、体贴，可没人知道，你心里那片荒原，其实也盼着有人能来给你点一把火。",
+  "gift": "温度。再平凡不过的日子，到你手里，总能被熬出一股子动人的烟火气。",
+  "shadow": "你太舍不得消耗自己了。总是先去照亮别人，替别人操心，等到自己没电了，还要怪自己不够亮。",
+  "line": "哪怕微弱如豆，你也是刺破长夜的唯一光源。",
+  "doing": "你是个干细活的高手。别人嫌弃太慢不愿意磨的事，你能一寸一寸地死磕出光来。你不太擅长去开局破冰，但要是把一件开了头的事交给你，你绝对能做到别人无可替代。碰到急事你容易慌乱，但在慢节奏里，你最稳。",
+  "bond": "你在人堆里话不多，但谁对什么过敏、谁最近家里出了点事，你心里门儿清。你给别人的关心总是不动声色的；等轮到自己心寒了，也死活不愿意张口说。"
+ },
+ {
+  "n": "不动之山",
+  "en": "STANDING MOUNTAIN",
+  "img": "山",
+  "core": "不言不语，自成一个宇宙的依靠。",
+  "strong": "你稳得让人害怕。哪怕旁边的天都要塌了，你还能冷静地算着撤退的路线。别人跑得没影了，你就是最后那道死死挡住的墙。",
+  "mid": "你能立得住，也不死板。知道什么时候该咬牙硬撑，什么时候该和光同尘，把担子交给你，最让人放心。",
+  "weak": "你的稳，是硬生生咬牙撑出来的。表面看着风平浪静，心里其实一直在跟快要崩塌的压力抗衡，只是你习惯了咬碎了牙往肚里咽。",
+  "gift": "承载。在这个谁都想找个依靠的世界里，你天生就是一张能接住所有人的网。",
+  "shadow": "把什么都往自己肩上扛，久了就真动弹不得了。你替所有人把责任揽下，累得半死也不吭声，到最后，那些体谅全变成了别人眼里的理所当然。",
+  "line": "你替所有人挡下了八面来风，可风也一直在割你的脸。",
+  "doing": "你干事情讲究个根基稳。一定要先把地基打扎实了，再一层层往上盖。别人急着抢跑你也不眼红，因为你见过太多跑太快的楼塌了。你的软肋在于，有时候为了打地基，你会把不动当成了拖延的借口。",
+  "bond": "你就是那种大家嘴里“有事找我”的老好人。谁把重担丢给你，你都能接得稳稳当当，但也接得太久了。时间一长，人家觉得这是你该干的，而你，也早忘了怎么去开口纠正。"
+ },
+ {
+  "n": "细作之田",
+  "en": "TENDED FIELD",
+  "img": "田",
+  "core": "低头深耕，把日子一寸寸种出繁华。",
+  "strong": "你是那种能在泥潭里理出头绪的人。再烂的摊子交到你手里，你都能不声不响地，把它收拾成一套舒舒服服的秩序。",
+  "mid": "你平时不显山不露水，却是那个真正稳住大局的人。哪里有坑要填，哪里该等一等，你心里比谁都明白。",
+  "weak": "你太会照顾人了。一门心思扑在别人身上，甚至把自己都给忘了，其实你也需要有人来给你这片田浇浇水。",
+  "gift": "落地。别人都在仰着头找月亮，只有你低着头，一步一个脚印地种出了活下去的六便士。",
+  "shadow": "体贴一旦成了你的下意识，怨气就偷偷长出来了。你心里其实有委屈，可就是拉不下脸说，最后全憋烂在肚子里。",
+  "line": "你的温柔是有重量的，只是别人以为那叫泥土，可以随意踩踏。",
+  "doing": "你是个能迅速把混乱归理的人。谁该干什么、什么节点必须交差、哪里容易出岔子，你脑子里有一张清晰的表。你不喜欢假大空，就喜欢看着一地鸡毛被收拾得干干净净，更享受这份清爽是你亲手打理出来的。",
+  "bond": "你照顾人全凭实际行动：帮人带饭、替人垫钱、把那些别人想不到的细节全给安排妥当。你极少开口说“我也需要你”，于是那些咽下去的委屈，一点一点攒成了心结。"
+ },
+ {
+  "n": "出鞘之刃",
+  "en": "DRAWN BLADE",
+  "img": "刃",
+  "core": "出鞘即是决断，何须多言。",
+  "strong": "你身上有一股不容置疑的狠劲。做事从来不拖泥带水，哪怕走错了路，你也宁可挥刀断臂重新来过，也绝对不跟谁耗着磨洋工。",
+  "mid": "你有锋芒，也有刀鞘。知道什么时候该藏起刺，什么时候该一刀见血。",
+  "weak": "你的锋芒藏得极深。多数时候，你选择了缄默，但这绝非退缩，而是因为拔刀需要付出的代价，你心里太清楚。",
+  "gift": "斩断。再乱成一团麻的破事，到了你手里，两三下就能劈出真相。",
+  "shadow": "你做事太麻利了，有时候会让人感觉像个冷血的机器。你处理完问题转身就走，完全没意识到别人还愣在原地没反应过来。",
+  "line": "你的无情，替这世间省下了太多无谓的纠缠。",
+  "doing": "你做事就图一个“准”字：判断快，下手稳，绝对不留烂尾巴。你宁可当时疼，也绝不忍受钝刀子割肉的折磨。旁边人跟不上你的节奏，觉得你心狠；其实你只是一早就把该犹豫的都犹豫完了。",
+  "bond": "你跟人打交道不绕弯子，习惯把丑话说在前头，因此看起来特别硬。你的心软，全都藏在你替人办完的事情里了——活儿都干了，却死活憋不出一句好听的软话。"
+ },
+ {
+  "n": "琢玉之手",
+  "en": "JADE CARVER",
+  "img": "玉",
+  "core": "宁可碎于雕琢，绝不粗粝地活。",
+  "strong": "你眼毒，手也稳。别人压根看不出来的瑕疵，你一眼就能钉住，而且你骨子里那股强迫症，绝不容许自己凑合糊弄。",
+  "mid": "你平时不争不抢，但心里始终悬着一把极准的尺子。一件东西好赖，你扫一眼就心里有数了。",
+  "weak": "你的标准高得吓人，这把刀往往第一下就砍向自己。有些事你宁可不做，也绝对不会把连自己都嫌弃的半成品拿出来丢人。",
+  "gift": "审美与分寸。你的厉害之处，往往要在真的分出高下时，才会被大家惊叹。",
+  "shadow": "挑剔这把刀，割伤最深的总是你自己。你对外人客客气气，对自己却下着死手，一点后路都不留。",
+  "line": "你磨去的都是瑕疵，留下的，全是傲骨。",
+  "doing": "你心里有一杆秤。别人觉得交八分活就能拿钱走人，你非要抠那两分哪里不对劲。这让你做出了好东西，但也把你害惨了：过不了自己心里那道坎，你就迟迟不肯交东西。",
+  "bond": "你待人接物有分寸，但也挑剔。别人的糙你能忍，自己的一点不完美你忍不了。所以外人总觉得你脾气真好，只有你自己清楚，你在心里把自己折磨成什么样了。"
+ },
+ {
+  "n": "不系之舟",
+  "en": "UNMOORED BOAT",
+  "img": "舟",
+  "core": "百转千回，不改赴海之志。",
+  "strong": "你天生不受拘束。小池塘养不住你，困久了你就枯了；只有换个城市，换个活法，你才能翻腾起属于自己的大浪。",
+  "mid": "把你丢到哪，你都能迅速重新扎根。这股在哪都能活命的适应力，就是你最牛的本钱。",
+  "weak": "你心里的水一直是暗流涌动的。表面看着不动声色，其实你早就把局势看透了，一般人的通透，根本不及你一半。",
+  "gift": "洞察。你特别擅长把两件八竿子打不着的事连在一起，看到别人压根看不破的局。",
+  "shadow": "随性过了头。答应人家的事一拍脑门就应了，兴致一过退得比谁都快，最后手里全是一堆开了头、没结尾的烂尾楼。",
+  "line": "你以为你在漂泊，其实你一直在奔赴属于自己的海。",
+  "doing": "你做事靠的是一股大势，根本不鸟什么死板的规章制度。只要给你一片能折腾的水，你就能趟出一条新路；可要是把你死死拴在木桩上，你一天比一天憋屈。你天生擅长开局，至于怎么收尾，往往得有人在后边踢你一脚。",
+  "bond": "你交朋友大气，聚得快，散得也快。你最讨厌被人逼问“咱俩到底算什么”，你更喜欢用一段同行的路来证明。旁人觉得抓不住你，倒不是你无情，是你骨子里就怕被死死钉在一个位置上。"
+ },
+ {
+  "n": "夜行之露",
+  "en": "NIGHT DEW",
+  "img": "露",
+  "core": "润物无声，惊艳只在黎明前。",
+  "strong": "你的直觉准得可怕。常常是风吹草动还没起，你就已经闻到了这局里变天的味道。",
+  "mid": "你很敏锐，而且能保持清醒。你知道哪些感觉是真的该防备，哪些只是自己吓自己。",
+  "weak": "你想得太深了。事情还没发生，你已经在脑子里翻来覆去演了一百遍。旁人看你好端端的，其实你早已心力交瘁。",
+  "gift": "通灵。别人话里藏着的弦外之音，你一耳朵就能听明白。不用觉得这是个魔咒，这是老天给你的天赋。",
+  "shadow": "可怕的自我内耗。总是把“可能”当成了“一定”，把自己活活耗死在了那些根本没发生的焦虑里。",
+  "line": "你的直觉往往是最准的，你只是，从来不敢太相信自己。",
+  "doing": "你动手之前，脑子里一定要先把所有步骤过一遍。别人看你在那发呆，其实你已经推演了好几种可能。你的判断大多是对的，但这代价就是，事情还没干，你先把自己耗没了一半的力气。",
+  "bond": "你总能听懂别人那些欲言又止的心里话，所以大家都爱靠近你。但真正能走进你心里的却寥寥无几。你习惯把情绪咽得极深，外人以为你大度不计较，其实你只是怕给别人惹麻烦。"
+ }
+];
+
+
+const TEN_GOD_GROUP = {
+  bj:{
+    label: '同行者',
+    read: '你的劲儿，一半是自己给的，一半是被周围人“逼”出来的。一个人待着容易没心气儿，要是有一帮人并肩，你立刻就能满血复活。你享受博弈的快感，但真正耗干你的，往往不是外部的强敌，而是夜深人静时，你在心里暗自跟人比较的那点不甘心。',
+    tip: '别总盯着别人的步子。试着把那个你最想超越的“假想敌”，变成能一起坐下来喝杯酒的同伴。'
+  },
+  ss:{
+    label: '表达者',
+    read: '你身体里像装了个高压锅，总憋着一股想往外掏的劲儿。不管是写东西、说话、做饭还是做设计，你必须得有个出口。你脑子里有太多奇思妙想，如果长期憋着不输出、没人欣赏，你会从内而外地觉得干瘪，甚至憋出内伤。',
+    tip: '别等什么完美时机了。给自己凿个固定的出口，发个朋友圈、写篇日记都好，哪怕每星期只倒出来一点点，心里也会痛快很多。'
+  },
+  cai:{
+    label: '经营者',
+    read: '你对“价值”有一种天生的敏锐度。不管是时间、精力还是金钱，你习惯把它们花在刀刃上。你讨厌虚头巴脑的画大饼，比起天花乱坠的承诺，你更看重实实在在的结果和体验。别人可能觉得你太务实，但这其实是你对这个世界的清醒认知，也是你极强的落地与承载能力。',
+    tip: '搞效率固然好，但人毕竟不是程序。偶尔试着关掉脑子里的“投入产出比”雷达，允许自己去浪费一点时间，做点毫无功利心的事。把亲密关系当成风景去体验，而不是当成项目去经营。'
+  },
+  gs:{
+    label: '守序者',
+    read: '你心里始终绷着一根弦，对自己有要求，也习惯了去扛别人的期待。有些压力确实能推着你往前走，让你比同龄人更靠谱；但最可怕的是，你很容易把外界给的“规矩”，慢慢内化成审判自己的枷锁。达不到要求，你第一个不放过自己。',
+    tip: '把脑子里那句沉重的“我必须做好”，试着换成轻松的“我想要试试”。允许自己偶尔掉个链子，天塌不下来。'
+  },
+  yin:{
+    label: '学习者',
+    read: '你不打无准备之仗。非得在脑子里把前因后果、各种可能全沙盘推演一遍了，才肯迈出那一步。知识、思考、做计划，是你安全感的来源；但这往往也是个陷阱，让你在“永远在准备、迟迟不行动”的怪圈里，眼睁睁看着机会溜走。',
+    tip: '给自己定个不讲理的死线。先开枪，后瞄准，逼自己先干起来，这比让你再读十本书都管用。'
+  }
+};
+const STRENGTH = {
+  strong:{tag:'外放',note:'能量足，扛得住，但也容易死扛'},
+  mid:{tag:'弹性',note:'进退都有余地，不偏激'},
+  weak:{tag:'内收',note:'靠借力，靠环境，也靠时机'}
+};
+const SUPPLY = [
+ {wx:'木',color:'青绿',season:'春',time:'05:00–07:00',dir:'东方',
+  habit:'每天给自己留二十分钟，做一件能“生长”的事：哪怕只是读几页书、练练字、或者侍弄一下阳台那盆快枯的植物。长期的东西，得切成每天能干的一点点。',
+  warn:'木最怕停。在同一个地方重复久了，你先是不爱说话，然后开始烦躁，最后恨不得把眼前的一切都推翻重来。'},
+ {wx:'火',color:'朱红',season:'夏',time:'11:00–13:00',dir:'南方',
+  habit:'把你的东西拿出来见见人。一周至少弄一次：发个朋友圈、公开讲几句、或者演一次，就算底下只有三个人，你也得动起来。',
+  warn:'火最怕憋。太久没人回应，你就会开始给自己洗脑，觉得我本来就该待在黑咕隆咚的角落里。'},
+ {wx:'土',color:'土黄',season:'长夏',time:'13:00–15:00',dir:'中部',
+  habit:'把作息和存款都给固定死：几点起、每个月必须存多少、在哪吃饭。你心里那份踏实感，就是这么一点点攒出来的。',
+  warn:'土最怕漂。生活里变数一多，你心里那点底气马上就被抽干了。'},
+ {wx:'金',color:'月白',season:'秋',time:'17:00–19:00',dir:'西方',
+  habit:'学会做减法：这一周狠下心砍掉一件没必要的事，把该守的边界清清楚楚说出来。少揽一件事，心里就宽敞一分。',
+  warn:'金最怕乱。事情一多、规矩一变，你就容易暴躁，恨不得把周围的人全推开。'},
+ {wx:'水',color:'深蓝',season:'冬',time:'21:00–23:00',dir:'北方',
+  habit:'让自己动起来。换条路下班，换个地方住一段，或者找一帮完全不同的人聊聊天。水要是老不流动，是会发臭的。',
+  warn:'水最怕困。在同一个池子里泡太久，脑子先僵化，然后热情就全没了。'}
+];
+// 地支性格短语
+const CITIES = [
+ {n:'杭州',wx:[0,4],pace:'slow',scene:'mixed',b:'温润体面，又留着一层恰到好处的距离感'},
+ {n:'成都',wx:[0,2],pace:'slow',scene:'mixed',b:'日子慢得理直气壮，允许你偶尔停步喘口气'},
+ {n:'厦门',wx:[4,0],pace:'slow',scene:'nature',b:'海风与小岛把日子拉长，连时间都跟着慢下来'},
+ {n:'苏州',wx:[0,4],pace:'slow',scene:'mixed',b:'精细入骨，是那种需要慢工才能养出来的讲究'},
+ {n:'南京',wx:[0,4],pace:'slow',scene:'mixed',b:'文气与安静之下，其实藏着一股不甘平庸的野心'},
+ {n:'大理',wx:[0,4],pace:'slow',scene:'nature',b:'在山水之间，把原本黏稠的生活一点点调稀'},
+ {n:'昆明',wx:[0,2],pace:'slow',scene:'nature',b:'四季都不着急催人，连风都是温和的'},
+ {n:'青岛',wx:[4,3],pace:'slow',scene:'nature',b:'海风吹得很开，人与人之间的边界也干净清爽'},
+ {n:'大连',wx:[4,3],pace:'slow',scene:'nature',b:'港口城市的开阔里，透着一点冷调的气质'},
+ {n:'哈尔滨',wx:[4,3],pace:'slow',scene:'mixed',b:'冷冽与宽阔逼人清醒，连犹豫都显得多余'},
+ {n:'天津',wx:[4,3],pace:'slow',scene:'urban',b:'市井里透着幽默，把日子过得不那么沉重'},
+ {n:'西安',wx:[2,3],pace:'slow',scene:'mixed',b:'厚重的历史压在这里，轻易容不下那些浮躁'},
+ {n:'广州',wx:[1,0],pace:'mid',scene:'urban',b:'湿热里裹着实在的烟火气，生活得极其具体'},
+ {n:'重庆',wx:[1,2],pace:'mid',scene:'urban',b:'陡峭的层次里，藏着毫不掩饰的热烈与分明'},
+ {n:'武汉',wx:[4,1],pace:'mid',scene:'urban',b:'扑面而来的江湖气，直率爽快，透着一股子豪迈'},
+ {n:'长沙',wx:[1],pace:'mid',scene:'urban',b:'夜长人更热闹，空气里都是极高的情绪浓度'},
+ {n:'郑州',wx:[2],pace:'mid',scene:'urban',b:'中原枢纽的底色，凡事讲究个脚踏实地与实实在在'},
+ {n:'宁波',wx:[4,2],pace:'mid',scene:'mixed',b:'低调务实的沿海城市，靠海吃海，踏实安稳'},
+ {n:'北京',wx:[3,2],pace:'fast',scene:'urban',b:'格局极大，这里的秩序和风一样凛冽硬朗'},
+ {n:'上海',wx:[4,3],pace:'fast',scene:'urban',b:'规矩清楚，体面与效率在这个城市里严丝合缝'},
+ {n:'深圳',wx:[1,0],pace:'fast',scene:'urban',b:'年轻的城市只管速度，没人问你的来处'},
+ {n:'香港',wx:[4,3],pace:'fast',scene:'urban',b:'密不透风的钢铁森林，有着极强且清晰的边界感'}
+];
+
+const WX_CITY_NOTE = [
+ '此地草木繁盛，藏着一股破土向上的生发之气。在这里，你不必刻意用力，一切都会顺着自然的规律向光生长。',
+ '这里的光照与烟火一样明朗。若你心头正蒙着灰，这方水土的温度，自会将你从幽暗中托起，重新点燃眼里的光。',
+ '此地有一种不动声色的包容。日子过得绵密而安宁，无论你心里悬着多大的风浪，落在这片踏实里，总能生出妥帖的归属。',
+ '此地的秩序感极好，透着一股清冽的界线分明。在这里，你不必费力去剖白自己，人与人之间自有一份互不侵扰的体面。',
+ '此地水汽温润，暗藏着灵动的流转。你若觉得思绪郁结，来这儿的水边走走，那些想不通的结，自会随着波光悄然化开。'
+];
+const ZHI_TRAIT = [
+ '心思机敏却深藏不露。习惯在暗处洞悉一切，鲜少主动将自己推至聚光灯下。', // 子
+ '极沉得住气，生性慢热。可一旦真正认准了方向，便如老牛犁地般倔强，八风也吹不动。', // 丑
+ '开局时锐不可当，天生擅长破局开路。只是冲得太猛，往往到了收尾阶段，便容易显出几分乏力。', // 寅
+ '天生有着极挑剔的审美，对氛围与细节感知惊人。最容不下的，便是敷衍了事与粗糙将就。', // 卯
+ '胸中有丘壑，能同时承托诸多繁杂。只是习惯将心事沉入深潭，凡事默默咽下，不轻易与人言说。', // 辰
+ '思绪极为迅捷，透着几分锐利。只是那份锋芒偶尔会不经意刺到旁人，且极易陷入过度的思虑之中。', // 巳
+ '性情热烈坦荡，毫无掩饰。情绪犹如夏日的骤雨，来时轰轰烈烈，退去后也干脆利落。', // 午
+ '极重人情，心思细腻，总能妥帖地顾及旁人。骨子里念旧，心里有一方属于过去的温床。', // 未
+ '崇尚极致的效率与干脆。做事雷厉风行，最受不了那种瞻前顾后、拖沓不决的做派。', // 申
+ '对事物有着极高的标尺，近乎苛求。最无法忍受的，便是那种得过且过的将就。', // 酉
+ '心中横着不可逾越的底线。极重一诺千金的义气，但也恩怨分明，绝不轻易释怀。', // 戌
+ '心胸开阔，目光辽远。只是情绪的余波退得很慢，常常在决断的边缘反复拉扯，暗自消耗。' // 亥
+];
+const CHONG_TRAIT = {
+ '子午':'想安安稳稳过日子和想折腾出一番大动静，这两种念头在你身上同时存在，所以你老是觉得在一个地方待不住，可真要走，又舍不得',
+ '丑未':'你总是在“再等等看”和“现在就走”之间来回拉扯，哪怕做一个决定，也得翻来覆去纠结两遍',
+ '寅申':'你干活的起手式和收尾完全像两个人：开头猛得不行，收尾却烦得要命',
+ '卯酉':'你对细节的强迫症，和你对效率的极度渴望，这俩事在你脑子里天天打架，往往只能保一个',
+ '辰戌':'你心里有两套标准，一套用来衡量别人，另一套却更狠地抽在自己身上',
+ '巳亥':'脑子和身体老是不同步，想的事情永远比实际干出来的多'
+};
+const LIUHE_TRAIT = {
+ '子丑':'你就像泥土里兜着水，心里想法很多，而且都能稳稳当当落在地上',
+ '寅亥':'又想出去打拼闯荡，又想赶紧回家求安稳，这两股劲在你身上居然能和平共处',
+ '卯戌':'你的心软外面套着一层硬壳，只有跟你特别熟的人，才能看到你里面的样子',
+ '辰酉':'在你身上，务实和讲究根本是一码事，你做出来的东西，永远比你嘴上说的还要好',
+ '巳申':'你的锋利是包裹起来的，除非被逼到无路可退的墙角，你才会亮剑',
+ '午未':'热火和稳重互相抵消了，所以你看起来，总比你实际的热度要温和得多'
+};
+const GEO = [
+ ['北京',116.41,8,39.9],['上海',121.47,8,31.23],['天津',117.20,8,39.13],['重庆',106.55,8,29.56],
+ ['广州',113.26,8,23.13],['深圳',114.06,8,22.55],['杭州',120.15,8,30.27],['南京',118.80,8,32.06],
+ ['苏州',120.62,8,31.3],['武汉',114.30,8,30.59],['成都',104.07,8,30.57],['西安',108.94,8,34.34],
+ ['长沙',112.94,8,28.23],['郑州',113.63,8,34.75],['沈阳',123.43,8,41.81],['大连',121.62,8,38.91],
+ ['长春',125.32,8,43.82],['哈尔滨',126.53,8,45.75],['济南',117.00,8,36.65],['青岛',120.38,8,36.07],
+ ['合肥',117.28,8,31.82],['福州',119.30,8,26.07],['厦门',118.09,8,24.48],['南昌',115.89,8,28.68],
+ ['昆明',102.83,8,25.04],['贵阳',106.63,8,26.65],['南宁',108.37,8,22.82],['海口',110.20,8,20.04],
+ ['兰州',103.83,8,36.06],['西宁',101.78,8,36.62],['银川',106.23,8,38.49],['乌鲁木齐',87.62,8,43.83],
+ ['拉萨',91.11,8,29.65],['大理',100.16,8,25.61],['宁波',121.55,8,29.87],['呼和浩特',111.75,8,40.84],['太原',112.55,8,37.87],['石家庄',114.51,8,38.04],
+ ['香港',114.17,8,22.32],['澳门',113.55,8,22.2],['台北',121.52,8,25.03],['高雄',120.31,8,22.63],
+ ['东京',139.69,9,35.68],['大阪',135.50,9,34.69],['首尔',126.98,9,37.57],['新加坡',103.85,8,1.35],
+ ['曼谷',100.50,7,13.75],['吉隆坡',101.69,8,3.14],['迪拜',55.27,4,25.2],['悉尼',151.21,10,-33.87],
+ ['纽约',-74.01,-5,40.71],['洛杉矶',-118.24,-8,34.05],['温哥华',-123.12,-8,49.28],
+ ['伦敦',-0.13,0,51.51],['巴黎',2.35,1,48.86],['法兰克福',8.68,1,50.11]
+];
+
+
+/* 省份 → 城市 */
+const MORE_CITIES=[
+['北京',116.41,8,39.90],['天津',117.20,8,39.13],['上海',121.47,8,31.23],['重庆',106.55,8,29.56],['石家庄',114.51,8,38.04],['唐山',118.18,8,39.63],['保定',115.46,8,38.87],['秦皇岛',119.60,8,39.94],['邯郸',114.49,8,36.61],['张家口',114.88,8,40.82],['承德',117.94,8,40.99],['廊坊',116.70,8,39.52],['沧州',116.84,8,38.30],['太原',112.55,8,37.87],['大同',113.30,8,40.08],['临汾',111.52,8,36.09],['运城',111.00,8,35.03],['长治',113.12,8,36.19],['呼和浩特',111.75,8,40.84],['包头',109.84,8,40.66],['鄂尔多斯',109.78,8,39.61],['赤峰',118.89,8,42.26],['呼伦贝尔',119.77,8,49.21],['沈阳',123.43,8,41.81],['大连',121.61,8,38.91],['鞍山',122.99,8,41.11],['抚顺',123.96,8,41.88],['锦州',121.13,8,41.10],['丹东',124.35,8,40.00],['长春',125.32,8,43.82],['吉林',126.55,8,43.84],['延吉',129.51,8,42.90],['哈尔滨',126.53,8,45.75],['大庆',125.10,8,46.59],['齐齐哈尔',123.92,8,47.35],['牡丹江',129.63,8,44.55],['南京',118.80,8,32.06],['苏州',120.62,8,31.30],['无锡',120.30,8,31.57],['常州',119.97,8,31.81],['徐州',117.18,8,34.26],['南通',120.89,8,31.98],['扬州',119.41,8,32.39],['镇江',119.42,8,32.19],['盐城',120.16,8,33.35],['淮安',119.02,8,33.61],['连云港',119.17,8,34.60],['杭州',120.15,8,30.27],['宁波',121.55,8,29.87],['温州',120.70,8,28.00],['绍兴',120.58,8,30.00],['嘉兴',120.76,8,30.75],['金华',119.65,8,29.08],['台州',121.42,8,28.66],['湖州',120.09,8,30.89],['丽水',119.92,8,28.45],['舟山',122.21,8,29.99],['合肥',117.28,8,31.82],['芜湖',118.43,8,31.35],['蚌埠',117.39,8,32.92],['安庆',117.05,8,30.53],['阜阳',115.82,8,32.90],['黄山',118.34,8,29.72],['福州',119.30,8,26.07],['厦门',118.09,8,24.48],['泉州',118.58,8,24.91],['漳州',117.65,8,24.51],['莆田',119.01,8,25.45],['龙岩',117.02,8,25.08],['南昌',115.89,8,28.68],['赣州',114.93,8,25.83],['九江',115.99,8,29.71],['上饶',117.97,8,28.45],['景德镇',117.18,8,29.27],['济南',117.00,8,36.65],['青岛',120.38,8,36.07],['烟台',121.39,8,37.54],['潍坊',119.16,8,36.71],['临沂',118.35,8,35.10],['淄博',118.05,8,36.81],['威海',122.12,8,37.51],['济宁',116.59,8,35.41],['泰安',117.09,8,36.20],['郑州',113.63,8,34.75],['洛阳',112.45,8,34.62],['开封',114.31,8,34.80],['新乡',113.93,8,35.30],['南阳',112.53,8,33.00],['许昌',113.85,8,34.04],['商丘',115.65,8,34.41],['信阳',114.09,8,32.15],['武汉',114.30,8,30.59],['宜昌',111.29,8,30.69],['襄阳',112.14,8,32.04],['荆州',112.24,8,30.33],['十堰',110.79,8,32.63],['长沙',112.94,8,28.23],['株洲',113.13,8,27.83],['衡阳',112.57,8,26.89],['岳阳',113.13,8,29.36],['常德',111.70,8,29.03],['湘潭',112.94,8,27.83],['广州',113.26,8,23.13],['深圳',114.06,8,22.55],['佛山',113.12,8,23.02],['东莞',113.75,8,23.02],['珠海',113.58,8,22.27],['中山',113.39,8,22.52],['惠州',114.41,8,23.11],['汕头',116.68,8,23.35],['江门',113.08,8,22.58],['湛江',110.36,8,21.27],['肇庆',112.47,8,23.05],['南宁',108.37,8,22.82],['桂林',110.29,8,25.27],['柳州',109.42,8,24.32],['北海',109.12,8,21.48],['海口',110.20,8,20.04],['三亚',109.51,8,18.25],['成都',104.07,8,30.57],['绵阳',104.68,8,31.47],['乐山',103.77,8,29.55],['宜宾',104.63,8,28.77],['南充',106.08,8,30.80],['泸州',105.44,8,28.87],['德阳',104.40,8,31.13],['达州',107.50,8,31.21],['贵阳',106.63,8,26.65],['遵义',106.93,8,27.73],['六盘水',104.83,8,26.59],['安顺',105.95,8,26.25],['昆明',102.83,8,25.04],['大理',100.16,8,25.61],['丽江',100.23,8,26.86],['曲靖',103.80,8,25.49],['玉溪',102.55,8,24.35],['西双版纳',100.79,8,22.01],['拉萨',91.11,8,29.65],['日喀则',88.88,8,29.27],['林芝',94.36,8,29.65],['西安',108.94,8,34.34],['咸阳',108.71,8,34.33],['宝鸡',107.24,8,34.36],['渭南',109.51,8,34.50],['延安',109.49,8,36.59],['汉中',107.02,8,33.07],['兰州',103.83,8,36.06],['天水',105.72,8,34.58],['酒泉',98.49,8,39.73],['张掖',100.45,8,38.93],['西宁',101.78,8,36.62],['格尔木',94.90,8,36.40],['银川',106.23,8,38.49],['石嘴山',106.38,8,39.02],['吴忠',106.20,8,37.99],['乌鲁木齐',87.62,8,43.83],['喀什',75.99,8,39.47],['伊宁',81.32,8,43.92],['克拉玛依',84.87,8,45.60],['吐鲁番',89.19,8,42.95],['台北',121.56,8,25.03],['高雄',120.30,8,22.63],['台中',120.68,8,24.15],['台南',120.21,8,22.99],['新竹',120.97,8,24.80],['香港',114.17,8,22.32],['澳门',113.55,8,22.20],['东京',139.69,9,35.68],['大阪',135.50,9,34.69],['首尔',126.98,9,37.57],['新加坡',103.85,8,1.35],['曼谷',100.50,7,13.75],['吉隆坡',101.69,8,3.14],['迪拜',55.27,4,25.20],['悉尼',151.21,10,-33.87],['纽约',-74.01,-5,40.71],['洛杉矶',-118.24,-8,34.05],['温哥华',-123.12,-8,49.28],['伦敦',-0.13,0,51.51],['巴黎',2.35,1,48.86],['法兰克福',8.68,1,50.11]
+];
+MORE_CITIES.forEach(c=>{if(!GEO.some(g=>g[0]===c[0]))GEO.push(c)});
+const PROV=[
+['北京',['北京']],['天津',['天津']],['上海',['上海']],['重庆',['重庆']],['河北',['石家庄','唐山','保定','秦皇岛','邯郸','张家口','承德','廊坊','沧州']],['山西',['太原','大同','临汾','运城','长治']],['内蒙古',['呼和浩特','包头','鄂尔多斯','赤峰','呼伦贝尔']],['辽宁',['沈阳','大连','鞍山','抚顺','锦州','丹东']],['吉林',['长春','吉林','延吉']],['黑龙江',['哈尔滨','大庆','齐齐哈尔','牡丹江']],['江苏',['南京','苏州','无锡','常州','徐州','南通','扬州','镇江','盐城','淮安','连云港']],['浙江',['杭州','宁波','温州','绍兴','嘉兴','金华','台州','湖州','丽水','舟山']],['安徽',['合肥','芜湖','蚌埠','安庆','阜阳','黄山']],['福建',['福州','厦门','泉州','漳州','莆田','龙岩']],['江西',['南昌','赣州','九江','上饶','景德镇']],['山东',['济南','青岛','烟台','潍坊','临沂','淄博','威海','济宁','泰安']],['河南',['郑州','洛阳','开封','新乡','南阳','许昌','商丘','信阳']],['湖北',['武汉','宜昌','襄阳','荆州','十堰']],['湖南',['长沙','株洲','衡阳','岳阳','常德','湘潭']],['广东',['广州','深圳','佛山','东莞','珠海','中山','惠州','汕头','江门','湛江','肇庆']],['广西',['南宁','桂林','柳州','北海']],['海南',['海口','三亚']],['四川',['成都','绵阳','乐山','宜宾','南充','泸州','德阳','达州']],['贵州',['贵阳','遵义','六盘水','安顺']],['云南',['昆明','大理','丽江','曲靖','玉溪','西双版纳']],['西藏',['拉萨','日喀则','林芝']],['陕西',['西安','咸阳','宝鸡','渭南','延安','汉中']],['甘肃',['兰州','天水','酒泉','张掖']],['青海',['西宁','格尔木']],['宁夏',['银川','石嘴山','吴忠']],['新疆',['乌鲁木齐','喀什','伊宁','克拉玛依','吐鲁番']],['台湾',['台北','高雄','台中','台南','新竹']],['香港',['香港']],['澳门',['澳门']],['海外',['东京','大阪','首尔','新加坡','曼谷','吉隆坡','迪拜','悉尼','纽约','洛杉矶','温哥华','伦敦','巴黎','法兰克福']]
+];
+
+const QUESTIONS = [
+ {q:'周末整整两天，没有人约你。你会怎么过？',o:[
+   {t:'买张票去个没去过的城市，当天来回也行',p:'fast',s:'mixed',c:'sparse'},
+   {t:'把家彻底收拾一遍，煮点东西，看两部老片',p:'slow',s:'urban',c:'sparse'},
+   {t:'约两三个熟人吃饭，聊到店要打烊',p:'mid',s:'urban',c:'dense'}]},
+ {q:'如果只能选一种住处，你选',o:[
+   {t:'楼下就是便利店和地铁，半夜也亮着',p:'fast',s:'urban',c:'dense'},
+   {t:'窗边有树，走十分钟能到河边',p:'slow',s:'nature',c:'sparse'},
+   {t:'老城区，房子旧一点，但有人味',p:'mid',s:'mixed',c:'mid'}]},
+ {q:'一份新工作，最先吸引你的是',o:[
+   {t:'钱和上升空间，看得见地涨',p:'fast',s:'urban',c:'dense'},
+   {t:'团队里的人对不对，能不能一起干',p:'mid',s:'urban',c:'dense'},
+   {t:'这件事本身有没有意思，能不能做得更细',p:'slow',s:'mixed',c:'sparse'}]},
+ {q:'事情卡住的时候，你的第一反应是',o:[
+   {t:'先做点什么，边做边看',p:'fast',s:'urban',c:'mid'},
+   {t:'找个人聊聊，换一个角度',p:'mid',s:'mixed',c:'dense'},
+   {t:'关起来想清楚，再动手',p:'slow',s:'nature',c:'sparse'}]},
+ {q:'在人群里，你的位置更像',o:[
+   {t:'站在中间说话的那个',p:'fast',s:'urban',c:'dense'},
+   {t:'在旁边接话、递东西、补台的那个',p:'mid',s:'mixed',c:'mid'},
+   {t:'在角落观察，散场后单独聊的那个',p:'slow',s:'nature',c:'sparse'}]},
+ {q:'下面哪种状态最让你难受',o:[
+   {t:'一眼能看到十年后的样子',p:'fast',s:'mixed',c:'mid'},
+   {t:'一直在努力，却始终没人看见',p:'mid',s:'urban',c:'dense'},
+   {t:'规则反复变，事情一直返工',p:'slow',s:'mixed',c:'sparse'}]},
+ {q:'你理想中的通勤是',o:[
+   {t:'骑车二十分钟穿过城市，风在脸上',p:'mid',s:'urban',c:'mid'},
+   {t:'走路十分钟，路上有树',p:'slow',s:'nature',c:'sparse'},
+   {t:'地铁四十分钟，正好把手机上的东西看完',p:'fast',s:'urban',c:'dense'}]},
+ {q:'如果真要搬一次家，最可能的原因是',o:[
+   {t:'一份更好的机会，值得赌一把',p:'fast',s:'urban',c:'dense'},
+   {t:'更便宜、更舒服的生活，能喘口气',p:'slow',s:'mixed',c:'sparse'},
+   {t:'一个具体的人，或者一段关系',p:'mid',s:'mixed',c:'dense'}]}
+];
+
+// ================= 应用逻辑 =================
+const $=id=>document.getElementById(id);
+const S={mode:'solar',date:'1995-06-18',time:'08:30',city:'北京',lon:116.41,lat:39.90,tz:8,noHour:false,ans:[],qi:0,sel:-1};
+
+function pad(n){return String(n).padStart(2,'0')}
+function sgn(n){const v=Math.round(n);return (v>=0?'+':'−')+Math.abs(v)}
+function hash(str){let h=2166136261;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return ((h>>>0)%10000)/10000}
+
+/* ---------- 封面命盘 ---------- */
+function buildRing(host,showZhi){
+  const NS='http://www.w3.org/2000/svg';
+  const g=document.createElementNS(NS,'g');
+  for(let i=0;i<24;i++){
+    const a=(i*15-90)*Math.PI/180, r1=118, r2=i%2?124:127;
+    const ln=document.createElementNS(NS,'line');
+    ln.setAttribute('x1',150+r1*Math.cos(a));ln.setAttribute('y1',150+r1*Math.sin(a));
+    ln.setAttribute('x2',150+r2*Math.cos(a));ln.setAttribute('y2',150+r2*Math.sin(a));
+    ln.setAttribute('stroke',i%6===0?'rgba(138,106,44,.62)':'rgba(22,33,28,.20)');
+    ln.setAttribute('stroke-width',i%6===0?1.4:.7);
+    g.appendChild(ln);
+  }
+  if(showZhi){
+    for(let i=0;i<12;i++){
+      const a=(i*30-90)*Math.PI/180, r=102;
+      const t=document.createElementNS(NS,'text');
+      t.setAttribute('x',150+r*Math.cos(a));t.setAttribute('y',150+r*Math.sin(a)+4);
+      t.setAttribute('text-anchor','middle');
+      t.setAttribute('font-size','13');
+      t.setAttribute('font-family','Noto Serif SC, serif');
+      t.setAttribute('fill','rgba(17,26,21,.68)');
+      t.textContent=ZHI[i];
+      t.setAttribute('data-zhi',i);
+      g.appendChild(t);
+    }
+  }
+  host.appendChild(g);
+}
+
+/* ---------- 城市定位 ---------- */
+function lookupCity(str){
+  if(!str) return null;
+  const s=str.trim().replace(/[省市自治区特别行政区]/g,'');
+  let hit=GEO.find(g=>g[0]===str.trim());
+  if(!hit) hit=GEO.find(g=>g[0]===s);
+  if(!hit) hit=GEO.find(g=>s.includes(g[0])||g[0].includes(s));
+  return hit||null;
+}
+function syncCity(){
+  const hit=lookupCity($('bcity').value);
+  if(hit){
+    S.city=hit[0];S.lon=hit[1];S.tz=hit[2];S.lat=hit[3];
+    $('cityHint').textContent=hit[0]+' · 东经 '+hit[1].toFixed(2)+'°';
+  }else{
+    $('cityHint').textContent='没匹配到这座城市，先按北京(116.41°)估算；可换成最近的大城市。';
+    S.city='北京';S.lon=116.41;S.lat=39.90;S.tz=8;
+  }
+  refreshHint();
+}
+function parseInput(){
+  let y,m,d,solarTxt;
+  if(S.mode==='lunar'){
+    const sy=+$('luY').value, smv=+$('luM').value, sd=+$('luD').value;
+    const sol=luToSolar(sy,Math.abs(smv),sd,smv<0);
+    if(!sol) return null;
+    y=sol.y;m=sol.m;d=sol.d;
+    solarTxt=pad4(y)+'-'+pad(m)+'-'+pad(d);
+  }else{
+    const dv=$('bdate').value;
+    const p=dv.split('-').map(Number);
+    if(p.length<3||isNaN(p[0])) return null;
+    y=p[0];m=p[1];d=p[2];
+    solarTxt=dv;
+  }
+  S.date=solarTxt;
+  const tv=S.noHour?'12:00':($('btime').value||'12:00');
+  const q=tv.split(':').map(Number);
+  return {y,m,d,h:q[0]||0,mi:q[1]||0};
+}
+function pad4(n){return String(n).padStart(4,'0')}
+
+function refreshHint(){
+  const p=parseInput();
+  if(!p){$('calHint').textContent='日期没读对，检查一下年份是否在 1920–2050 之间。';return}
+  if(S.mode==='lunar'){
+    const smv=+$('luM').value;
+    $('calHint').textContent='＝ 公历 '+p.y+' 年 '+p.m+' 月 '+p.d+' 日'+(smv<0?'（闰月已换算）':'');
+  }
+}
+
+/* ---------- 方位 ---------- */
+const DIR_NAMES=['北','东北','东','东南','南','西南','西','西北'];
+const DIR_WX=[4,2,0,0,1,2,3,3];            // 后天八卦：坎北水、艮东北土、震东木、巽东南木、离南火、坤西南土、兑西金、乾西北金
+function bearingTo(lat1,lon1,lat2,lon2){
+  const f1=lat1*Math.PI/180,f2=lat2*Math.PI/180,dl=(lon2-lon1)*Math.PI/180;
+  const y=Math.sin(dl)*Math.cos(f2);
+  const x=Math.cos(f1)*Math.sin(f2)-Math.sin(f1)*Math.cos(f2)*Math.cos(dl);
+  return (Math.atan2(y,x)*180/Math.PI+360)%360;
+}
+function distKm(lat1,lon1,lat2,lon2){
+  const R=6371,f1=lat1*Math.PI/180,f2=lat2*Math.PI/180;
+  const dlat=(lat2-lat1)*Math.PI/180,dlon=(lon2-lon1)*Math.PI/180;
+  const a=Math.sin(dlat/2)**2+Math.cos(f1)*Math.cos(f2)*Math.sin(dlon/2)**2;
+  return 2*R*Math.asin(Math.min(1,Math.sqrt(a)));
+}
+function attrChips(c,r){
+  const dv=dirOf(c.n);
+  if(!dv) return '';
+  let h='<span>'+dv.label+'</span><span>'+dv.d+' 公里</span>';
+  if(dv.wx===r.useEl) h+='<span>方位合'+WX_NAMES[r.useEl]+'</span>';
+  else if(dv.wx===r.jiEl) h+='<span>方位冲'+WX_NAMES[r.jiEl]+'</span>';
+  return h;
+}
+function dirOf(name){
+  const g=GEO.find(x=>x[0]===name);
+  if(!g) return null;
+  const d=distKm(S.lat,S.lon,g[3],g[1]);
+  if(d<120) return {name:'近旁',label:'就在附近',wx:-1,deg:0,d:Math.round(d)};
+  const b=bearingTo(S.lat,S.lon,g[3],g[1]);
+  const i=Math.round(b/45)%8;
+  return {name:DIR_NAMES[i],label:'在你'+DIR_NAMES[i]+'面',wx:DIR_WX[i],deg:Math.round(b),d:Math.round(d)};
+}
+
+/* ---------- 农历选择器 ---------- */
+const LU_MONTH_CN=['正月','二月','三月','四月','五月','六月','七月','八月','九月','十月','冬月','腊月'];
+const LU_DAY_CN=['初一','初二','初三','初四','初五','初六','初七','初八','初九','初十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十','廿一','廿二','廿三','廿四','廿五','廿六','廿七','廿八','廿九','三十'];
+
+function fillYears(){
+  const sel=$('luY');
+  for(let y=LU_Y0;y<=LU_Y0+LU_INFO.length-1;y++){
+    const o=document.createElement('option');o.value=y;o.textContent=y+' 年';sel.appendChild(o);
+  }
+  sel.value=1995;
+}
+function rebuildMonths(keep){
+  const y=+$('luY').value, lm=luLeapMonth(y), sel=$('luM');
+  const prev=keep||sel.value;
+  sel.innerHTML='';
+  for(let m=1;m<=12;m++){
+    const o=document.createElement('option');o.value=m;o.textContent=LU_MONTH_CN[m-1];sel.appendChild(o);
+    if(lm===m){
+      const p=document.createElement('option');p.value=-m;p.textContent='闰'+LU_MONTH_CN[m-1];sel.appendChild(p);
+    }
+  }
+  if(prev&&[...sel.options].some(o=>o.value===String(prev))) sel.value=String(prev);
+  else sel.value='1';
+}
+function rebuildDays(keep){
+  const y=+$('luY').value, mv=+$('luM').value, sel=$('luD');
+  const len=luMonthLen(y,Math.abs(mv),mv<0), prev=keep||sel.value;
+  sel.innerHTML='';
+  for(let d=1;d<=len;d++){
+    const o=document.createElement('option');o.value=d;o.textContent=LU_DAY_CN[d-1];sel.appendChild(o);
+  }
+  if(prev&&+prev<=len) sel.value=String(prev);
+}
+
+/* ---------- 表单 ---------- */
+function initForm(){
+  const provSel=$('bprov'), citySel=$('bcity');
+  PROV.forEach(pv=>{const o=document.createElement('option');o.textContent=pv[0];o.value=pv[0];provSel.appendChild(o)});
+  const fillCity=keep=>{
+    const pv=PROV.find(x=>x[0]===provSel.value)||PROV[0];
+    const cur=keep?citySel.value:'';
+    citySel.innerHTML='';
+    pv[1].forEach(c=>{const o=document.createElement('option');o.textContent=c;o.value=c;citySel.appendChild(o)});
+    if(cur&&pv[1].includes(cur)) citySel.value=cur;
+  };
+  provSel.value='北京';fillCity();
+  provSel.addEventListener('change',()=>{fillCity();syncCity()});
+
+  fillYears();rebuildMonths('8');rebuildDays('15');
+
+  document.querySelectorAll('.cal-btn').forEach(b=>{
+    b.addEventListener('click',()=>setMode(b.dataset.mode));
+  });
+  $('bdate').addEventListener('change',()=>{if(parseInput())refreshHint()});
+  $('btime').addEventListener('change',()=>{if(!S.noHour)refreshHint()});
+  $('luY').addEventListener('change',()=>{rebuildMonths();rebuildDays();refreshHint()});
+  $('luM').addEventListener('change',()=>{rebuildDays();refreshHint()});
+  $('luD').addEventListener('change',refreshHint);
+  $('bcity').addEventListener('change',syncCity);
+  $('noHour').addEventListener('click',toggleNoHour);
+  $('noHour').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();toggleNoHour()}});
+  refreshHint();
+}
+function setMode(mode){
+  if(mode===S.mode) return;
+  S.mode=mode;
+  document.querySelectorAll('.cal-btn').forEach(b=>{
+    const on=b.dataset.mode===mode;
+    b.classList.toggle('on',on);b.setAttribute('aria-selected',on?'true':'false');
+  });
+  $('solarBox').hidden=mode!=='solar';
+  $('lunarBox').hidden=mode!=='lunar';
+  if(mode==='lunar'){
+    const p=(()=>{const dv=$('bdate').value.split('-').map(Number);return {y:dv[0],m:dv[1],d:dv[2]}})();
+    const lu=solarToLunar(p.y,p.m,p.d);
+    if(lu){
+      $('luY').value=lu.y;rebuildMonths(lu.leap?-lu.m:lu.m);rebuildDays(lu.d);
+    }
+  }
+  refreshHint();
+}
+function toggleNoHour(){
+  S.noHour=!S.noHour;
+  $('noHour').setAttribute('aria-checked',S.noHour?'true':'false');
+  $('btime').disabled=S.noHour;
+  $('btime').value='12:00';
+  refreshHint();
+}
+
+/* ---------- 测试题 ---------- */
+function startQuiz(){
+  S.ans=Array(QUESTIONS.length).fill(null);S.qi=0;
+  const bar=$('qbar');bar.innerHTML='';
+  for(let i=0;i<QUESTIONS.length;i++){const b=document.createElement('i');bar.appendChild(b)}
+  show('v-quiz');renderQuiz();
+}
+function renderQuiz(){
+  const n=QUESTIONS.length, q=QUESTIONS[S.qi];
+  $('qcount').textContent='第 '+(S.qi+1)+' / '+n+' 题';
+  [...$('qbar').children].forEach((el,i)=>el.classList.toggle('on',i<=S.qi));
+  $('qtext').textContent=q.q;
+  const box=$('opts');box.innerHTML='';
+  q.o.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';b.type='button';
+    b.innerHTML='<span class="k">'+'ABC'[i]+'</span><span>'+o.t+'</span>';
+    if(S.ans[S.qi]===i) b.style.borderColor='rgba(210,72,47,.6)';
+    b.addEventListener('click',()=>{
+      S.ans[S.qi]=i;
+      setTimeout(nextQuestion,220);
+    });
+    box.appendChild(b);
+  });
+  $('qback').style.visibility=S.qi===0?'hidden':'visible';
+  window.scrollTo({top:0,behavior:'auto'});
+}
+function nextQuestion(){
+  if(S.qi<QUESTIONS.length-1){S.qi++;renderQuiz();}
+  else{runLoading();}
+}
+function prevQuestion(){if(S.qi>0){S.qi--;renderQuiz();}}
+function skipQuestion(){S.ans[S.qi]=null;nextQuestion();}
+
+/* ---------- 视图切换 ---------- */
+function show(id){
+  ['v-cover','v-form','v-quiz','v-load','v-result'].forEach(v=>{
+    const el=$(v);el.hidden=(v!==id);
+  });
+}
+let loadTimer=null;
+function runLoading(){
+  show('v-load');window.scrollTo({top:0,behavior:'auto'});
+  loadTimer&&clearTimeout(loadTimer);
+  loadTimer=setTimeout(()=>{
+    document.fonts.ready.then(()=>{
+      try{renderResult();show('v-result');window.scrollTo({top:0,behavior:'auto'});}
+      catch(err){console.error(err);}
+    });
+  },1900);
+}
+
+/* ---------- 核心计算 ---------- */
+function axisResult(){
+  const acc={p:{fast:0,mid:0,slow:0},s:{urban:0,nature:0,mixed:0},c:{dense:0,mid:0,sparse:0}};
+  S.ans.forEach((a,qi)=>{
+    if(a==null) return;
+    const o=QUESTIONS[qi].o[a];
+    acc.p[o.p]++;acc.s[o.s]++;acc.c[o.c]++;
+  });
+  const pick=(x,def)=>{
+    let best=null,bv=-1,tie=[];
+    for(const k in x){
+      if(x[k]>bv){bv=x[k];best=k;tie=[k]}
+      else if(x[k]===bv){tie.push(k)}
+    }
+    if(bv<=0) return def;
+    if(tie.indexOf(def)>-1) return def;
+    return best;
+  };
+  return {pace:pick(acc.p,'mid'),scene:pick(acc.s,'mixed'),crowd:pick(acc.c,'mid'),raw:acc};
+}
+
+function analyze(){
+  const p=parseInput();
+  const b=calcBazi(p.y,p.m,p.d,p.h,p.mi,S.lon,S.tz);
+  const P=b.pillars;
+  const dGan=P[2].g, selfWx=GAN_WX[dGan];
+  const scores=elemScores(P);
+  const total=scores.reduce((a,c)=>a+c,0)||100;
+  const pct=scores.map(s=>s/total*100);
+  const yin=(selfWx+4)%5;
+  const tong=scores[selfWx]+scores[yin];
+  const ratio=tong/total;
+  const level=ratio>=0.555?'strong':(ratio<=0.448?'weak':'mid');
+
+  let useEl,jiEl;
+  if(level==='strong'){
+    const cand=[(selfWx+1)%5,(selfWx+2)%5,(selfWx+3)%5];
+    useEl=cand.reduce((a,c)=>scores[c]<scores[a]?c:a);
+    jiEl=selfWx;
+  }else if(level==='weak'){
+    const cand=[yin,selfWx];
+    useEl=cand.reduce((a,c)=>scores[c]<scores[a]?c:a);
+    jiEl=(selfWx+3)%5;
+  }else{
+    useEl=scores.indexOf(Math.min(...scores));
+    jiEl=scores.indexOf(Math.max(...scores));
+  }
+
+  // 十神
+  const gscore={bj:0,ss:0,cai:0,gs:0,yin:0};
+  const gw=[10,10,0,10], zw=[10,36,12,12];
+  const godOf=[];
+  for(let i=0;i<4;i++){
+    const ng=i===2?'日主':tenGod(dGan,P[i].g);
+    godOf.push(ng);
+    if(i!==2) gscore[gkey(ng)]+=gw[i];
+    for(const c of ZHI_CANG[P[i].z]) gscore[gkey(tenGod(dGan,c[0]))]+=zw[i]*c[1];
+  }
+  const gmain=Object.keys(gscore).sort((a,b)=>gscore[b]-gscore[a])[0];
+
+  // 天干/地支分项
+  const ganS=[0,0,0,0,0], zhiS=[0,0,0,0,0];
+  for(let i=0;i<4;i++){
+    if(i!==2) ganS[GAN_WX[P[i].g]]+=gw[i];
+    for(const c of ZHI_CANG[P[i].z]) zhiS[GAN_WX[c[0]]]+=zw[i]*c[1];
+  }
+  const ax=axisResult();
+  return {p,b,P,dGan,selfWx,scores,pct,ratio,level,useEl,jiEl,gscore,gmain,godOf,ganS,zhiS,ax};
+}
+function gkey(name){
+  if(name==='比肩'||name==='劫财') return 'bj';
+  if(name==='食神'||name==='伤官') return 'ss';
+  if(name==='偏财'||name==='正财') return 'cai';
+  if(name==='七杀'||name==='正官') return 'gs';
+  return 'yin';
+}
+
+function pickCity(r,pace,scene){
+  return CITIES.map(c=>{
+    let s=0;
+    if(c.wx[0]===r.useEl) s+=3.4;
+    else if(c.wx.includes(r.useEl)) s+=2.1;
+    if(c.pace===pace) s+=1.7;
+    else if(Math.abs(['slow','mid','fast'].indexOf(c.pace)-['slow','mid','fast'].indexOf(pace))===1) s+=0.5;
+    if(c.scene===scene) s+=0.9; else if(c.scene==='混合') s+=0.35;
+    if(c.wx[0]===r.jiEl) s-=1.6; else if(c.wx.includes(r.jiEl)) s-=0.6;
+    const dv=dirOf(c.n);
+    if(dv&&dv.wx===r.useEl) s+=2.4;
+    else if(dv&&dv.wx===r.jiEl) s-=0.7;
+    s+=hash(c.n+S.date+String(S.ans.join('')))*0.25;
+    return Object.assign({},c,{s:s});
+  }).sort((a,b)=>b.s-a.s);
+}
+
+/* ---------- 文案生成 ---------- */
+const PACE_CN={slow:'慢',mid:'中',fast:'快'};
+const SCENE_CN={urban:'都市',nature:'自然',mixed:'混合'};
+const PACE_WORD={fast:'快一点、有奔头',mid:'不紧不慢、能自己控制',slow:'慢一点、有余地'};
+const SCENE_WORD={urban:'城市里、楼下什么都有',nature:'有自然、能走到水边',mixed:'新旧交杂、有点人味'};
+const CROWD_WORD={dense:'人多热闹、信息密度高',mid:'三五个人、不必应酬',sparse:'人少安静、随时能退场'};
+
+function buildResult(){
+  const r=analyze();
+  const {P,p,b}=r;
+  const arch=ARCH[r.dGan];
+  const lv=STRENGTH[r.level];
+  const grp=TEN_GOD_GROUP[r.gmain];
+  const sup=SUPPLY[r.useEl];
+  const ax=r.ax;
+  const cities=pickCity(r,ax.pace,ax.scene);
+  const mainCity=cities[0];
+  const sameQi=cities.find(c=>c.n!==mainCity.n&&c.wx.includes(r.useEl)&&c.wx[0]!==r.useEl)||cities[1];
+  const otherQi=cities.find(c=>c.n!==mainCity.n&&c.n!==sameQi.n&&!c.wx.includes(r.useEl)&&(c.pace===ax.pace||c.scene===ax.scene))||cities.find(c=>c.n!==sameQi.n&&c.n!==mainCity.n)||cities[2];
+  const alt=[sameQi,otherQi].filter(Boolean);
+  const avoid=CITIES.slice().sort((a,c)=>(a.wx.includes(r.jiEl)?0:1)-(c.wx.includes(r.jiEl)?0:1))[0];
+  const avoidCity=(()=>{
+    const list=CITIES.filter(c=>c.wx.includes(r.jiEl)&&c.n!==mainCity.n);
+    return list.sort((a,c)=>hash(a.n+S.date)-hash(c.n+S.date))[0]||avoid;
+  })();
+
+  // 命盘细节
+  const det=[];
+  const br=P.map(x=>x.z);
+  const chongPairs=[['子午',0,6],['丑未',1,7],['寅申',2,8],['卯酉',3,9],['辰戌',4,10],['巳亥',5,11]];
+  for(const [nm,a,c] of chongPairs){
+    if(br.includes(a)&&br.includes(c)) det.push({k:'地支 '+nm+' 冲',p:CHONG_TRAIT[nm]+'。两股力气在互相推，你比同龄人更早学会“这次该听哪一边”。'});
+  }
+  const hePairs=[['子丑',0,1],['寅亥',2,11],['卯戌',3,10],['辰酉',4,9],['巳申',5,8],['午未',6,7]];
+  for(const [nm,a,c] of hePairs){
+    if(br.includes(a)&&br.includes(c)) det.push({k:'地支 '+nm+' 合',p:LIUHE_TRAIT[nm]+'。合是黏合剂，也提醒你别因为“合得来”就长期留在不合适的结构里。'});
+  }
+  const sanhe=[['申子辰',[8,0,4],'水'],['亥卯未',[11,3,7],'木'],['寅午戌',[2,6,10],'火'],['巳酉丑',[5,9,1],'金']];
+  for(const [nm,arr,el] of sanhe){
+    if(arr.every(x=>br.includes(x))) det.push({k:'地支成 '+nm+' 之局',p:'三支凑齐，'+el+'的气势很整。你一旦认准一件事，能量会全部压上去，爆发力强，但也要留一条退路给自己。'});
+  }
+  const maxEl=r.pct.indexOf(Math.max(...r.pct));
+  if(r.pct[maxEl]>=38) det.push({k:WX_NAMES[maxEl]+'气偏旺（'+Math.round(r.pct[maxEl])+'%）',
+    p:'这一股在你身上是主调，好处是特征鲜明、容易被人记住，代价是你会不自觉地用同一套方式处理所有事。'});
+  for(let i=0;i<5;i++){
+    if(r.pct[i]<5&&det.length<4&&i===r.selfWx) det.push({k:'日主无根',
+      p:'你就是'+WX_NAMES[i]+'，但四柱里没有别的'+WX_NAMES[i]+'接着你，等于一盏没加油的灯。你的光要靠外部的事、外部的人点着，所以状态起伏大，得学会自己给自己点火。'});
+    else if(r.pct[i]<5&&det.length<4) det.push({k:'盘中缺 '+WX_NAMES[i],
+      p:['木代表生长与计划性。这一块薄，你容易“想做但不起头”，最该补的是固定的小习惯。','火代表表达与热度。你不太习惯把自己推到人前，东西做得很好，但只有自己知道。','土代表落地与稳定。你想法多、动得快，但连续性容易断，需要外部结构帮你按住。','金代表边界与决断。你不太好意思说不，事情越堆越多，最后累在自己身上。','水代表流动与洞察。生活容易变硬、变板，需要主动给自己换换环境。'][i]+'（补法见下面的能量补给）'});
+  }
+  const base={k:'日主坐'+ZHI[r.P[2].z],p:'这一柱是你的底座：'+ZHI_TRAIT[r.P[2].z]+'。遇到大事时，你最先冒出来的反应就是这个。'};
+  const merged=[base].concat(det);
+  if(merged.length<3&&r.P[1].z!==r.P[2].z) merged.push({k:'月令在'+ZHI[r.P[1].z],p:'一个月里最重的一格是月令，它是你出生时的大背景：'+ZHI_TRAIT[r.P[1].z]+'。你做事的优先顺序，基本由它决定。'});
+  if(merged.length<3&&r.P[3].z!==r.P[2].z) merged.push({k:'时柱看后半程',p:'时柱代表三十五岁以后的节奏，也代表你最终想留下什么：'+ZHI_TRAIT[r.P[3].z]+'。'});
+  if(merged.length<3&&r.P[0].z!==r.P[2].z) merged.push({k:'年柱看在外的样子',p:'年柱是你出场时的那副样子：'+ZHI_TRAIT[r.P[0].z]+'。别人往往先认识这一面的你，再认识真正的你。'});
+  const detTop=merged.slice(0,4);
+
+  // 月令
+  const daysAfter=(b.ts.instant-b.monthStart.t)/(86400000);
+  const termName=TERM_NAMES[b.monthStart.i];
+
+  const name=GAN[r.dGan]+WX_NAMES[r.selfWx]+' · '+arch.n;
+  const strengthText={strong:'身强',mid:'中和',weak:'身弱'}[r.level];
+
+  const dirMain=dirOf(mainCity.n);
+  const wxMain=WX_NAMES[mainCity.wx[0]], wxAlt=mainCity.wx[1]!==undefined?WX_NAMES[mainCity.wx[1]]:'';
+  const cxMatch=mainCity.wx[0]===r.useEl, cxHas=mainCity.wx.includes(r.useEl);
+  const useN=WX_NAMES[r.useEl], jiN=WX_NAMES[r.jiEl];
+  const cityWhy='你的用神是<b>「'+useN+'」</b>。'
+    + (cxMatch
+        ? mainCity.n+'五行主'+wxMain+'，'+WX_CITY_NOTE[r.useEl]
+        : cxHas
+          ? mainCity.n+'主'+wxMain+'、兼'+wxAlt+'，'+WX_CITY_NOTE[r.useEl]
+          : mainCity.n+'主'+wxMain+'气，自身'+useN+'不厚，能借的是方位与节奏')
+    + '。'
+    + (dirMain&&dirMain.wx===r.useEl ? '方位也对得上：它'+dirMain.label+'，那一带正对'+useN+'。':'')
+    + (dirMain&&dirMain.wx===r.jiEl ? '地图上它'+dirMain.label+'，方位这一头偏向'+jiN+'，所以它给的，是里子之外的一点外力。':'')
+    + (mainCity.pace===ax.pace
+      ? '它的节奏与你答出来的偏好对得上，适应成本低，省下的力气可以拿去做更要紧的事。'
+      : '它的节奏比你习惯的'+(['slow','mid','fast'].indexOf(mainCity.pace)>['slow','mid','fast'].indexOf(ax.pace)?'快一档':'慢一档')+
+        (['slow','mid','fast'].indexOf(mainCity.pace)>['slow','mid','fast'].indexOf(ax.pace)
+          ? '。刚到时你会嫌它吵，住满三个月，身上那股被日子磨钝的劲会重新长出来。'
+          : '。刚到时你会嫌它闷，住满三个月，你会发现自己很久没有这样睡够了。'));
+
+  const ALT_PACE={
+    slow:['补得缓：日子松，机会也少一些，正好把被催惯了的那口气放平。',
+          '补得慢：头一个月会觉得空，空出来的地方，后来都用来喘气了。'],
+    mid:['补得不急不缓：既做得了事，也留得住喘气的空。',
+         '补得匀：不催人，也不拦人，节奏由你自己定。'],
+    fast:['补得急：气来得快，人跟着被推着走，适合还想再冲一段的时候。',
+          '补得烈：劲儿足，代价是停不下来，得自己找间隙。']
+  };
+  const ALT_SCENE={nature:'山水就在边上，气是走进去才补得上的。',urban:'气藏在市井里，得靠日子一天天泡出来。',mixed:'新旧杂处，气跟着人流动，来得散也来得久。'};
+  const altText=alt.map((c,k)=>{
+    const wxOk=c.wx.includes(r.useEl);
+    const lb=wxOk?'同一股气 · 另一种活法':'另一种活法';
+    return '<div class="item"><div class="h"><span class="nm">'+c.n+'</span><span class="lb">'+lb+'</span><span class="ds">'+PACE_CN[c.pace]+'节奏 · '+SCENE_CN[c.scene]+' · '+((dirOf(c.n)||{label:''}).label)+'</span></div><p>'+c.b+'。'+
+      (wxOk
+        ?(ALT_PACE[c.pace][k%2]+(ALT_SCENE[c.scene]||''))
+        :'它的主气偏'+WX_NAMES[c.wx[0]]+'，补不到你的'+useN+'；短住换换心情可以，长住得另找补法。')+'</p></div>';
+  }).join('');
+
+  const avoidText=avoidCity?'<div class="avoid"><div class="t">会让你更累的地方</div><p>'+avoidCity.n+'本身没什么问题。'+avoidCity.b+'，只是这城'+WX_NAMES[r.jiEl]+'气重。住久了容易总觉得自己该再努力一点。去玩几天很好，久住先想清楚。</p></div>':'';
+
+  return {r,arch,lv,grp,sup,ax,cities,mainCity,alt,altText,avoidText,detTop,name,strengthText,cityWhy,daysAfter,termName};
+}
+
+/* ---------- 渲染 ---------- */
+function renderResult(){
+  const R=buildResult();
+  const {r,arch,lv,grp,sup,ax,mainCity,altText,avoidText,detTop,name,strengthText,cityWhy,daysAfter,termName}=R;
+  const P=r.P;
+  const dateStr=r.p.y+'.'+pad(r.p.m)+'.'+pad(r.p.d);
+  const unknown=S.noHour;
+
+  const cells=P.map((x,i)=>{
+    const role=['年柱','月柱','日柱','时柱'][i];
+    const hid=(i===3&&unknown)?' hid':'';
+    const me=i===2?' me':'';
+    const tg=i===2?'日主':r.godOf[i];
+    const cang=ZHI_CANG[x.z].map(c=>GAN[c[0]]).join(' ');
+    return '<div class="cell'+hid+me+'">'
+      +'<div class="role">'+role+'</div>'
+      +'<div class="gan wx-'+GAN_WX[x.g]+'">'+GAN[x.g]+'</div>'
+      +'<div class="tg">'+tg+'</div>'
+      +'<div class="zhi wx-'+ZHI_WX[x.z]+'">'+ZHI[x.z]+'</div>'
+      +'<div class="cang">'+cang+'</div>'
+      +'</div>';
+  }).join('');
+
+  const WX_COLOR_ARR=['var(--wood)','var(--fire)','var(--earth)','var(--metal)','var(--water)'];
+  const wxRows=[0,1,2,3,4].map(i=>{
+    const mark=i===r.useEl?'用神':(i===r.jiEl?'忌神':'');
+    return '<div class="wx-row"><span class="n wx-'+i+'">'+WX_NAMES[i]+'</span>'
+      +'<span class="bar"><i data-w="'+r.pct[i].toFixed(1)+'" style="background:'+WX_COLOR_ARR[i]+'"></i></span>'
+      +'<span class="pct">'+r.pct[i].toFixed(0)+'%</span>'
+      +'<span class="mark'+(mark?'':' mute')+'">'+mark+'</span></div>';
+  }).join('');
+
+  const supplyRows='<div><div class="k">颜色</div><div class="v">'+sup.color+'</div></div>'
+    +'<div><div class="k">方位</div><div class="v">'+sup.dir+'</div></div>'
+    +'<div><div class="k">季节</div><div class="v">'+sup.season+'</div></div>'
+    +'<div><div class="k">时段</div><div class="v">'+sup.time+'</div></div>'
+    +'<div class="wide"><div class="k">怎么补</div><div class="v">'+sup.habit+'</div></div>';
+
+  const html=''
+  +'<div class="res-head"><div class="stepno"><b>03</b><span>你的坐标</span></div>'
+  +'<h2>'+name+'</h2>'
+  +'<p class="sub"><span class="nw">'+dateStr+' · '+S.city+'</span>'
+  +'<span class="nw">月令 '+(daysAfter<1?'刚交'+termName:termName+'后 '+Math.floor(daysAfter)+' 天')+'（'+(['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'][P[1].z])+'月）</span></p></div>'
+
+  +'<div class="pan">'+cells+'</div>'
+  +'<p class="pan-note">四柱 = 年 月 日 时，各一干一支。日柱的天干就是你（“日主”），下面一行小字是该柱地支里的藏干。'+(unknown?'你勾选了“不确定时辰”，时柱按午时推算，与之相关的推断只作参考。':'')+'</p>'
+
+  +'<div class="type-card"><div class="tc-head"><div>'
+  +'<div class="kicker">'+strengthText+' · '+grp.label+'</div>'
+  +'<div class="tc-en">'+arch.en+'</div>'
+  +'</div><div class="seal">'+arch.img+'</div></div>'
+  +'<h3>'+arch.core.replace(/。$/,'').replace('，','，<br>')+'</h3>'
+  +'<p class="en">'+WX_NAMES[r.selfWx]+'日主 · 十神偏「'+grp.label+'」</p>'
+  +'<div class="tags"><span>'+lv.tag+'</span><span>'+PACE_CN[ax.pace]+'节奏</span><span>'+SCENE_CN[ax.scene]+'环境</span></div>'
+  +'</div>'
+
+  +'<div class="sec"><div class="sec-h"><h3>你的人物画像</h3><span class="ln"></span></div>'
+  +'<div class="sec-body">'
+  +'<p class="p-body"><span class="first">'+arch.img+'</span>'+arch[r.level]+'</p>'
+  +'<p class="p-body">日主'+GAN[r.dGan]+''+WX_NAMES[r.selfWx]+'，月令在'+ZHI[r.P[1].z]+'，'+termName+'后'+Math.round(daysAfter)+'天，'+strengthText+'（'+STRENGTH[r.level].note+'）。四柱之中，「'+grp.label+'」这一柱的分量最重。'+grp.read+'</p>'
+  +'<p class="p-body">落到做事上，'+arch.doing+'</p>'
+  +'<p class="p-body">落到人身上，'+arch.bond+'</p>'
+  +'<p class="p-body">代价也在同一处——'+(arch.shadow.split('。')[0].length<=16&&arch.shadow.split('。').length>2
+      ? '<strong>'+arch.shadow.split('。')[0]+'</strong>。'+arch.shadow.split('。').slice(1).join('。')
+      : arch.shadow)+'忙起来、应酬多、什么都自己扛的时候，这一面格外明显。解法不必复杂：'+grp.tip+'</p>'
+  +'<p class="p-body">还有一样常被你自己漏掉：<strong>'+arch.gift.split('。')[0]+'</strong>。'+arch.gift.split('。').slice(1).join('。')+'</p>'
+  +'<p class="p-body" style="color:var(--txt-2);font-size:13.5px">八道题答下来，指向是一致的：<b style="color:var(--gold);font-weight:400">'+PACE_WORD[ax.pace]+'</b>的节奏，<b style="color:var(--gold);font-weight:400">'+SCENE_WORD[ax.scene]+'</b>的环境，<b style="color:var(--gold);font-weight:400">'+CROWD_WORD[ax.crowd]+'</b>的人群。这三条说的是同一件事：你的元气，在什么样的日子里回得来。城市只占其中一格。</p>'
+  +'</div></div>'
+
+  +'<div class="sec"><div class="sec-h"><h3>五行结构</h3><span class="ln"></span></div>'
+  +'<div class="wx-list">'+wxRows+'</div>'
+  +'<p class="wx-legend">'+(r.pct[r.selfWx]<10
+      ? WX_NAMES[r.selfWx]+'是你的底色。只是这盘局里，除了你自己，鲜少有同类的力量能托住你（仅占 '+Math.round(r.pct[r.selfWx])+'%）。所以你常常会觉得：我分明知道自己是个什么样的人，但要想在现实中稳稳当当地立住这一面，总显得有些吃力。'
+      : WX_NAMES[r.selfWx]+'是你的底色，占据了 '+Math.round(r.pct[r.selfWx])+'% 的比重。')+
+    (r.useEl===r.selfWx
+      ? '难得的是，它恰好也是你的用神。顺着这股天性去活，往往比硬找别的捷径更省力，也更自洽。'
+      : '你的用神是「'+WX_NAMES[r.useEl]+'」，占了 '+Math.round(r.pct[r.useEl])+'%。这是你此生最该主动去亲近、去补足的能量。至于偏旺的「'+WX_NAMES[r.jiEl]+'」（'+Math.round(r.pct[r.jiEl])+'%），它已经足够强了，就别再由着性子往那一头添柴了。')
+    +'</p>'
+  +'</div>'
+
+  +'<div class="sec"><div class="sec-h"><h3>你的城市坐标</h3><span class="ln"></span></div>'
+  +'<div class="city-main"><div class="tagline">第一坐标</div>'
+  +'<div class="name">'+mainCity.n+'<small>'+PACE_CN[mainCity.pace]+'节奏 · '+SCENE_CN[mainCity.scene]+'</small></div>'
+  +'<div class="blurb">'+mainCity.b+'</div>'
+  +'<p class="attr"><span>'+WX_NAMES[mainCity.wx[0]]+'气</span>'+attrChips(mainCity,r)+'</p>'
+  +'<p class="why">'+cityWhy.replace(/。。/g,'。')+'</p></div>'
+  +'<div class="alt">'+altText+'</div>'
+  +avoidText
+  +'<p class="note" style="margin-top:14px">若一时无法动身也无妨。不妨先挑个周末去那住上两晚，体会一下清晨醒来那半小时的心境——比起推演，你身体的直觉往往更加诚实。</p>'
+  +'</div>'
+
+  +'<div class="sec"><div class="sec-h"><h3>命盘里的几个细节</h3><span class="ln"></span></div>'
+  +'<div class="sec-body">'+detTop.map(d=>'<div class="detail"><span class="dia"></span><div><div class="k">'+d.k+'</div><p>'+d.p+'</p></div></div>').join('')+'</div>'
+  +'</div>'
+
+  +'<div class="sec"><div class="sec-h"><h3>能量补给 · 缺 '+WX_NAMES[r.useEl]+' 怎么补</h3><span class="ln"></span></div>'
+  +'<div class="supply">'+supplyRows+'</div>'
+  +'<p class="note" style="margin-top:12px">'+sup.warn+'</p>'
+  +'</div>'
+
+  +'<div class="share"><div class="sec-h"><h3>你的坐标卡</h3><span class="ln"></span></div>'
+  +'<canvas id="card" width="900" height="1400" aria-label="八字坐标结果卡"></canvas>'
+  +'<p class="cap">长按图片可保存 · 也可以直接截图分享</p>'
+  +'<div class="btn-row"><button class="btn-ghost" id="saveCard">保存这张卡</button><button class="btn-ghost" id="copyText">复制分享文案</button></div>'
+  +'<button class="btn-ghost" id="restart" style="margin-top:10px">重新排一次</button>'
+  +'</div>'
+
+  +'<details class="logic"><summary>这份结果是怎么算出来的</summary><div class="in">'
+  +'<h4>一 · 四柱</h4>'
+  +'<p>年柱看立春换年，不看元旦；月柱看十二个“节”换月（立春、惊蛰、清明…）；日柱按儒略日推算，23:00 之后算次日子时；时柱由日干和时支推出来。节气时刻取天文历表，误差在一分钟以内。</p>'
+  +'<h4>二 · 五行权重（总计 100）</h4>'
+  +'<table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>'
+  +'<tr><th>五行</th><th>天干</th><th>地支</th><th>合计</th></tr>'
+  +[0,1,2,3,4].map(i=>'<tr><td>'+WX_NAMES[i]+'</td><td>'+r.ganS[i].toFixed(0)+'</td><td>'+r.zhiS[i].toFixed(1)+'</td><td>'+r.pct[i].toFixed(0)+'%</td></tr>').join('')
+  +'</table>'
+  +'<p>天干各位 10 分（日干不计，它是“我”本身）；地支按藏干拆分，年支 10、月支 36（月令最重）、日支 12、时支 12。</p>'
+  +'<h4>三 · 旺衰与用神</h4>'
+  +'<p>同党 = 比劫（'+WX_NAMES[r.selfWx]+'）'+ Math.round(r.scores[r.selfWx]) +' + 印（'+WX_NAMES[(r.selfWx+4)%5]+'）'+ Math.round(r.scores[(r.selfWx+4)%5]) +' = '+Math.round(r.ratio*100)+'%。≥55% 判身强，≤45% 判身弱，之间为中和。身强时，在食伤/财/官杀里挑<b style="color:var(--gold);font-weight:400">最缺</b>的一行作用神；身弱时，在印/比劫里挑较缺的一行。取的都是缺口，不去砍最旺的那一行。</p>'
+  +'<h4>四 · 城市评分</h4>'
+  +'<p>每座城市有两个跟命有关的属性。<b style="color:var(--gold);font-weight:400">五行气质</b>看气候与地理：盆地的湿、沿海的风、高原的燥、老城的烟火，落到木火土金水里。成都是 木+土（湿润多雨、草木厚，地势低、节奏慢），这个属性和它在图上的东西南北无关。'
+  +'<b style="color:var(--gold);font-weight:400">方位</b>是按地图算的：以你的出生地为圆心，用两点的大圆方位角分成八方——东、东南属木，南属火，西南、东北属土，西、西北属金，北属水；方位合上忌神要减分。</p>'
+  +'<p>计分：五行气质 +3.4（副五行 +2.1）；方位 +2.4（方位为忌神 −0.7）；节奏 +1.7（相邻 +0.5）；环境 +0.9；忌神相冲 −1.6；再加固定扰动打散同分。喜木时，木气足的城市和你东侧、东南侧的城市都会往上走，两样都占的排最前。</p>'
+  +'<p>八道情境题只影响节奏/环境/人群三项，不改变四柱结论——它校准的是“你现在怎么活”，命盘说的是“你本来就是谁”。</p>'
+  +'<p style="margin-top:12px;color:var(--txt-3)">注：节气表覆盖 1920–2050，此范围外改用天文近似；海外城市的时区不处理夏令时。整套结果仅供娱乐。</p>'
+  +'</div></details>'
+  +'<p class="note" style="margin-top:22px;text-align:center">八字只是一个观察角度。<br>真正的坐标，是你自己走出来的。</p>'
+  +'<div class="foot"><div class="brand"><i></i><span>八字坐标</span></div>'
+  +'<p>四柱由出生时刻推算，节气采用天文历表（1920–2050）。<br>内容为娱乐向自我观察，不构成命理、医疗或职业建议。</p></div>';
+
+  const host=$('v-result');
+  host.innerHTML=html;
+  requestAnimationFrame(()=>{
+    host.querySelectorAll('.bar i').forEach((el,i)=>{
+      setTimeout(()=>{el.style.width=el.dataset.w+'%'},60+i*90);
+    });
+  });
+  $('saveCard').addEventListener('click',saveCard);
+  $('copyText').addEventListener('click',()=>copyShare(R));
+  $('restart').addEventListener('click',()=>{S.ans=[];S.qi=0;show('v-form');window.scrollTo({top:0,behavior:'auto'})});
+  drawCard(R);
+}
+
+function copyShare(R){
+  const {r,arch,grp,lv,mainCity,name}=R;
+  const pz=r.P.map(p=>GAN[p.g]+ZHI[p.z]).join(' ');
+  const txt='我的八字坐标是「'+name+'」\n'+arch.core+'\n'
+    +'待得住的地方：'+mainCity.n+'，'+mainCity.b+'\n'
+    +'五行：'+WX_NAMES.map((w,i)=>w+Math.round(r.pct[i])+'%').join(' ')+'｜用神 '+WX_NAMES[r.useEl]+'\n'
+    +'四柱：'+pz+'（出生时刻 '+pad(r.b.ts.h)+':'+pad(r.b.ts.mi)+'）\n'
+    +'#八字测试 #城市坐标 #性格测试 #自我观察';
+  const done=()=>{const b=$('copyText');b.textContent='已复制，去粘贴吧';setTimeout(()=>{b.textContent='复制分享文案'},1600)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done).catch(()=>fallback());
+  }else fallback();
+  function fallback(){
+    const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');done()}catch(e){alert(txt)}
+    document.body.removeChild(ta);
+  }
+}
+
+/* ---------- 分享卡 ---------- */
+function drawCard(R){
+  const cv=$('card'); if(!cv) return;
+  const g=cv.getContext('2d');
+  const W=cv.width,H=cv.height;
+  const serif='"Noto Serif SC","Songti SC",serif';
+  const sans='"Noto Sans SC","PingFang SC",sans-serif';
+  const {r,arch,grp,lv,mainCity,ax}=R;
+
+  g.clearRect(0,0,W,H);
+  g.fillStyle='#f4f2ea';g.fillRect(0,0,W,H);
+  const grd=g.createLinearGradient(0,0,W,H);
+  grd.addColorStop(0,'rgba(185,67,43,.055)');grd.addColorStop(.55,'rgba(244,242,234,0)');
+  g.fillStyle=grd;g.fillRect(0,0,W,H);
+  g.strokeStyle='rgba(24,33,29,.18)';g.lineWidth=1.5;g.strokeRect(30,30,W-60,H-60);
+
+  const T=(txt,x,y,font,color,align)=>{g.font=font;g.fillStyle=color;g.textAlign=align||'left';g.textBaseline='middle';g.fillText(txt,x,y)};
+  const rule=(y)=>{g.strokeStyle='rgba(24,33,29,.16)';g.lineWidth=1;g.beginPath();g.moveTo(70,y);g.lineTo(W-70,y);g.stroke()};
+  const Tfit=(txt,x,y,maxW,size,fam,color)=>{let sp=size;g.font='400 '+sp+'px '+fam;
+    while(g.measureText(txt).width>maxW&&sp>17){sp-=1;g.font='400 '+sp+'px '+fam}
+    T(txt,x,y,'400 '+sp+'px '+fam,color,'center')};
+
+  T('八 字 坐 标',W/2,92,'500 30px '+sans,'rgba(17,26,21,.66)','center');
+  rule(132);
+
+  const roles=['年','月','日','时'];
+  const cw=(W-180)/4;
+  r.P.forEach((x,i)=>{
+    const cx=90+cw*(i+0.5);
+    T(roles[i],cx,182,'400 23px '+sans,'rgba(17,26,21,.54)','center');
+    T(GAN[x.g],cx,262,'900 78px '+serif,WX_HEX[GAN_WX[x.g]],'center');
+    T(ZHI[x.z],cx,356,'900 78px '+serif,WX_HEX[ZHI_WX[x.z]],'center');
+    T(i===2?'日主':r.godOf[i],cx,412,'300 23px '+sans,'rgba(17,26,21,.56)','center');
+  });
+  rule(452);
+
+  T(lv.tag+' · '+grp.label,W/2,500,'400 24px '+sans,'rgba(17,26,21,.66)','center');
+  T(arch.n,W/2,592,'900 88px '+serif,'#111a15','center');
+  Tfit(arch.core.replace(/。$/,''),W/2,674,W-170,32,serif,'rgba(17,26,21,.88)');
+
+  const tags=[WX_NAMES[r.selfWx]+'日主',lv.tag,PACE_CN[ax.pace]+'节奏',SCENE_CN[ax.scene]+'环境'];
+  g.font='300 25px '+sans;
+  let tw=tags.reduce((a,t)=>a+g.measureText(t).width+34,0)+(tags.length-1)*18;
+  let tx=(W-tw)/2;
+  tags.forEach(t=>{
+    const w=g.measureText(t).width+34;
+    g.strokeStyle='rgba(138,106,44,.5)';g.lineWidth=1.2;g.strokeRect(tx,712,w,46);
+    T(t,tx+w/2,736,'300 25px '+sans,'rgba(138,106,44,.95)','center');
+    tx+=w+18;
+  });
+
+  T('五 行',90,812,'400 22px '+sans,'rgba(17,26,21,.52)');
+  [0,1,2,3,4].forEach(i=>{
+    const y=862+i*58;
+    T(WX_NAMES[i],92,y,'600 34px '+serif,WX_HEX[i]);
+    const bx=168,bw=W-168-300;
+    g.fillStyle='rgba(24,33,29,.12)';g.fillRect(bx,y-8,bw,13);
+    g.fillStyle=WX_HEX[i];g.fillRect(bx,y-8,bw*r.pct[i]/100,13);
+    T(Math.round(r.pct[i])+'%',W-215,y,'300 26px '+sans,'rgba(17,26,21,.72)','right');
+    if(i===r.useEl) T('用神',W-92,y,'400 24px '+sans,'rgba(185,67,43,.95)','right');
+  });
+  rule(1116);
+
+  T('宜 居',92,1150,'400 22px '+sans,'rgba(17,26,21,.52)');
+  T(mainCity.n,90,1208,'900 72px '+serif,'#111a15');
+  T(mainCity.b,W-90,1178,'300 25px '+sans,'rgba(17,26,21,.66)','right');
+  T(PACE_CN[mainCity.pace]+'节奏 · '+SCENE_CN[mainCity.scene],W-90,1220,'300 23px '+sans,'rgba(17,26,21,.56)','right');
+
+  Tfit(arch.line,W/2,1296,W-170,26,serif,'rgba(138,106,44,.9)');
+  T(r.p.y+'.'+pad(r.p.m)+'.'+pad(r.p.d)+'  '+pad(r.b.ts.h)+':'+pad(r.b.ts.mi)+' · '+S.city,W/2,1346,'300 20px '+sans,'rgba(17,26,21,.48)','center');
+}
+const WX_HEX=['#3d7f5b','#b8482c','#96762e','#5f6873','#33638c'];
+
+function saveCard(){
+  const cv=$('card');
+  try{
+    const url=cv.toDataURL('image/png');
+    const a=document.createElement('a');
+    a.href=url;a.download='八字坐标.png';a.click();
+  }catch(e){alert('这张卡请长按或截图保存')}
+}
+
+/* ---------- 启动 ---------- */
+(function(){
+  buildRing($('ticks'),true);
+  buildRing($('ticks2'),false);
+  initForm();
+  $('goForm').addEventListener('click',()=>{show('v-form');window.scrollTo({top:0,behavior:'auto'})});
+  $('goQuiz').addEventListener('click',()=>{syncCity();startQuiz()});
+  $('qback').addEventListener('click',prevQuestion);
+  $('qskip').addEventListener('click',skipQuestion);
+  document.querySelectorAll('.opt').forEach(o=>o.addEventListener('keydown',e=>{if(e.key==='Enter')o.click()}));
+})();
+
+</script>
+</body>
+</html>
+<iframe id="miaoda-html-comment" src="https://comment.doubao.link/iframe" title="评论" hidden style="display:none!important"></iframe>
