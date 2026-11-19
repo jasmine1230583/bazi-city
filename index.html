@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html data-src-ver="a48c9f46" lang="zh-CN" data-inspector-id="html:a48c9f46:0">
 <head data-inspector-id="html:a48c9f46:1">
@@ -953,7 +953,6 @@ const TEN_GOD_GROUP = {
 };
 const STRENGTH = {
   strong:{tag:'外放',note:'能量足，扛得住，但也容易死扛'},
-  mid:{tag:'弹性',note:'进退都有余地，不偏激'},
   weak:{tag:'内收',note:'靠借力，靠环境，也靠时机'}
 };
 const SUPPLY = [
@@ -1361,6 +1360,293 @@ function runLoading(){
   },1900);
 }
 
+/* ===== 旺衰 / 取用 / 喜忌：与 bazi-yongshen 同源（调候 → 扶抑，四维 100 分） ===== */
+const DONG_ZHI = [11, 0, 1], XIA_ZHI = [5, 6, 7];
+const LIU_CHONG = [[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11]];
+const LIU_HE = { '0-1': 2, '2-11': 0, '3-10': 1, '4-9': 3, '5-8': 4, '6-7': 1 };
+const SAN_HE = [[[8, 0, 4], 4], [[11, 3, 7], 0], [[2, 6, 10], 1], [[5, 9, 1], 3]];
+const SAN_HE_MID = { 4: 0, 0: 3, 1: 6, 3: 9 };
+const LIU_HAI = [[0, 7], [1, 6], [2, 5], [3, 4], [8, 11], [9, 10]];
+const LIU_PO = [[0, 9], [3, 6], [4, 1], [7, 10], [2, 11], [5, 8]];
+const LIU_XING3 = [[2, 5, 8], [1, 10, 7]];
+const ZI_MAO = [0, 3], ZI_XING = [4, 6, 9, 11];
+
+function zhiBase(z) { return GAN_WX[ZHI_CANG[z][0][0]]; }
+function roundHalfEven(x) { const f = Math.floor(x); return ((x - f) === 0.5 && f % 2 === 0) ? f : ((x - f) >= 0.5 ? f + 1 : f); }
+function normPct(s) { const t = s.reduce(function (a, c) { return a + c; }, 0) || 1; return s.map(function (x) { return x / t * 100; }); }
+
+/* 五行分：天干各 10（日干也计），地支各 15 按 0.6/0.3/0.1 拆，乘每支基础分系数 k */
+function elemScoresK(pillars, k) {
+  const s = [0, 0, 0, 0, 0];
+  for (let i = 0; i < pillars.length; i++) {
+    s[GAN_WX[pillars[i].g]] += 10;
+    const kk = (k && k[i] != null) ? k[i] : 1;
+    for (const c of ZHI_CANG[pillars[i].z]) s[GAN_WX[c[0]]] += 15 * c[1] * kk;
+  }
+  return s;
+}
+
+/* 刑冲破害合：m 为根气系数，k 为合化时的基础分系数，bonus 为化神加分 */
+function branchRelations(pillars, basePct) {
+  const zhis = pillars.map(function (p) { return p.z; });
+  const n = zhis.length;
+  const m = [], k = [], bonus = [0, 0, 0, 0, 0], notes = [], chonged = [], he_hua = [], he_ban = [];
+  for (let i = 0; i < n; i++) { m.push(1); k.push(1); }
+  function idxs(z) { const r = []; for (let i = 0; i < n; i++) if (zhis[i] === z) r.push(i); return r; }
+
+  // 1) 六合：先判成败，再决定力量转移
+  for (const key in LIU_HE) {
+    const a = parseInt(key.split('-')[0]), b = parseInt(key.split('-')[1]), hua = LIU_HE[key];
+    const ia = idxs(a), ib = idxs(b);
+    if (!ia.length || !ib.length) continue;
+    const ba = zhiBase(a), bb = zhiBase(b);
+    const tou = pillars.some(function (p, i) { return i !== 2 && GAN_WX[p.g] === hua; });
+    const root = zhis.some(function (z) { return zhiBase(z) === hua; });
+    const strongest = Math.max(basePct[ba], basePct[bb]);
+    if (!((tou || root) && basePct[hua] >= strongest)) {
+      for (const i of ia.concat(ib)) k[i] *= 0.90;
+      const sw = basePct[ba] >= basePct[bb] ? ba : bb;
+      notes.push('合：' + ZHI[a] + ZHI[b] + ' 合而不化（合绊）——化神' + WX_NAMES[hua] + ' ' + basePct[hua].toFixed(1) + '% 弱于' + WX_NAMES[sw] + ' ' + basePct[sw].toFixed(1) + '%，只绊不化，两支基础分 0.90');
+      ia.concat(ib).forEach(function (i) { he_ban.push(i); });
+      continue;
+    }
+    if (hua === ba || hua === bb) {
+      const strong = ia.filter(function (i) { return ba === hua; }).concat(ib.filter(function (i) { return bb === hua; }));
+      const weak = ia.concat(ib).filter(function (i) { return strong.indexOf(i) < 0; });
+      strong.forEach(function (i) { k[i] *= 1.3; });
+      weak.forEach(function (i) { k[i] *= 0.7; });
+      ia.concat(ib).forEach(function (i) { he_hua.push(i); });
+      notes.push('合：' + ZHI[a] + ZHI[b] + ' 合化' + WX_NAMES[hua] + '成功（化神即' + WX_NAMES[hua] + '本气，' + basePct[hua].toFixed(1) + '%），' + strong.map(function (i) { return ZHI[zhis[i]]; }).join('') + ' 基础分 ×1.3、' + weak.map(function (i) { return ZHI[zhis[i]]; }).join('') + ' ×0.7');
+      continue;
+    }
+    bonus[hua] += 5;
+    ia.concat(ib).forEach(function (i) { k[i] *= 0.70; he_hua.push(i); });
+    notes.push('合：' + ZHI[a] + ZHI[b] + ' 合化' + WX_NAMES[hua] + '成功（' + (tou ? '透干' : '有本气根') + '，' + basePct[hua].toFixed(1) + '%），化神 +5 分，两支基础分 0.70');
+  }
+
+  // 2) 六冲：旺者冲衰、势均两损；已合化者贪合忘冲，合绊之支冲力减半
+  for (const pair of LIU_CHONG) {
+    const a = pair[0], b = pair[1];
+    const ia = idxs(a), ib = idxs(b);
+    if (!ia.length || !ib.length) continue;
+    if (he_hua.indexOf(ia[0]) > -1 || he_hua.indexOf(ib[0]) > -1 ||
+        ia.some(function (i) { return he_hua.indexOf(i) > -1; }) || ib.some(function (i) { return he_hua.indexOf(i) > -1; })) {
+      notes.push('冲：' + ZHI[a] + ZHI[b] + ' 一支已合化，贪合忘冲，不作冲论');
+      continue;
+    }
+    const pa = Math.max(basePct[zhiBase(a)], 1e-9), pb = Math.max(basePct[zhiBase(b)], 1e-9);
+    const ratio = pa / pb;
+    let ma, mb, how;
+    if (ratio >= 1.5) { ma = 0.90; mb = 0.60; how = WX_NAMES[zhiBase(a)] + '旺' + WX_NAMES[zhiBase(b)] + '衰，' + ZHI[b] + '被冲损根'; }
+    else if (ratio >= 1.2) { ma = 0.80; mb = 0.80; how = '两行相近，' + ZHI[a] + ZHI[b] + '同伤'; }
+    else if (ratio <= 1 / 1.5) { ma = 0.60; mb = 0.90; how = WX_NAMES[zhiBase(b)] + '旺' + WX_NAMES[zhiBase(a)] + '衰，' + ZHI[a] + '被冲损根'; }
+    else if (ratio <= 1 / 1.2) { ma = 0.80; mb = 0.80; how = '两行相近，' + ZHI[a] + ZHI[b] + '同伤'; }
+    else { ma = 0.70; mb = 0.70; how = ZHI[a] + ZHI[b] + '势均，互冲两损'; }
+    ia.forEach(function (i) {
+      let c = ma;
+      if (he_ban.indexOf(i) > -1) { c = (c + 1) / 2; how += '（' + ZHI[a] + '被合绊，冲力减半）'; }
+      m[i] *= c; chonged.push(i);
+    });
+    ib.forEach(function (i) {
+      let c = mb;
+      if (he_ban.indexOf(i) > -1) { c = (c + 1) / 2; how += '（' + ZHI[b] + '被合绊，冲力减半）'; }
+      m[i] *= c; chonged.push(i);
+    });
+    notes.push('冲：' + ZHI[a] + ZHI[b] + ' 相冲，' + how);
+  }
+
+  // 3) 三合 / 半合
+  for (const item of SAN_HE) {
+    const group = item[0], hua = item[1];
+    const present = [];
+    for (let i = 0; i < n; i++) if (group.indexOf(zhis[i]) > -1) present.push(i);
+    const intact = present.filter(function (i) { return chonged.indexOf(i) < 0 && he_hua.indexOf(i) < 0 && he_ban.indexOf(i) < 0; });
+    if (present.length === 3 && intact.length === 3) {
+      const inYue = present.indexOf(1) > -1;
+      const add = inYue ? 16 : 12;
+      bonus[hua] += add;
+      present.forEach(function (i) { m[i] *= inYue ? 0.55 : 0.60; });
+      notes.push('合：' + present.map(function (i) { return ZHI[zhis[i]]; }).join('') + ' 三合成' + WX_NAMES[hua] + '局' + (inYue ? '（月令入局）' : '') + '，化神 +' + add + ' 分');
+    } else if (intact.length >= 2) {
+      const mid = SAN_HE_MID[hua];
+      const midIdx = intact.filter(function (i) { return zhis[i] === mid; });
+      const other = intact.filter(function (i) { return zhis[i] !== mid; });
+      if (midIdx.length && other.length) {
+        bonus[hua] += 6;
+        intact.forEach(function (i) { m[i] *= 0.85; });
+        notes.push('合：' + intact.map(function (i) { return ZHI[zhis[i]]; }).join('') + ' 半合' + WX_NAMES[hua] + '局，化神 +6 分，参与之支根气 0.85');
+      }
+    }
+  }
+
+  // 4) 刑、自刑、害、破
+  const zs = zhis;
+  for (const trio of LIU_XING3) {
+    if (trio.every(function (z) { return zs.indexOf(z) > -1; })) {
+      for (let i = 0; i < n; i++) if (trio.indexOf(zhis[i]) > -1 && chonged.indexOf(i) < 0) m[i] *= 0.70;
+      notes.push('刑：' + trio.map(function (z) { return ZHI[z]; }).join('') + ' 三刑齐，参与之支根气 0.70');
+    }
+  }
+  if (zs.indexOf(0) > -1 && zs.indexOf(3) > -1) {
+    for (let i = 0; i < n; i++) if (ZI_MAO.indexOf(zhis[i]) > -1 && chonged.indexOf(i) < 0) m[i] *= 0.75;
+    notes.push('刑：子卯相刑，根气 0.75');
+  }
+  for (const z of ZI_XING) {
+    const same = [];
+    for (let i = 0; i < n; i++) if (zhis[i] === z) same.push(i);
+    if (same.length >= 2) { same.forEach(function (i) { m[i] *= 0.75; }); notes.push('刑：' + ZHI[z] + ' 自刑，根气 0.75'); }
+  }
+  for (const pair of LIU_HAI) {
+    const ia = idxs(pair[0]), ib = idxs(pair[1]);
+    if (ia.length && ib.length) {
+      ia.concat(ib).forEach(function (i) { if (chonged.indexOf(i) < 0) m[i] *= 0.85; });
+      notes.push('害：' + ZHI[pair[0]] + ZHI[pair[1]] + ' 相害，根气 0.85');
+    }
+  }
+  for (const pair of LIU_PO) {
+    const ia = idxs(pair[0]), ib = idxs(pair[1]);
+    if (ia.length && ib.length) {
+      ia.concat(ib).forEach(function (i) { if (chonged.indexOf(i) < 0) m[i] *= 0.90; });
+      notes.push('破：' + ZHI[pair[0]] + ZHI[pair[1]] + ' 相破，根气 0.90');
+    }
+  }
+
+  for (let i = 0; i < n; i++) { m[i] = Math.max(Math.round(m[i] * 100) / 100, 0.20); k[i] = Math.round(k[i] * 100) / 100; }
+  return { m: m, k: k, bonus: bonus, notes: notes };
+}
+
+/* 旺衰：得令 40/30 + 得地 30 + 得势 20 + 得生 10 */
+function wangShuai(pillars, selfWx, rel, pctWithBonus) {
+  const m = rel.m, k = rel.k, bonus = rel.bonus, zhis = pillars.map(function (p) { return p.z; });
+  const eff = m.map(function (x, i) { return Math.round(x * k[i] * 100) / 100; });
+  const yin = (selfWx + 4) % 5;
+  const gansWo = pillars.filter(function (p, i) { return i !== 2; }).map(function (p) { return p.g; });
+  const src = { '比劫': 0, '印': 0 };
+
+  const lingWx = ZHI_WX[zhis[1]];
+  let ling = lingWx === selfWx ? 40 : ((lingWx + 1) % 5 === selfWx ? 30 : 0);
+  if (ling && selfWx === 3 && (zhis[1] === 7 || zhis[1] === 10) && pctWithBonus[1] >= 25) ling *= 0.75;
+  if (ling) src[lingWx === selfWx ? '比劫' : '印'] += ling;
+  if (ling) { if (eff[1] < 0.65) ling *= 0.60; else if (eff[1] < 0.85) ling *= 0.85; }
+
+  let di = 0;
+  for (let i = 0; i < zhis.length; i++) {
+    const pos = i === 2 ? 1.5 : 1;
+    for (const c of ZHI_CANG[zhis[i]]) {
+      const hw = GAN_WX[c[0]];
+      if (hw === selfWx || hw === yin) {
+        const v = 20 * c[1] * pos * eff[i];
+        di += v;
+        src[hw === selfWx ? '比劫' : '印'] += v;
+      }
+    }
+  }
+  di += (bonus[selfWx] + bonus[yin]) * 0.75;
+  src['比劫'] += bonus[selfWx] * 0.75;
+  src['印'] += bonus[yin] * 0.75;
+  if (di > 30) { const r = 30 / di; src['比劫'] *= r; src['印'] *= r; di = 30; }
+
+  let shi = 0;
+  for (const g of gansWo) {
+    const gw = GAN_WX[g];
+    if (gw === selfWx || gw === yin) {
+      const roots = [];
+      for (let i = 0; i < zhis.length; i++) if (ZHI_CANG[zhis[i]].some(function (c) { return GAN_WX[c[0]] === gw; })) roots.push(i);
+      let v;
+      if (roots.length && Math.max.apply(null, roots.map(function (i) { return eff[i]; })) >= 0.80) v = 10;
+      else if (roots.length) v = 6;
+      else v = 5;
+      shi += v;
+      src[gw === selfWx ? '比劫' : '印'] += v;
+    }
+  }
+  if (shi > 20) { const r = 20 / shi; src['比劫'] *= r; src['印'] *= r; shi = 20; }
+
+  let sheng = 0;
+  if (gansWo.some(function (g) { return GAN_WX[g] === yin; })) sheng = 10;
+  else {
+    const roots = [];
+    for (let i = 0; i < zhis.length; i++) if (ZHI_CANG[zhis[i]].some(function (c) { return GAN_WX[c[0]] === yin; })) roots.push(i);
+    if (roots.length) sheng = Math.max.apply(null, roots.map(function (i) { return eff[i]; })) >= 0.80 ? 5 : 3;
+  }
+  src['印'] += sheng;
+
+  const total = roundHalfEven(ling + di + shi + sheng);
+  const tier = total >= 80 ? '极强' : total >= 50 ? '偏强' : total >= 25 ? '偏弱' : '极弱';
+  return { ling: roundHalfEven(ling), di: roundHalfEven(di), shi: roundHalfEven(shi), sheng: roundHalfEven(sheng),
+           total: total, tier: tier, level: total >= 50 ? 'strong' : 'weak',
+           src: { bj: Math.round(src['比劫'] * 10) / 10, yin: Math.round(src['印'] * 10) / 10 },
+           kind: (total >= 50 ? (src['印'] > src['比劫'] ? '印旺' : '比劫多') : '身弱') };
+}
+
+/* 调候：寒 / 湿 / 热 / 燥 */
+function climate(pillars, pct) {
+  const yue = ZHI[pillars[1].z];
+  const fire = pct[1], water = pct[4], earth = pct[2];
+  const fireGan = pillars.some(function (p, i) { return i !== 2 && GAN_WX[p.g] === 1; });
+  const waterGan = pillars.some(function (p, i) { return i !== 2 && GAN_WX[p.g] === 4; });
+  const hits = [];
+  if (DONG_ZHI.indexOf(pillars[1].z) > -1 && fire <= 12 && !fireGan)
+    hits.push({ type: '寒', use: 1, why: yue + '月生，火仅 ' + fire.toFixed(1) + '% 且天干无丙丁，寒木寒土需火暖局' });
+  if (water >= 38 && fire <= 10 && earth < 38)
+    hits.push({ type: '湿', use: 1, why: '水 ' + water.toFixed(1) + '% 而火仅 ' + fire.toFixed(1) + '%，水旺土荡，需火暖土制' });
+  if (XIA_ZHI.indexOf(pillars[1].z) > -1 && water <= 12 && !waterGan)
+    hits.push({ type: '热', use: 4, why: yue + '月生，水仅 ' + water.toFixed(1) + '% 且天干无壬癸，燥热需水润' });
+  if (earth >= 38 && water <= 10 && fire >= 15)
+    hits.push({ type: '燥', use: 4, why: '土 ' + earth.toFixed(1) + '%、水仅 ' + water.toFixed(1) + '%、火 ' + fire.toFixed(1) + '%，燥土需水润' });
+  if (fire + earth >= 58 && water <= 15 && fire >= 30)
+    hits.push({ type: '燥', use: 4, why: '火 ' + fire.toFixed(1) + '% 与土 ' + earth.toFixed(1) + '% 合势，水仅 ' + water.toFixed(1) + '% 不足润局，燥土不生物' });
+  if (!hits.length) return null;
+  const main = hits[0];
+  return { type: main.type, use: main.use, why: main.why,
+           also: hits.slice(1).map(function (h) { return h.type; }) };
+}
+
+/* 扶抑：按“强从何来”分型 */
+function fuYi(selfWx, ws, pct) {
+  let order, kind, why;
+  if (ws.level === 'strong') {
+    if (ws.src.yin > ws.src.bj) {
+      order = [(selfWx + 2) % 5, (selfWx + 1) % 5];
+      kind = '印旺';
+      why = '身' + ws.tier + '，印旺（印 ' + ws.src.yin + ' 分 > 比劫 ' + ws.src.bj + ' 分），用财制印，食伤泄身';
+    } else if (selfWx === 2) {
+      order = [(selfWx + 3) % 5, (selfWx + 1) % 5, (selfWx + 2) % 5];
+      kind = '比劫多';
+      why = '身' + ws.tier + '，比劫多（比劫 ' + ws.src.bj + ' 分），土厚宜木疏土';
+    } else {
+      order = [(selfWx + 1) % 5, (selfWx + 3) % 5, (selfWx + 2) % 5];
+      kind = '比劫多';
+      why = '身' + ws.tier + '，比劫多（比劫 ' + ws.src.bj + ' 分 > 印 ' + ws.src.yin + ' 分），食伤泄秀，官杀制比劫';
+    }
+  } else {
+    order = [(selfWx + 4) % 5, selfWx];
+    kind = '身弱';
+    why = '身' + ws.tier + '，宜生宜帮';
+  }
+  return { use: order[0], order: order, kind: kind, why: why };
+}
+
+/* 喜忌：身弱喜生帮；身强按来源分两型 */
+function counterSet(use, selfWx, ws, pct, kind) {
+  let favored, against;
+  if (ws.level === 'strong') {
+    if (kind === '印旺') {
+      favored = [(selfWx + 2) % 5, (selfWx + 1) % 5];                     // 财 食伤
+      against = [(selfWx + 4) % 5, selfWx, (selfWx + 3) % 5];             // 印 比劫 官杀
+    } else {
+      favored = [(selfWx + 3) % 5, (selfWx + 2) % 5, (selfWx + 1) % 5];   // 官杀 财 食伤
+      against = [(selfWx + 4) % 5, selfWx];                               // 印 比劫
+    }
+  } else {
+    favored = [(selfWx + 4) % 5, selfWx];
+    against = [(selfWx + 1) % 5, (selfWx + 2) % 5, (selfWx + 3) % 5];
+  }
+  const xi = favored.filter(function (e) { return e !== use; }).sort(function (a, b) { return pct[b] - pct[a]; });
+  const ji = against.filter(function (e) { return e !== use; }).sort(function (a, b) { return pct[b] - pct[a]; });
+  return { xi: xi, ji: ji, favored: favored };
+}
+
 /* ---------- 核心计算 ---------- */
 function axisResult(){
   const acc={p:{fast:0,mid:0,slow:0},s:{urban:0,nature:0,mixed:0},c:{dense:0,mid:0,sparse:0}};
@@ -1387,27 +1673,25 @@ function analyze(){
   const b=calcBazi(p.y,p.m,p.d,p.h,p.mi,S.lon,S.tz);
   const P=b.pillars;
   const dGan=P[2].g, selfWx=GAN_WX[dGan];
-  const scores=elemScores(P);
+  const basePct=normPct(elemScoresK(P,null));
+  const rel=branchRelations(P,basePct);
+  const adj=elemScoresK(P,rel.k).map((v,e)=>v+rel.bonus[e]);
+  const scores=adj;
   const total=scores.reduce((a,c)=>a+c,0)||100;
-  const pct=scores.map(s=>s/total*100);
+  const pct=normPct(adj);
   const yin=(selfWx+4)%5;
   const tong=scores[selfWx]+scores[yin];
   const ratio=tong/total;
-  const level=ratio>=0.555?'strong':(ratio<=0.448?'weak':'mid');
-
-  let useEl,jiEl;
-  if(level==='strong'){
-    const cand=[(selfWx+1)%5,(selfWx+2)%5,(selfWx+3)%5];
-    useEl=cand.reduce((a,c)=>scores[c]<scores[a]?c:a);
-    jiEl=selfWx;
-  }else if(level==='weak'){
-    const cand=[yin,selfWx];
-    useEl=cand.reduce((a,c)=>scores[c]<scores[a]?c:a);
-    jiEl=(selfWx+3)%5;
-  }else{
-    useEl=scores.indexOf(Math.min(...scores));
-    jiEl=scores.indexOf(Math.max(...scores));
-  }
+  const ws=wangShuai(P,selfWx,rel,pct);
+  const level=ws.level;
+  const cl=climate(P,pct);
+  const fy=fuYi(selfWx,ws,pct);
+  const useEl=cl?cl.use:fy.use;
+  const cs=counterSet(useEl,selfWx,ws,pct,fy.kind);
+  const jiEl=cs.ji[0];
+  const jiAll=cs.ji;
+  const xiEl=cs.xi;
+  const layerName=cl?'调候':'扶抑';
 
   // 十神
   const gscore={bj:0,ss:0,cai:0,gs:0,yin:0};
@@ -1424,11 +1708,11 @@ function analyze(){
   // 天干/地支分项
   const ganS=[0,0,0,0,0], zhiS=[0,0,0,0,0];
   for(let i=0;i<4;i++){
-    if(i!==2) ganS[GAN_WX[P[i].g]]+=gw[i];
-    for(const c of ZHI_CANG[P[i].z]) zhiS[GAN_WX[c[0]]]+=zw[i]*c[1];
+    ganS[GAN_WX[P[i].g]]+=10;
+    for(const c of ZHI_CANG[P[i].z]) zhiS[GAN_WX[c[0]]]+=15*c[1]*rel.k[i];
   }
   const ax=axisResult();
-  return {p,b,P,dGan,selfWx,scores,pct,ratio,level,useEl,jiEl,gscore,gmain,godOf,ganS,zhiS,ax};
+  return {p,b,P,dGan,selfWx,scores,pct,ratio,level,useEl,jiEl,jiAll,xiEl,ws,cl,fy,layerName,rel,gscore,gmain,godOf,ganS,zhiS,ax};
 }
 function gkey(name){
   if(name==='比肩'||name==='劫财') return 'bj';
@@ -1517,7 +1801,7 @@ function buildResult(){
   const termName=TERM_NAMES[b.monthStart.i];
 
   const name=GAN[r.dGan]+WX_NAMES[r.selfWx]+' · '+arch.n;
-  const strengthText={strong:'身强',mid:'中和',weak:'身弱'}[r.level];
+  const strengthText={strong:'身强',weak:'身弱'}[r.level];
 
   const dirMain=dirOf(mainCity.n);
   const wxMain=WX_NAMES[mainCity.wx[0]], wxAlt=mainCity.wx[1]!==undefined?WX_NAMES[mainCity.wx[1]]:'';
@@ -1677,9 +1961,20 @@ function renderResult(){
   +'<tr><th>五行</th><th>天干</th><th>地支</th><th>合计</th></tr>'
   +[0,1,2,3,4].map(i=>'<tr><td>'+WX_NAMES[i]+'</td><td>'+r.ganS[i].toFixed(0)+'</td><td>'+r.zhiS[i].toFixed(1)+'</td><td>'+r.pct[i].toFixed(0)+'%</td></tr>').join('')
   +'</table>'
-  +'<p>天干各位 10 分（日干不计，它是“我”本身）；地支按藏干拆分，年支 10、月支 36（月令最重）、日支 12、时支 12。</p>'
+  +'<p>天干各位 10 分（日干也计 10 分，它是“我”所在的那一行）；地支各 15 分，按藏干 0.6 / 0.3 / 0.1 拆分，再乘该支的有效根气（冲刑害破系数 × 合化转移系数）。月令的作用由“得令”单独承担，不在分值上再加倍。</p>'
   +'<h4>三 · 旺衰与用神</h4>'
-  +'<p>同党 = 比劫（'+WX_NAMES[r.selfWx]+'）'+ Math.round(r.scores[r.selfWx]) +' + 印（'+WX_NAMES[(r.selfWx+4)%5]+'）'+ Math.round(r.scores[(r.selfWx+4)%5]) +' = '+Math.round(r.ratio*100)+'%。≥55% 判身强，≤45% 判身弱，之间为中和。身强时，在食伤/财/官杀里挑<b style="color:var(--gold);font-weight:400">最缺</b>的一行作用神；身弱时，在印/比劫里挑较缺的一行。取的都是缺口，不去砍最旺的那一行。</p>'
+  +'<table><colgroup><col style="width:16%"><col style="width:12%"><col style="width:12%"><col style="width:60%"></colgroup>'
+  +'<tr><th>维度</th><th>得分</th><th>上限</th><th>看什么</th></tr>'
+  +'<tr><td>得令</td><td>'+r.ws.ling+'</td><td>40</td><td>月支本气与日主同类给 40，生我（印坐月令）给 30，其余 0</td></tr>'
+  +'<tr><td>得地</td><td>'+r.ws.di+'</td><td>30</td><td>四支藏干里同我、生我者，单支 20，日支 1.5 倍</td></tr>'
+  +'<tr><td>得势</td><td>'+r.ws.shi+'</td><td>20</td><td>年月时干同我或生我：有实根 10、有根偏虚 6、无根 5</td></tr>'
+  +'<tr><td>得生</td><td>'+r.ws.sheng+'</td><td>10</td><td>天干透印 10；只藏支中，实根 5、虚根 3</td></tr>'
+  +'<tr><td><b>合计</b></td><td><b>'+r.ws.total+'</b></td><td>100</td><td>≥50 身强（'+r.ws.tier+'），&lt;50 身弱；不设中和档</td></tr>'
+  +'</table>'
+  +'<p>地支不是干算的：先量化刑冲破害合。冲按两边旺衰给 0.6~0.9；刑、害、破各 0.70~0.90；六合要看能不能化——化神正好是某一支的本气（子丑化土、寅亥化木、辰酉化金、午未化火），该支基础分 ×1.3、另一支 ×0.7，力量在两者间转移；化神不属两支本气（卯戌化火、巳申化水），按原局占比判成败，成则两支 ×0.7，不成只作合绊 ×0.9；三合 ×0.55、半合 ×0.85。有效根气 = 冲刑系数 × 合化系数，上面四个维度都用它。</p>'
+  +'<p>取用先看调候，命中即止：'+(r.cl? '本局判「<b style="color:var(--gold);font-weight:400">'+r.cl.type+'</b>」，'+r.cl.why+'，用'+WX_NAMES[r.cl.use]+'。' : '本局未达寒热燥湿的门槛，直接走扶抑。')+'</p>'
+  +'<p>扶抑不再“身强一律泄耗”，先看强从何来：比劫 '+r.ws.src.bj+' 分、印 '+r.ws.src.yin+' 分。'+(r.fy.kind==='印旺'? '印旺用财制印，官杀生印，所以忌。' : r.fy.kind==='比劫多'? (r.selfWx===2? '土日主比劫多，用木疏土。' : '比劫多用食伤泄、官杀制。') : '身弱宜生宜帮。')+'</p>'
+  +'<p>用神 <b style="color:var(--gold);font-weight:400">'+WX_NAMES[r.useEl]+'</b>（'+tenGod(r.dGan, [0,2,4,6,8][r.useEl])+'），喜 '+r.xiEl.map(i=>WX_NAMES[i]).join('、')+'，忌 '+r.jiAll.map(i=>WX_NAMES[i]).join('、')+'。</p>'
   +'<h4>四 · 城市评分</h4>'
   +'<p>每座城市有两个跟命有关的属性。<b style="color:var(--gold);font-weight:400">五行气质</b>看气候与地理：盆地的湿、沿海的风、高原的燥、老城的烟火，落到木火土金水里。成都是 木+土（湿润多雨、草木厚，地势低、节奏慢），这个属性和它在图上的东西南北无关。'
   +'<b style="color:var(--gold);font-weight:400">方位</b>是按地图算的：以你的出生地为圆心，用两点的大圆方位角分成八方——东、东南属木，南属火，西南、东北属土，西、西北属金，北属水；方位合上忌神要减分。</p>'
