@@ -1756,13 +1756,18 @@ function buildResult(){
   const ax=r.ax;
   const cities=pickCity(r,ax.pace,ax.scene);
   const mainCity=cities[0];
-  const sameQi=cities.find(c=>c.n!==mainCity.n&&c.wx.includes(r.useEl)&&c.wx[0]!==r.useEl)||cities[1];
-  const otherQi=cities.find(c=>c.n!==mainCity.n&&c.n!==sameQi.n&&!c.wx.includes(r.useEl)&&(c.pace===ax.pace||c.scene===ax.scene))||cities.find(c=>c.n!==sameQi.n&&c.n!==mainCity.n)||cities[2];
+  const sameQi=cities.find(c=>c.n!==mainCity.n&&c.wx.includes(r.useEl)&&c.wx[0]!==r.useEl&&!c.wx.includes(r.jiEl))||cities[1];
+  const otherQi=cities.find(c=>c.n!==mainCity.n&&c.n!==sameQi.n&&!c.wx.includes(r.useEl)&&!c.wx.includes(r.jiEl)&&(c.pace===ax.pace||c.scene===ax.scene))
+    ||cities.find(c=>c.n!==sameQi.n&&c.n!==mainCity.n&&!c.wx.includes(r.useEl)&&!c.wx.includes(r.jiEl))
+    ||cities.find(c=>c.n!==sameQi.n&&c.n!==mainCity.n&&!c.wx.includes(r.jiEl))||cities[2];
   const alt=[sameQi,otherQi].filter(Boolean);
   const avoid=CITIES.slice().sort((a,c)=>(a.wx.includes(r.jiEl)?0:1)-(c.wx.includes(r.jiEl)?0:1))[0];
+  const recNames=[mainCity,sameQi,otherQi].filter(Boolean).map(c=>c.n);
   const avoidCity=(()=>{
-    const list=CITIES.filter(c=>c.wx.includes(r.jiEl)&&c.n!==mainCity.n);
-    return list.sort((a,c)=>hash(a.n+S.date)-hash(c.n+S.date))[0]||avoid;
+    const list=CITIES.filter(c=>c.wx.includes(r.jiEl)&&recNames.indexOf(c.n)<0);
+    return list.sort((a,c)=>hash(a.n+S.date)-hash(c.n+S.date))[0]
+      ||(avoid&&recNames.indexOf(avoid.n)<0?avoid:null)
+      ||CITIES.filter(c=>recNames.indexOf(c.n)<0).sort((a,c)=>hash(a.n+S.date)-hash(c.n+S.date))[0];
   })();
 
   // 命盘细节
